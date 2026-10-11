@@ -1,0 +1,79 @@
+[
+  {
+    "company_name": "alpha-En Corp",
+    "cik": "0001023298",
+    "filing_type": "10-K",
+    "date_filed": "2026-10-09",
+    "file_link": "https://www.sec.gov/Archives/edgar/data/1023298/000164033426001664/0001640334-26-001664-index.htm"
+  },
+  {
+    "company_name": "HARBOR DIVERSIFIED, INC.",
+    "cik": "0000899394",
+    "filing_type": "10-K",
+    "date_filed": "2026-10-09",
+    "file_link": "https://www.sec.gov/Archives/edgar/data/899394/000089939426000033/0000899394-26-000033-index.htm"
+  },
+  {
+    "company_name": "GHST World Inc.",
+    "cik": "0001121795",
+    "filing_type": "10-K",
+    "date_filed": "2026-10-09",
+    "file_link": "https://www.sec.gov/Archives/edgar/data/1121795/000107997326001337/0001079973-26-001337-index.htm"
+  },
+  {
+    "company_name": "WEWARDS, INC.",
+    "cik": "0001616156",
+    "filing_type": "10-K/A",
+    "date_filed": "2026-10-09",
+    "file_link": "https://www.sec.gov/Archives/edgar/data/1616156/000107997326001334/0001079973-26-001334-index.htm"
+  },
+  {
+    "company_name": "MICRON TECHNOLOGY INC",
+    "cik": "0000723125",
+    "filing_type": "10-K",
+    "date_filed": "2026-10-09",
+    "file_link": "https://www.sec.gov/Archives/edgar/data/723125/000072312526000023/0000723125-26-000023-index.htm"
+  },
+  {
+    "company_name": "Oil-Dri Corp of America",
+    "cik": "0000074046",
+    "filing_type": "10-K",
+    "date_filed": "2026-10-08",
+    "file_link": "https://www.sec.gov/Archives/edgar/data/74046/000162828026065453/0001628280-26-065453-index.htm"
+  },
+  {
+    "company_name": "VILLAGE SUPER MARKET INC",
+    "cik": "0000103595",
+    "filing_type": "10-K",
+    "date_filed": "2026-10-08",
+    "file_link": "https://www.sec.gov/Archives/edgar/data/103595/000010359526000018/0000103595-26-000018-index.htm"
+  },
+  {
+    "company_name": "APPlife Digital Solutions Inc",
+    "cik": "0001755101",
+    "filing_type": "10-K",
+    "date_filed": "2026-10-08",
+    "file_link": "https://www.sec.gov/Archives/edgar/data/1755101/000109690626001522/0001096906-26-001522-index.htm"
+  },
+  {
+    "company_name": "Protopia Global Holdings Inc.",
+    "cik": "0001959585",
+    "filing_type": "10-K",
+    "date_filed": "2026-10-07",
+    "file_link": "https://www.sec.gov/Archives/edgar/data/1959585/000182912626010860/0001829126-26-010860-index.htm"
+  },
+  {
+    "company_name": "Mag Magna Corp",
+    "cik": "0001949864",
+    "filing_type": "10-K",
+    "date_filed": "2026-10-07",
+    "file_link": "https://www.sec.gov/Archives/edgar/data/1949864/000168316826007689/0001683168-26-007689-index.htm"
+  },
+  {
+    "company_name": "PILLARSTONE CAPITAL REIT",
+    "cik": "0000928953",
+    "filing_type": "10-K",
+    "date_filed": "2026-10-07",
+    "file_link": "https://www.sec.gov/Archives/edgar/data/928953/000143774926032293/0001437749-26-032293-index.htm"
+  }
+]

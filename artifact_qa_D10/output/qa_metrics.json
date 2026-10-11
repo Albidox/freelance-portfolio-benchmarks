@@ -1,0 +1,462 @@
+{
+  "artifact_id": "D10",
+  "round": "R1",
+  "service": "Automated Data Validation and Regression Test Harness",
+  "target_database": "PostgreSQL 18.0",
+  "port": 5433,
+  "schema_isolation": "d10_regression_sandbox",
+  "timestamp_epoch": 1791695238.6118157,
+  "wall_clock_time_seconds": 16.312,
+  "surefire_execution_time_seconds": 9.359,
+  "under_20s_sla": true,
+  "total_tests": 35,
+  "passed_tests": 35,
+  "failed_tests": 0,
+  "error_tests": 0,
+  "skipped_tests": 0,
+  "pass_rate_percent": 100.0,
+  "suites": [
+    {
+      "suite_name": "com.albidox.qa.OrderApiRegressionTest",
+      "tests": 20,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "duration_seconds": 9.041,
+      "cases": [
+        {
+          "name": "shouldGetExistingOrderByIdReturningHttp200WithFullHierarchy",
+          "classname": "com.albidox.qa.OrderApiRegressionTest",
+          "duration_seconds": 1.715,
+          "status": "PASSED"
+        },
+        {
+          "name": "shouldRejectOrderWhenRequestedQuantityExceedsAvailableStockReturningHttp409",
+          "classname": "com.albidox.qa.OrderApiRegressionTest",
+          "duration_seconds": 0.128,
+          "status": "PASSED"
+        },
+        {
+          "name": "shouldRollbackStockDeductionWhenSubsequentItemFails",
+          "classname": "com.albidox.qa.OrderApiRegressionTest",
+          "duration_seconds": 0.021,
+          "status": "PASSED"
+        },
+        {
+          "name": "shouldCancelPendingOrderAndRestoreInventory",
+          "classname": "com.albidox.qa.OrderApiRegressionTest",
+          "duration_seconds": 0.033,
+          "status": "PASSED"
+        },
+        {
+          "name": "shouldRejectOrderWithNonExistentProductIdReturningHttp404",
+          "classname": "com.albidox.qa.OrderApiRegressionTest",
+          "duration_seconds": 0.017,
+          "status": "PASSED"
+        },
+        {
+          "name": "shouldCreateValidSingleItemOrderWithHttp201",
+          "classname": "com.albidox.qa.OrderApiRegressionTest",
+          "duration_seconds": 0.02,
+          "status": "PASSED"
+        },
+        {
+          "name": "shouldRejectOrderWithNegativeQuantityReturningHttp400",
+          "classname": "com.albidox.qa.OrderApiRegressionTest",
+          "duration_seconds": 0.022,
+          "status": "PASSED"
+        },
+        {
+          "name": "shouldFilterOrdersByStatus",
+          "classname": "com.albidox.qa.OrderApiRegressionTest",
+          "duration_seconds": 0.033,
+          "status": "PASSED"
+        },
+        {
+          "name": "shouldReturnHttp404WhenGettingNonExistentOrder",
+          "classname": "com.albidox.qa.OrderApiRegressionTest",
+          "duration_seconds": 0.011,
+          "status": "PASSED"
+        },
+        {
+          "name": "shouldRejectOrderWithZeroQuantityReturningHttp400",
+          "classname": "com.albidox.qa.OrderApiRegressionTest",
+          "duration_seconds": 0.009,
+          "status": "PASSED"
+        },
+        {
+          "name": "shouldRejectOrderWithEmptyItemsListReturningHttp400",
+          "classname": "com.albidox.qa.OrderApiRegressionTest",
+          "duration_seconds": 0.013,
+          "status": "PASSED"
+        },
+        {
+          "name": "shouldDeductInventoryAtomicallyOnOrderCreation",
+          "classname": "com.albidox.qa.OrderApiRegressionTest",
+          "duration_seconds": 0.015,
+          "status": "PASSED"
+        },
+        {
+          "name": "shouldRejectOrderWithNullProductIdReturningHttp400",
+          "classname": "com.albidox.qa.OrderApiRegressionTest",
+          "duration_seconds": 0.012,
+          "status": "PASSED"
+        },
+        {
+          "name": "shouldFilterOrdersByCustomerId",
+          "classname": "com.albidox.qa.OrderApiRegressionTest",
+          "duration_seconds": 0.026,
+          "status": "PASSED"
+        },
+        {
+          "name": "shouldRejectOrderWithNonExistentCustomerIdReturningHttp404",
+          "classname": "com.albidox.qa.OrderApiRegressionTest",
+          "duration_seconds": 0.011,
+          "status": "PASSED"
+        },
+        {
+          "name": "shouldListOrdersWithPagination",
+          "classname": "com.albidox.qa.OrderApiRegressionTest",
+          "duration_seconds": 0.063,
+          "status": "PASSED"
+        },
+        {
+          "name": "shouldRejectCancellationOfAlreadyCancelledOrderReturningHttp409",
+          "classname": "com.albidox.qa.OrderApiRegressionTest",
+          "duration_seconds": 0.038,
+          "status": "PASSED"
+        },
+        {
+          "name": "shouldCreateValidMultipleItemsOrderAndCalculateAccurateTotal",
+          "classname": "com.albidox.qa.OrderApiRegressionTest",
+          "duration_seconds": 0.033,
+          "status": "PASSED"
+        },
+        {
+          "name": "shouldRejectOrderWithNullCustomerIdReturningHttp400ProblemDetail",
+          "classname": "com.albidox.qa.OrderApiRegressionTest",
+          "duration_seconds": 0.018,
+          "status": "PASSED"
+        },
+        {
+          "name": "shouldRejectCancellationOfDeliveredOrderReturningHttp409",
+          "classname": "com.albidox.qa.OrderApiRegressionTest",
+          "duration_seconds": 0.022,
+          "status": "PASSED"
+        }
+      ]
+    },
+    {
+      "suite_name": "com.albidox.qa.SchemaMigrationTest",
+      "tests": 15,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "duration_seconds": 0.318,
+      "cases": [
+        {
+          "name": "shouldEnforceProductsPriceNonNegativeCheckConstraint",
+          "classname": "com.albidox.qa.SchemaMigrationTest",
+          "duration_seconds": 0.04,
+          "status": "PASSED"
+        },
+        {
+          "name": "shouldEnforceOrdersStatusCheckConstraint",
+          "classname": "com.albidox.qa.SchemaMigrationTest",
+          "duration_seconds": 0.014,
+          "status": "PASSED"
+        },
+        {
+          "name": "shouldValidateMigrationChecksumsAreNonZero",
+          "classname": "com.albidox.qa.SchemaMigrationTest",
+          "duration_seconds": 0.031,
+          "status": "PASSED"
+        },
+        {
+          "name": "shouldEnforceCustomersStatusCheckConstraint",
+          "classname": "com.albidox.qa.SchemaMigrationTest",
+          "duration_seconds": 0.015,
+          "status": "PASSED"
+        },
+        {
+          "name": "shouldEnforceForeignKeyOrderItemsToProducts",
+          "classname": "com.albidox.qa.SchemaMigrationTest",
+          "duration_seconds": 0.023,
+          "status": "PASSED"
+        },
+        {
+          "name": "shouldVerifyFlywaySchemaHistoryTableExists",
+          "classname": "com.albidox.qa.SchemaMigrationTest",
+          "duration_seconds": 0.014,
+          "status": "PASSED"
+        },
+        {
+          "name": "shouldEnforceForeignKeyOrdersToCustomers",
+          "classname": "com.albidox.qa.SchemaMigrationTest",
+          "duration_seconds": 0.006,
+          "status": "PASSED"
+        },
+        {
+          "name": "shouldEnforceForeignKeyOrderItemsToOrders",
+          "classname": "com.albidox.qa.SchemaMigrationTest",
+          "duration_seconds": 0.011,
+          "status": "PASSED"
+        },
+        {
+          "name": "shouldVerifyAllForeignKeyIndexesExistInPostgresCatalog",
+          "classname": "com.albidox.qa.SchemaMigrationTest",
+          "duration_seconds": 0.018,
+          "status": "PASSED"
+        },
+        {
+          "name": "shouldVerifyAuditLogsTableAndIndexesExist",
+          "classname": "com.albidox.qa.SchemaMigrationTest",
+          "duration_seconds": 0.013,
+          "status": "PASSED"
+        },
+        {
+          "name": "shouldEnforceCustomersEmailUniqueConstraint",
+          "classname": "com.albidox.qa.SchemaMigrationTest",
+          "duration_seconds": 0.011,
+          "status": "PASSED"
+        },
+        {
+          "name": "shouldEnforceProductsStockQuantityNonNegativeCheckConstraint",
+          "classname": "com.albidox.qa.SchemaMigrationTest",
+          "duration_seconds": 0.007,
+          "status": "PASSED"
+        },
+        {
+          "name": "shouldApplyAllMigrationsCleanly",
+          "classname": "com.albidox.qa.SchemaMigrationTest",
+          "duration_seconds": 0.051,
+          "status": "PASSED"
+        },
+        {
+          "name": "shouldEnforceOrderItemsUnitPriceNonNegativeCheckConstraint",
+          "classname": "com.albidox.qa.SchemaMigrationTest",
+          "duration_seconds": 0.014,
+          "status": "PASSED"
+        },
+        {
+          "name": "shouldEnforceOrderItemsQuantityPositiveCheckConstraint",
+          "classname": "com.albidox.qa.SchemaMigrationTest",
+          "duration_seconds": 0.011,
+          "status": "PASSED"
+        }
+      ]
+    }
+  ],
+  "test_cases": [
+    {
+      "name": "shouldGetExistingOrderByIdReturningHttp200WithFullHierarchy",
+      "classname": "com.albidox.qa.OrderApiRegressionTest",
+      "duration_seconds": 1.715,
+      "status": "PASSED"
+    },
+    {
+      "name": "shouldRejectOrderWhenRequestedQuantityExceedsAvailableStockReturningHttp409",
+      "classname": "com.albidox.qa.OrderApiRegressionTest",
+      "duration_seconds": 0.128,
+      "status": "PASSED"
+    },
+    {
+      "name": "shouldRollbackStockDeductionWhenSubsequentItemFails",
+      "classname": "com.albidox.qa.OrderApiRegressionTest",
+      "duration_seconds": 0.021,
+      "status": "PASSED"
+    },
+    {
+      "name": "shouldCancelPendingOrderAndRestoreInventory",
+      "classname": "com.albidox.qa.OrderApiRegressionTest",
+      "duration_seconds": 0.033,
+      "status": "PASSED"
+    },
+    {
+      "name": "shouldRejectOrderWithNonExistentProductIdReturningHttp404",
+      "classname": "com.albidox.qa.OrderApiRegressionTest",
+      "duration_seconds": 0.017,
+      "status": "PASSED"
+    },
+    {
+      "name": "shouldCreateValidSingleItemOrderWithHttp201",
+      "classname": "com.albidox.qa.OrderApiRegressionTest",
+      "duration_seconds": 0.02,
+      "status": "PASSED"
+    },
+    {
+      "name": "shouldRejectOrderWithNegativeQuantityReturningHttp400",
+      "classname": "com.albidox.qa.OrderApiRegressionTest",
+      "duration_seconds": 0.022,
+      "status": "PASSED"
+    },
+    {
+      "name": "shouldFilterOrdersByStatus",
+      "classname": "com.albidox.qa.OrderApiRegressionTest",
+      "duration_seconds": 0.033,
+      "status": "PASSED"
+    },
+    {
+      "name": "shouldReturnHttp404WhenGettingNonExistentOrder",
+      "classname": "com.albidox.qa.OrderApiRegressionTest",
+      "duration_seconds": 0.011,
+      "status": "PASSED"
+    },
+    {
+      "name": "shouldRejectOrderWithZeroQuantityReturningHttp400",
+      "classname": "com.albidox.qa.OrderApiRegressionTest",
+      "duration_seconds": 0.009,
+      "status": "PASSED"
+    },
+    {
+      "name": "shouldRejectOrderWithEmptyItemsListReturningHttp400",
+      "classname": "com.albidox.qa.OrderApiRegressionTest",
+      "duration_seconds": 0.013,
+      "status": "PASSED"
+    },
+    {
+      "name": "shouldDeductInventoryAtomicallyOnOrderCreation",
+      "classname": "com.albidox.qa.OrderApiRegressionTest",
+      "duration_seconds": 0.015,
+      "status": "PASSED"
+    },
+    {
+      "name": "shouldRejectOrderWithNullProductIdReturningHttp400",
+      "classname": "com.albidox.qa.OrderApiRegressionTest",
+      "duration_seconds": 0.012,
+      "status": "PASSED"
+    },
+    {
+      "name": "shouldFilterOrdersByCustomerId",
+      "classname": "com.albidox.qa.OrderApiRegressionTest",
+      "duration_seconds": 0.026,
+      "status": "PASSED"
+    },
+    {
+      "name": "shouldRejectOrderWithNonExistentCustomerIdReturningHttp404",
+      "classname": "com.albidox.qa.OrderApiRegressionTest",
+      "duration_seconds": 0.011,
+      "status": "PASSED"
+    },
+    {
+      "name": "shouldListOrdersWithPagination",
+      "classname": "com.albidox.qa.OrderApiRegressionTest",
+      "duration_seconds": 0.063,
+      "status": "PASSED"
+    },
+    {
+      "name": "shouldRejectCancellationOfAlreadyCancelledOrderReturningHttp409",
+      "classname": "com.albidox.qa.OrderApiRegressionTest",
+      "duration_seconds": 0.038,
+      "status": "PASSED"
+    },
+    {
+      "name": "shouldCreateValidMultipleItemsOrderAndCalculateAccurateTotal",
+      "classname": "com.albidox.qa.OrderApiRegressionTest",
+      "duration_seconds": 0.033,
+      "status": "PASSED"
+    },
+    {
+      "name": "shouldRejectOrderWithNullCustomerIdReturningHttp400ProblemDetail",
+      "classname": "com.albidox.qa.OrderApiRegressionTest",
+      "duration_seconds": 0.018,
+      "status": "PASSED"
+    },
+    {
+      "name": "shouldRejectCancellationOfDeliveredOrderReturningHttp409",
+      "classname": "com.albidox.qa.OrderApiRegressionTest",
+      "duration_seconds": 0.022,
+      "status": "PASSED"
+    },
+    {
+      "name": "shouldEnforceProductsPriceNonNegativeCheckConstraint",
+      "classname": "com.albidox.qa.SchemaMigrationTest",
+      "duration_seconds": 0.04,
+      "status": "PASSED"
+    },
+    {
+      "name": "shouldEnforceOrdersStatusCheckConstraint",
+      "classname": "com.albidox.qa.SchemaMigrationTest",
+      "duration_seconds": 0.014,
+      "status": "PASSED"
+    },
+    {
+      "name": "shouldValidateMigrationChecksumsAreNonZero",
+      "classname": "com.albidox.qa.SchemaMigrationTest",
+      "duration_seconds": 0.031,
+      "status": "PASSED"
+    },
+    {
+      "name": "shouldEnforceCustomersStatusCheckConstraint",
+      "classname": "com.albidox.qa.SchemaMigrationTest",
+      "duration_seconds": 0.015,
+      "status": "PASSED"
+    },
+    {
+      "name": "shouldEnforceForeignKeyOrderItemsToProducts",
+      "classname": "com.albidox.qa.SchemaMigrationTest",
+      "duration_seconds": 0.023,
+      "status": "PASSED"
+    },
+    {
+      "name": "shouldVerifyFlywaySchemaHistoryTableExists",
+      "classname": "com.albidox.qa.SchemaMigrationTest",
+      "duration_seconds": 0.014,
+      "status": "PASSED"
+    },
+    {
+      "name": "shouldEnforceForeignKeyOrdersToCustomers",
+      "classname": "com.albidox.qa.SchemaMigrationTest",
+      "duration_seconds": 0.006,
+      "status": "PASSED"
+    },
+    {
+      "name": "shouldEnforceForeignKeyOrderItemsToOrders",
+      "classname": "com.albidox.qa.SchemaMigrationTest",
+      "duration_seconds": 0.011,
+      "status": "PASSED"
+    },
+    {
+      "name": "shouldVerifyAllForeignKeyIndexesExistInPostgresCatalog",
+      "classname": "com.albidox.qa.SchemaMigrationTest",
+      "duration_seconds": 0.018,
+      "status": "PASSED"
+    },
+    {
+      "name": "shouldVerifyAuditLogsTableAndIndexesExist",
+      "classname": "com.albidox.qa.SchemaMigrationTest",
+      "duration_seconds": 0.013,
+      "status": "PASSED"
+    },
+    {
+      "name": "shouldEnforceCustomersEmailUniqueConstraint",
+      "classname": "com.albidox.qa.SchemaMigrationTest",
+      "duration_seconds": 0.011,
+      "status": "PASSED"
+    },
+    {
+      "name": "shouldEnforceProductsStockQuantityNonNegativeCheckConstraint",
+      "classname": "com.albidox.qa.SchemaMigrationTest",
+      "duration_seconds": 0.007,
+      "status": "PASSED"
+    },
+    {
+      "name": "shouldApplyAllMigrationsCleanly",
+      "classname": "com.albidox.qa.SchemaMigrationTest",
+      "duration_seconds": 0.051,
+      "status": "PASSED"
+    },
+    {
+      "name": "shouldEnforceOrderItemsUnitPriceNonNegativeCheckConstraint",
+      "classname": "com.albidox.qa.SchemaMigrationTest",
+      "duration_seconds": 0.014,
+      "status": "PASSED"
+    },
+    {
+      "name": "shouldEnforceOrderItemsQuantityPositiveCheckConstraint",
+      "classname": "com.albidox.qa.SchemaMigrationTest",
+      "duration_seconds": 0.011,
+      "status": "PASSED"
+    }
+  ]
+}

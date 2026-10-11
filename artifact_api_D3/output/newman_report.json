@@ -1,0 +1,2850 @@
+{
+  "collection": {
+    "_": {
+      "postman_id": "c4837781-1313-45ea-bcc7-5043d2d2051c"
+    },
+    "item": [
+      {
+        "id": "e8138a72-ce20-4548-b58a-d07954caa26f",
+        "name": "Auth - User Login",
+        "request": {
+          "description": {
+            "content": "Authenticates user credentials and captures bearer token.",
+            "type": "text/plain"
+          },
+          "url": {
+            "path": [
+              "api",
+              "v1",
+              "auth",
+              "login"
+            ],
+            "host": [
+              "{{baseUrl}}"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Accept",
+              "value": "application/json"
+            }
+          ],
+          "method": "POST",
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"email\": \"user@example.com\",\n  \"password\": \"SecurePassword123!\"\n}"
+          }
+        },
+        "response": [],
+        "event": [
+          {
+            "listen": "prerequest",
+            "script": {
+              "id": "dac9921b-a4c2-4dac-86ce-342377695f6e",
+              "type": "text/javascript",
+              "exec": [
+                "// Pre-request script: initialize auth test payload",
+                "pm.variables.set('login_timestamp', Date.now());"
+              ],
+              "_lastExecutionId": "a79f104e-0bfe-42d2-9027-2238a9e3a883"
+            }
+          },
+          {
+            "listen": "test",
+            "script": {
+              "id": "b272a160-f8fb-4d7d-8016-7cdd589bd3a6",
+              "type": "text/javascript",
+              "exec": [
+                "pm.test('Status code is 200', function () {",
+                "    pm.response.to.have.status(200);",
+                "});",
+                "",
+                "pm.test('Response time is under 500ms', function () {",
+                "    pm.expect(pm.response.responseTime).to.be.below(500);",
+                "});",
+                "",
+                "pm.test('Content-Type is application/json', function () {",
+                "    pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json');",
+                "});",
+                "",
+                "pm.test('Auth response contains access token and token type', function () {",
+                "    var jsonData = pm.response.json();",
+                "    pm.expect(jsonData).to.have.property('access_token');",
+                "    pm.expect(jsonData.access_token).to.be.a('string').and.not.empty;",
+                "    pm.expect(jsonData).to.have.property('token_type', 'Bearer');",
+                "    pm.environment.set('authToken', jsonData.access_token);",
+                "});",
+                "",
+                "pm.test('Auth schema conforms to contract fields', function () {",
+                "    var jsonData = pm.response.json();",
+                "    pm.expect(jsonData).to.have.property('expires_in').that.is.a('number');",
+                "    pm.expect(jsonData).to.have.property('user_id').that.is.a('string');",
+                "});"
+              ],
+              "_lastExecutionId": "f29dd38b-cc3e-4dab-a26d-08a45cf1a8ec"
+            }
+          }
+        ]
+      },
+      {
+        "id": "6af69937-6213-48bc-b61d-6abf741017a6",
+        "name": "Products - List Catalog",
+        "request": {
+          "description": {
+            "content": "Lists paginated products from catalog.",
+            "type": "text/plain"
+          },
+          "url": {
+            "path": [
+              "api",
+              "v1",
+              "products"
+            ],
+            "host": [
+              "{{baseUrl}}"
+            ],
+            "query": [
+              {
+                "key": "limit",
+                "value": "10"
+              }
+            ],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Accept",
+              "value": "application/json"
+            }
+          ],
+          "method": "GET"
+        },
+        "response": [],
+        "event": [
+          {
+            "listen": "prerequest",
+            "script": {
+              "id": "26148014-d3ae-4d43-9dc1-26c498dec347",
+              "type": "text/javascript",
+              "exec": [
+                "// Pre-request script: ensure headers set",
+                "pm.request.headers.add({key: 'Accept', value: 'application/json'});"
+              ],
+              "_lastExecutionId": "cf1082b5-5d05-43fd-833d-fe45239356c2"
+            }
+          },
+          {
+            "listen": "test",
+            "script": {
+              "id": "fc4c37a9-a18c-4b67-a148-2081f5657a72",
+              "type": "text/javascript",
+              "exec": [
+                "pm.test('Status code is 200', function () {",
+                "    pm.response.to.have.status(200);",
+                "});",
+                "",
+                "pm.test('Response time is under 500ms', function () {",
+                "    pm.expect(pm.response.responseTime).to.be.below(500);",
+                "});",
+                "",
+                "pm.test('Content-Type is application/json', function () {",
+                "    pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json');",
+                "});",
+                "",
+                "pm.test('Product list returns non-empty catalog items', function () {",
+                "    var jsonData = pm.response.json();",
+                "    pm.expect(jsonData).to.have.property('items').that.is.an('array').and.not.empty;",
+                "    pm.expect(jsonData).to.have.property('total').that.is.a('number');",
+                "    pm.environment.set('productId', jsonData.items[0].id);",
+                "});",
+                "",
+                "pm.test('Product items conform to contract schema', function () {",
+                "    var jsonData = pm.response.json();",
+                "    var p = jsonData.items[0];",
+                "    pm.expect(p).to.have.property('id').that.is.a('string');",
+                "    pm.expect(p).to.have.property('name').that.is.a('string');",
+                "    pm.expect(p).to.have.property('price').that.is.a('number');",
+                "    pm.expect(p).to.have.property('stock').that.is.a('number');",
+                "    pm.expect(p).to.have.property('category').that.is.a('string');",
+                "});"
+              ],
+              "_lastExecutionId": "156ef775-7de7-40bf-95ab-3cae7fe48ca0"
+            }
+          }
+        ]
+      },
+      {
+        "id": "2a9d752d-b41c-493c-8263-4e5651cc9a15",
+        "name": "Products - Get Details",
+        "request": {
+          "description": {
+            "content": "Retrieves product detail by id.",
+            "type": "text/plain"
+          },
+          "url": {
+            "path": [
+              "api",
+              "v1",
+              "products",
+              "{{productId}}"
+            ],
+            "host": [
+              "{{baseUrl}}"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Accept",
+              "value": "application/json"
+            }
+          ],
+          "method": "GET"
+        },
+        "response": [],
+        "event": [
+          {
+            "listen": "prerequest",
+            "script": {
+              "id": "e3d3460e-a245-47d3-8c8c-726fca2d77cf",
+              "type": "text/javascript",
+              "exec": [
+                "var pid = pm.environment.get('productId');",
+                "if (!pid) {",
+                "    pm.environment.set('productId', 'prod_001');",
+                "}"
+              ],
+              "_lastExecutionId": "eecbfca9-c56c-439e-80ba-21d802161388"
+            }
+          },
+          {
+            "listen": "test",
+            "script": {
+              "id": "2f1f25c1-0b39-4ceb-813e-823ab4bfe782",
+              "type": "text/javascript",
+              "exec": [
+                "pm.test('Status code is 200', function () {",
+                "    pm.response.to.have.status(200);",
+                "});",
+                "",
+                "pm.test('Response time is under 500ms', function () {",
+                "    pm.expect(pm.response.responseTime).to.be.below(500);",
+                "});",
+                "",
+                "pm.test('Content-Type is application/json', function () {",
+                "    pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json');",
+                "});",
+                "",
+                "pm.test('Product ID matches requested parameter', function () {",
+                "    var jsonData = pm.response.json();",
+                "    var targetId = pm.environment.get('productId') || 'prod_001';",
+                "    pm.expect(jsonData.id).to.eql(targetId);",
+                "});",
+                "",
+                "pm.test('Product detail schema attributes are valid', function () {",
+                "    var jsonData = pm.response.json();",
+                "    pm.expect(jsonData.price).to.be.above(0);",
+                "    pm.expect(jsonData).to.have.property('sku').that.is.a('string');",
+                "    pm.expect(jsonData).to.have.property('currency', 'USD');",
+                "});"
+              ],
+              "_lastExecutionId": "7d6433c0-1c6a-41e8-a48f-74d8a83eccd4"
+            }
+          }
+        ]
+      },
+      {
+        "id": "b966c160-3aba-44be-9be3-bbf4a7b5e9ad",
+        "name": "Cart - Add Item",
+        "request": {
+          "description": {
+            "content": "Appends product to cart with authorization.",
+            "type": "text/plain"
+          },
+          "url": {
+            "path": [
+              "api",
+              "v1",
+              "cart",
+              "items"
+            ],
+            "host": [
+              "{{baseUrl}}"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Accept",
+              "value": "application/json"
+            },
+            {
+              "key": "Authorization",
+              "value": "Bearer {{authToken}}"
+            }
+          ],
+          "method": "POST",
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"product_id\": \"{{productId}}\",\n  \"quantity\": 2\n}"
+          }
+        },
+        "response": [],
+        "event": [
+          {
+            "listen": "prerequest",
+            "script": {
+              "id": "b9ae8e39-963c-43fc-b480-e8da13d1d1df",
+              "type": "text/javascript",
+              "exec": [
+                "var token = pm.environment.get('authToken');",
+                "if (token) {",
+                "    pm.request.headers.upsert({key: 'Authorization', value: 'Bearer ' + token});",
+                "}",
+                "var pid = pm.environment.get('productId');",
+                "if (!pid) {",
+                "    pm.environment.set('productId', 'prod_001');",
+                "}"
+              ],
+              "_lastExecutionId": "53f10879-ffd0-4778-8bb8-33a721d40271"
+            }
+          },
+          {
+            "listen": "test",
+            "script": {
+              "id": "e8c13192-f780-42fb-a502-322fe290dab3",
+              "type": "text/javascript",
+              "exec": [
+                "pm.test('Status code is 200', function () {",
+                "    pm.response.to.have.status(200);",
+                "});",
+                "",
+                "pm.test('Response time is under 500ms', function () {",
+                "    pm.expect(pm.response.responseTime).to.be.below(500);",
+                "});",
+                "",
+                "pm.test('Content-Type is application/json', function () {",
+                "    pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json');",
+                "});",
+                "",
+                "pm.test('Cart updated with correct item and quantity', function () {",
+                "    var jsonData = pm.response.json();",
+                "    pm.expect(jsonData).to.have.property('cart_id').that.is.a('string');",
+                "    pm.expect(jsonData).to.have.property('items').that.is.an('array').and.not.empty;",
+                "    pm.expect(jsonData.items[0].quantity).to.eql(2);",
+                "    pm.environment.set('cartId', jsonData.cart_id);",
+                "});",
+                "",
+                "pm.test('Cart pricing calculation schema conforms', function () {",
+                "    var jsonData = pm.response.json();",
+                "    pm.expect(jsonData).to.have.property('total_items').that.is.a('number');",
+                "    pm.expect(jsonData).to.have.property('subtotal').that.is.a('number');",
+                "    pm.expect(jsonData.subtotal).to.be.above(0);",
+                "});"
+              ],
+              "_lastExecutionId": "5b779923-3a45-4d4b-87a3-ce17ce3cd85a"
+            }
+          }
+        ]
+      },
+      {
+        "id": "65babe35-323a-4e8f-ac26-9d0b014dfdaa",
+        "name": "Orders - Checkout Order",
+        "request": {
+          "description": {
+            "content": "Checks out active cart and creates confirmed order.",
+            "type": "text/plain"
+          },
+          "url": {
+            "path": [
+              "api",
+              "v1",
+              "orders",
+              "checkout"
+            ],
+            "host": [
+              "{{baseUrl}}"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Accept",
+              "value": "application/json"
+            },
+            {
+              "key": "Authorization",
+              "value": "Bearer {{authToken}}"
+            }
+          ],
+          "method": "POST",
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"cart_id\": \"{{cartId}}\",\n  \"shipping_address\": {\n    \"street\": \"100 Market St\",\n    \"city\": \"San Francisco\",\n    \"postal_code\": \"94105\",\n    \"country\": \"USA\"\n  },\n  \"payment_method\": \"credit_card\"\n}"
+          }
+        },
+        "response": [],
+        "event": [
+          {
+            "listen": "prerequest",
+            "script": {
+              "id": "80c3aac4-39dc-4dce-9eb8-c16cd71397c7",
+              "type": "text/javascript",
+              "exec": [
+                "var token = pm.environment.get('authToken');",
+                "if (token) {",
+                "    pm.request.headers.upsert({key: 'Authorization', value: 'Bearer ' + token});",
+                "}",
+                "var cid = pm.environment.get('cartId');",
+                "if (!cid) {",
+                "    pm.environment.set('cartId', 'cart_9901');",
+                "}"
+              ],
+              "_lastExecutionId": "c11b8808-5e0b-45d2-92c7-87fff052d311"
+            }
+          },
+          {
+            "listen": "test",
+            "script": {
+              "id": "dda25f9c-d978-4c27-b332-74645ddde79c",
+              "type": "text/javascript",
+              "exec": [
+                "pm.test('Status code is 200', function () {",
+                "    pm.response.to.have.status(200);",
+                "});",
+                "",
+                "pm.test('Response time is under 500ms', function () {",
+                "    pm.expect(pm.response.responseTime).to.be.below(500);",
+                "});",
+                "",
+                "pm.test('Content-Type is application/json', function () {",
+                "    pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json');",
+                "});",
+                "",
+                "pm.test('Order confirmed with valid identifier', function () {",
+                "    var jsonData = pm.response.json();",
+                "    pm.expect(jsonData).to.have.property('order_id').that.is.a('string').and.not.empty;",
+                "    pm.expect(jsonData).to.have.property('status', 'confirmed');",
+                "});",
+                "",
+                "pm.test('Order financial status verified as paid', function () {",
+                "    var jsonData = pm.response.json();",
+                "    pm.expect(jsonData).to.have.property('total_amount').that.is.a('number').and.above(0);",
+                "    pm.expect(jsonData).to.have.property('payment_status', 'paid');",
+                "    pm.expect(jsonData).to.have.property('created_at').that.is.a('string');",
+                "});"
+              ],
+              "_lastExecutionId": "a6b99e75-0705-4d08-a37a-d7fd5f76a24b"
+            }
+          }
+        ]
+      }
+    ],
+    "event": [],
+    "variable": [
+      {
+        "type": "string",
+        "value": "http://127.0.0.1:8000",
+        "key": "baseUrl"
+      }
+    ],
+    "info": {
+      "_postman_id": "c4837781-1313-45ea-bcc7-5043d2d2051c",
+      "name": "E-Commerce Checkout and Catalog API v1.0.0",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+      "description": {
+        "content": "Automated Postman Collection v2.1 generated from OpenAPI 3.0 specification.",
+        "type": "text/plain"
+      }
+    }
+  },
+  "environment": {
+    "_": {
+      "postman_variable_scope": "environment"
+    },
+    "id": "db1b2e79-1c54-41fa-bc55-cdab5ec0a6ee",
+    "name": "Local Mock Server Environment",
+    "values": [
+      {
+        "type": "any",
+        "value": "http://127.0.0.1:8000",
+        "key": "baseUrl"
+      },
+      {
+        "type": "any",
+        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfODkyMWEiLCJyb2xlIjoiY3VzdG9tZXIifQ.mock_signature",
+        "key": "authToken"
+      },
+      {
+        "type": "any",
+        "value": "prod_001",
+        "key": "productId"
+      },
+      {
+        "type": "any",
+        "value": "cart_9901",
+        "key": "cartId"
+      }
+    ]
+  },
+  "globals": {
+    "id": "db3c64e5-ca05-48fa-9e2e-2287c804442c",
+    "values": []
+  },
+  "run": {
+    "stats": {
+      "iterations": {
+        "total": 1,
+        "pending": 0,
+        "failed": 0
+      },
+      "items": {
+        "total": 5,
+        "pending": 0,
+        "failed": 0
+      },
+      "scripts": {
+        "total": 10,
+        "pending": 0,
+        "failed": 0
+      },
+      "prerequests": {
+        "total": 5,
+        "pending": 0,
+        "failed": 0
+      },
+      "requests": {
+        "total": 5,
+        "pending": 0,
+        "failed": 0
+      },
+      "tests": {
+        "total": 5,
+        "pending": 0,
+        "failed": 0
+      },
+      "assertions": {
+        "total": 25,
+        "pending": 0,
+        "failed": 0
+      },
+      "testScripts": {
+        "total": 5,
+        "pending": 0,
+        "failed": 0
+      },
+      "prerequestScripts": {
+        "total": 5,
+        "pending": 0,
+        "failed": 0
+      }
+    },
+    "timings": {
+      "responseAverage": 105,
+      "responseMin": 77,
+      "responseMax": 132,
+      "responseSd": 18.13284313062902,
+      "dnsAverage": 0,
+      "dnsMin": 0,
+      "dnsMax": 0,
+      "dnsSd": 0,
+      "firstByteAverage": 0,
+      "firstByteMin": 0,
+      "firstByteMax": 0,
+      "firstByteSd": 0,
+      "started": 1791678981671,
+      "completed": 1791678982633
+    },
+    "executions": [
+      {
+        "cursor": {
+          "position": 0,
+          "iteration": 0,
+          "length": 5,
+          "cycles": 1,
+          "empty": false,
+          "eof": false,
+          "bof": true,
+          "cr": false,
+          "ref": "5ee9fd59-dc77-471d-9917-21660fa61823",
+          "httpRequestId": "6669a8d5-ab3e-48ad-aa75-5ebe0e2e90da"
+        },
+        "item": {
+          "id": "e8138a72-ce20-4548-b58a-d07954caa26f",
+          "name": "Auth - User Login",
+          "request": {
+            "description": {
+              "content": "Authenticates user credentials and captures bearer token.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "login"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"user@example.com\",\n  \"password\": \"SecurePassword123!\"\n}"
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "dac9921b-a4c2-4dac-86ce-342377695f6e",
+                "type": "text/javascript",
+                "exec": [
+                  "// Pre-request script: initialize auth test payload",
+                  "pm.variables.set('login_timestamp', Date.now());"
+                ],
+                "_lastExecutionId": "a79f104e-0bfe-42d2-9027-2238a9e3a883"
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "b272a160-f8fb-4d7d-8016-7cdd589bd3a6",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status code is 200', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('Response time is under 500ms', function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(500);",
+                  "});",
+                  "",
+                  "pm.test('Content-Type is application/json', function () {",
+                  "    pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json');",
+                  "});",
+                  "",
+                  "pm.test('Auth response contains access token and token type', function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('access_token');",
+                  "    pm.expect(jsonData.access_token).to.be.a('string').and.not.empty;",
+                  "    pm.expect(jsonData).to.have.property('token_type', 'Bearer');",
+                  "    pm.environment.set('authToken', jsonData.access_token);",
+                  "});",
+                  "",
+                  "pm.test('Auth schema conforms to contract fields', function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('expires_in').that.is.a('number');",
+                  "    pm.expect(jsonData).to.have.property('user_id').that.is.a('string');",
+                  "});"
+                ],
+                "_lastExecutionId": "f29dd38b-cc3e-4dab-a26d-08a45cf1a8ec"
+              }
+            }
+          ]
+        },
+        "request": {
+          "description": {
+            "content": "Authenticates user credentials and captures bearer token.",
+            "type": "text/plain"
+          },
+          "url": {
+            "protocol": "http",
+            "port": "8000",
+            "path": [
+              "api",
+              "v1",
+              "auth",
+              "login"
+            ],
+            "host": [
+              "127",
+              "0",
+              "0",
+              "1"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Accept",
+              "value": "application/json"
+            },
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.39.1",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "1d6034cf-07b7-4909-a0da-df30b664a3db",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "127.0.0.1:8000",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            },
+            {
+              "key": "Content-Length",
+              "value": "69",
+              "system": true
+            }
+          ],
+          "method": "POST",
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"email\": \"user@example.com\",\n  \"password\": \"SecurePassword123!\"\n}"
+          }
+        },
+        "response": {
+          "id": "c37f9967-b665-41dd-b82a-5fe11b491b9f",
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "date",
+              "value": "Sun, 11 Oct 2026 00:36:20 GMT"
+            },
+            {
+              "key": "server",
+              "value": "uvicorn"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-length",
+              "value": "183"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              34,
+              97,
+              99,
+              99,
+              101,
+              115,
+              115,
+              95,
+              116,
+              111,
+              107,
+              101,
+              110,
+              34,
+              58,
+              34,
+              101,
+              121,
+              74,
+              104,
+              98,
+              71,
+              99,
+              105,
+              79,
+              105,
+              74,
+              73,
+              85,
+              122,
+              73,
+              49,
+              78,
+              105,
+              73,
+              115,
+              73,
+              110,
+              82,
+              53,
+              99,
+              67,
+              73,
+              54,
+              73,
+              107,
+              112,
+              88,
+              86,
+              67,
+              74,
+              57,
+              46,
+              101,
+              121,
+              74,
+              122,
+              100,
+              87,
+              73,
+              105,
+              79,
+              105,
+              74,
+              49,
+              99,
+              51,
+              74,
+              102,
+              79,
+              68,
+              107,
+              121,
+              77,
+              87,
+              69,
+              105,
+              76,
+              67,
+              74,
+              121,
+              98,
+              50,
+              120,
+              108,
+              73,
+              106,
+              111,
+              105,
+              89,
+              51,
+              86,
+              122,
+              100,
+              71,
+              57,
+              116,
+              90,
+              88,
+              73,
+              105,
+              102,
+              81,
+              46,
+              109,
+              111,
+              99,
+              107,
+              95,
+              115,
+              105,
+              103,
+              110,
+              97,
+              116,
+              117,
+              114,
+              101,
+              34,
+              44,
+              34,
+              116,
+              111,
+              107,
+              101,
+              110,
+              95,
+              116,
+              121,
+              112,
+              101,
+              34,
+              58,
+              34,
+              66,
+              101,
+              97,
+              114,
+              101,
+              114,
+              34,
+              44,
+              34,
+              101,
+              120,
+              112,
+              105,
+              114,
+              101,
+              115,
+              95,
+              105,
+              110,
+              34,
+              58,
+              51,
+              54,
+              48,
+              48,
+              44,
+              34,
+              117,
+              115,
+              101,
+              114,
+              95,
+              105,
+              100,
+              34,
+              58,
+              34,
+              117,
+              115,
+              114,
+              95,
+              56,
+              57,
+              50,
+              49,
+              97,
+              34,
+              125
+            ]
+          },
+          "cookie": [],
+          "responseTime": 132,
+          "responseSize": 183
+        },
+        "id": "e8138a72-ce20-4548-b58a-d07954caa26f",
+        "assertions": [
+          {
+            "assertion": "Status code is 200",
+            "skipped": false
+          },
+          {
+            "assertion": "Response time is under 500ms",
+            "skipped": false
+          },
+          {
+            "assertion": "Content-Type is application/json",
+            "skipped": false
+          },
+          {
+            "assertion": "Auth response contains access token and token type",
+            "skipped": false
+          },
+          {
+            "assertion": "Auth schema conforms to contract fields",
+            "skipped": false
+          }
+        ]
+      },
+      {
+        "cursor": {
+          "ref": "8ebce1ed-c324-4868-b11f-47781a5e5c09",
+          "length": 5,
+          "cycles": 1,
+          "position": 1,
+          "iteration": 0,
+          "httpRequestId": "52e99786-5896-49c6-9319-149da27f15c2"
+        },
+        "item": {
+          "id": "6af69937-6213-48bc-b61d-6abf741017a6",
+          "name": "Products - List Catalog",
+          "request": {
+            "description": {
+              "content": "Lists paginated products from catalog.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "products"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "10"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET"
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "26148014-d3ae-4d43-9dc1-26c498dec347",
+                "type": "text/javascript",
+                "exec": [
+                  "// Pre-request script: ensure headers set",
+                  "pm.request.headers.add({key: 'Accept', value: 'application/json'});"
+                ],
+                "_lastExecutionId": "cf1082b5-5d05-43fd-833d-fe45239356c2"
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "fc4c37a9-a18c-4b67-a148-2081f5657a72",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status code is 200', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('Response time is under 500ms', function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(500);",
+                  "});",
+                  "",
+                  "pm.test('Content-Type is application/json', function () {",
+                  "    pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json');",
+                  "});",
+                  "",
+                  "pm.test('Product list returns non-empty catalog items', function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('items').that.is.an('array').and.not.empty;",
+                  "    pm.expect(jsonData).to.have.property('total').that.is.a('number');",
+                  "    pm.environment.set('productId', jsonData.items[0].id);",
+                  "});",
+                  "",
+                  "pm.test('Product items conform to contract schema', function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    var p = jsonData.items[0];",
+                  "    pm.expect(p).to.have.property('id').that.is.a('string');",
+                  "    pm.expect(p).to.have.property('name').that.is.a('string');",
+                  "    pm.expect(p).to.have.property('price').that.is.a('number');",
+                  "    pm.expect(p).to.have.property('stock').that.is.a('number');",
+                  "    pm.expect(p).to.have.property('category').that.is.a('string');",
+                  "});"
+                ],
+                "_lastExecutionId": "156ef775-7de7-40bf-95ab-3cae7fe48ca0"
+              }
+            }
+          ]
+        },
+        "request": {
+          "description": {
+            "content": "Lists paginated products from catalog.",
+            "type": "text/plain"
+          },
+          "url": {
+            "protocol": "http",
+            "port": "8000",
+            "path": [
+              "api",
+              "v1",
+              "products"
+            ],
+            "host": [
+              "127",
+              "0",
+              "0",
+              "1"
+            ],
+            "query": [
+              {
+                "key": "limit",
+                "value": "10"
+              }
+            ],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Accept",
+              "value": "application/json"
+            },
+            {
+              "key": "Accept",
+              "value": "application/json"
+            },
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.39.1",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "64f30f5e-0412-4e25-a284-ae5782ed0a73",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "127.0.0.1:8000",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            }
+          ],
+          "method": "GET"
+        },
+        "response": {
+          "id": "1039d694-b9e3-46db-ba20-1f9c692dee70",
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "date",
+              "value": "Sun, 11 Oct 2026 00:36:21 GMT"
+            },
+            {
+              "key": "server",
+              "value": "uvicorn"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-length",
+              "value": "463"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              34,
+              105,
+              116,
+              101,
+              109,
+              115,
+              34,
+              58,
+              91,
+              123,
+              34,
+              105,
+              100,
+              34,
+              58,
+              34,
+              112,
+              114,
+              111,
+              100,
+              95,
+              48,
+              48,
+              49,
+              34,
+              44,
+              34,
+              110,
+              97,
+              109,
+              101,
+              34,
+              58,
+              34,
+              77,
+              101,
+              99,
+              104,
+              97,
+              110,
+              105,
+              99,
+              97,
+              108,
+              32,
+              71,
+              97,
+              109,
+              105,
+              110,
+              103,
+              32,
+              75,
+              101,
+              121,
+              98,
+              111,
+              97,
+              114,
+              100,
+              34,
+              44,
+              34,
+              112,
+              114,
+              105,
+              99,
+              101,
+              34,
+              58,
+              49,
+              50,
+              57,
+              46,
+              57,
+              57,
+              44,
+              34,
+              115,
+              116,
+              111,
+              99,
+              107,
+              34,
+              58,
+              52,
+              50,
+              44,
+              34,
+              99,
+              97,
+              116,
+              101,
+              103,
+              111,
+              114,
+              121,
+              34,
+              58,
+              34,
+              69,
+              108,
+              101,
+              99,
+              116,
+              114,
+              111,
+              110,
+              105,
+              99,
+              115,
+              34,
+              44,
+              34,
+              115,
+              107,
+              117,
+              34,
+              58,
+              34,
+              75,
+              66,
+              45,
+              77,
+              69,
+              67,
+              72,
+              45,
+              82,
+              71,
+              66,
+              45,
+              48,
+              49,
+              34,
+              44,
+              34,
+              99,
+              117,
+              114,
+              114,
+              101,
+              110,
+              99,
+              121,
+              34,
+              58,
+              34,
+              85,
+              83,
+              68,
+              34,
+              125,
+              44,
+              123,
+              34,
+              105,
+              100,
+              34,
+              58,
+              34,
+              112,
+              114,
+              111,
+              100,
+              95,
+              48,
+              48,
+              50,
+              34,
+              44,
+              34,
+              110,
+              97,
+              109,
+              101,
+              34,
+              58,
+              34,
+              87,
+              105,
+              114,
+              101,
+              108,
+              101,
+              115,
+              115,
+              32,
+              69,
+              114,
+              103,
+              111,
+              110,
+              111,
+              109,
+              105,
+              99,
+              32,
+              77,
+              111,
+              117,
+              115,
+              101,
+              34,
+              44,
+              34,
+              112,
+              114,
+              105,
+              99,
+              101,
+              34,
+              58,
+              55,
+              57,
+              46,
+              53,
+              44,
+              34,
+              115,
+              116,
+              111,
+              99,
+              107,
+              34,
+              58,
+              49,
+              56,
+              44,
+              34,
+              99,
+              97,
+              116,
+              101,
+              103,
+              111,
+              114,
+              121,
+              34,
+              58,
+              34,
+              69,
+              108,
+              101,
+              99,
+              116,
+              114,
+              111,
+              110,
+              105,
+              99,
+              115,
+              34,
+              44,
+              34,
+              115,
+              107,
+              117,
+              34,
+              58,
+              34,
+              77,
+              83,
+              45,
+              69,
+              82,
+              71,
+              79,
+              45,
+              87,
+              76,
+              45,
+              48,
+              50,
+              34,
+              44,
+              34,
+              99,
+              117,
+              114,
+              114,
+              101,
+              110,
+              99,
+              121,
+              34,
+              58,
+              34,
+              85,
+              83,
+              68,
+              34,
+              125,
+              44,
+              123,
+              34,
+              105,
+              100,
+              34,
+              58,
+              34,
+              112,
+              114,
+              111,
+              100,
+              95,
+              48,
+              48,
+              51,
+              34,
+              44,
+              34,
+              110,
+              97,
+              109,
+              101,
+              34,
+              58,
+              34,
+              85,
+              108,
+              116,
+              114,
+              97,
+              45,
+              87,
+              105,
+              100,
+              101,
+              32,
+              71,
+              97,
+              109,
+              105,
+              110,
+              103,
+              32,
+              77,
+              111,
+              110,
+              105,
+              116,
+              111,
+              114,
+              32,
+              51,
+              52,
+              45,
+              105,
+              110,
+              99,
+              104,
+              34,
+              44,
+              34,
+              112,
+              114,
+              105,
+              99,
+              101,
+              34,
+              58,
+              52,
+              57,
+              57,
+              46,
+              48,
+              44,
+              34,
+              115,
+              116,
+              111,
+              99,
+              107,
+              34,
+              58,
+              57,
+              44,
+              34,
+              99,
+              97,
+              116,
+              101,
+              103,
+              111,
+              114,
+              121,
+              34,
+              58,
+              34,
+              69,
+              108,
+              101,
+              99,
+              116,
+              114,
+              111,
+              110,
+              105,
+              99,
+              115,
+              34,
+              44,
+              34,
+              115,
+              107,
+              117,
+              34,
+              58,
+              34,
+              77,
+              78,
+              45,
+              51,
+              52,
+              45,
+              85,
+              87,
+              45,
+              49,
+              52,
+              52,
+              34,
+              44,
+              34,
+              99,
+              117,
+              114,
+              114,
+              101,
+              110,
+              99,
+              121,
+              34,
+              58,
+              34,
+              85,
+              83,
+              68,
+              34,
+              125,
+              93,
+              44,
+              34,
+              116,
+              111,
+              116,
+              97,
+              108,
+              34,
+              58,
+              51,
+              44,
+              34,
+              112,
+              97,
+              103,
+              101,
+              34,
+              58,
+              49,
+              125
+            ]
+          },
+          "cookie": [],
+          "responseTime": 96,
+          "responseSize": 463
+        },
+        "id": "6af69937-6213-48bc-b61d-6abf741017a6",
+        "assertions": [
+          {
+            "assertion": "Status code is 200",
+            "skipped": false
+          },
+          {
+            "assertion": "Response time is under 500ms",
+            "skipped": false
+          },
+          {
+            "assertion": "Content-Type is application/json",
+            "skipped": false
+          },
+          {
+            "assertion": "Product list returns non-empty catalog items",
+            "skipped": false
+          },
+          {
+            "assertion": "Product items conform to contract schema",
+            "skipped": false
+          }
+        ]
+      },
+      {
+        "cursor": {
+          "ref": "a1bd294d-fa0c-4cf5-9ce6-6dc475df87de",
+          "length": 5,
+          "cycles": 1,
+          "position": 2,
+          "iteration": 0,
+          "httpRequestId": "ef3988b0-d7cc-4431-b9dc-1f5f7fab5f97"
+        },
+        "item": {
+          "id": "2a9d752d-b41c-493c-8263-4e5651cc9a15",
+          "name": "Products - Get Details",
+          "request": {
+            "description": {
+              "content": "Retrieves product detail by id.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "products",
+                "{{productId}}"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET"
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "e3d3460e-a245-47d3-8c8c-726fca2d77cf",
+                "type": "text/javascript",
+                "exec": [
+                  "var pid = pm.environment.get('productId');",
+                  "if (!pid) {",
+                  "    pm.environment.set('productId', 'prod_001');",
+                  "}"
+                ],
+                "_lastExecutionId": "eecbfca9-c56c-439e-80ba-21d802161388"
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "2f1f25c1-0b39-4ceb-813e-823ab4bfe782",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status code is 200', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('Response time is under 500ms', function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(500);",
+                  "});",
+                  "",
+                  "pm.test('Content-Type is application/json', function () {",
+                  "    pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json');",
+                  "});",
+                  "",
+                  "pm.test('Product ID matches requested parameter', function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    var targetId = pm.environment.get('productId') || 'prod_001';",
+                  "    pm.expect(jsonData.id).to.eql(targetId);",
+                  "});",
+                  "",
+                  "pm.test('Product detail schema attributes are valid', function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.price).to.be.above(0);",
+                  "    pm.expect(jsonData).to.have.property('sku').that.is.a('string');",
+                  "    pm.expect(jsonData).to.have.property('currency', 'USD');",
+                  "});"
+                ],
+                "_lastExecutionId": "7d6433c0-1c6a-41e8-a48f-74d8a83eccd4"
+              }
+            }
+          ]
+        },
+        "request": {
+          "description": {
+            "content": "Retrieves product detail by id.",
+            "type": "text/plain"
+          },
+          "url": {
+            "protocol": "http",
+            "port": "8000",
+            "path": [
+              "api",
+              "v1",
+              "products",
+              "prod_001"
+            ],
+            "host": [
+              "127",
+              "0",
+              "0",
+              "1"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Accept",
+              "value": "application/json"
+            },
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.39.1",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "135bffb6-6355-4db8-ac7e-d7cacb4b8121",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "127.0.0.1:8000",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            }
+          ],
+          "method": "GET"
+        },
+        "response": {
+          "id": "9bdaf3d0-111e-43a0-acb5-9c8df0b682ac",
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "date",
+              "value": "Sun, 11 Oct 2026 00:36:21 GMT"
+            },
+            {
+              "key": "server",
+              "value": "uvicorn"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-length",
+              "value": "144"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              34,
+              105,
+              100,
+              34,
+              58,
+              34,
+              112,
+              114,
+              111,
+              100,
+              95,
+              48,
+              48,
+              49,
+              34,
+              44,
+              34,
+              110,
+              97,
+              109,
+              101,
+              34,
+              58,
+              34,
+              77,
+              101,
+              99,
+              104,
+              97,
+              110,
+              105,
+              99,
+              97,
+              108,
+              32,
+              71,
+              97,
+              109,
+              105,
+              110,
+              103,
+              32,
+              75,
+              101,
+              121,
+              98,
+              111,
+              97,
+              114,
+              100,
+              34,
+              44,
+              34,
+              112,
+              114,
+              105,
+              99,
+              101,
+              34,
+              58,
+              49,
+              50,
+              57,
+              46,
+              57,
+              57,
+              44,
+              34,
+              115,
+              116,
+              111,
+              99,
+              107,
+              34,
+              58,
+              52,
+              50,
+              44,
+              34,
+              99,
+              97,
+              116,
+              101,
+              103,
+              111,
+              114,
+              121,
+              34,
+              58,
+              34,
+              69,
+              108,
+              101,
+              99,
+              116,
+              114,
+              111,
+              110,
+              105,
+              99,
+              115,
+              34,
+              44,
+              34,
+              115,
+              107,
+              117,
+              34,
+              58,
+              34,
+              75,
+              66,
+              45,
+              77,
+              69,
+              67,
+              72,
+              45,
+              82,
+              71,
+              66,
+              45,
+              48,
+              49,
+              34,
+              44,
+              34,
+              99,
+              117,
+              114,
+              114,
+              101,
+              110,
+              99,
+              121,
+              34,
+              58,
+              34,
+              85,
+              83,
+              68,
+              34,
+              125
+            ]
+          },
+          "cookie": [],
+          "responseTime": 77,
+          "responseSize": 144
+        },
+        "id": "2a9d752d-b41c-493c-8263-4e5651cc9a15",
+        "assertions": [
+          {
+            "assertion": "Status code is 200",
+            "skipped": false
+          },
+          {
+            "assertion": "Response time is under 500ms",
+            "skipped": false
+          },
+          {
+            "assertion": "Content-Type is application/json",
+            "skipped": false
+          },
+          {
+            "assertion": "Product ID matches requested parameter",
+            "skipped": false
+          },
+          {
+            "assertion": "Product detail schema attributes are valid",
+            "skipped": false
+          }
+        ]
+      },
+      {
+        "cursor": {
+          "ref": "24a09b61-0c9f-48a3-aa1d-6c4f6b1373c6",
+          "length": 5,
+          "cycles": 1,
+          "position": 3,
+          "iteration": 0,
+          "httpRequestId": "ad8a5512-e0f8-4180-8c40-e00da72f5ed8"
+        },
+        "item": {
+          "id": "b966c160-3aba-44be-9be3-bbf4a7b5e9ad",
+          "name": "Cart - Add Item",
+          "request": {
+            "description": {
+              "content": "Appends product to cart with authorization.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "cart",
+                "items"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{authToken}}"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"product_id\": \"{{productId}}\",\n  \"quantity\": 2\n}"
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "b9ae8e39-963c-43fc-b480-e8da13d1d1df",
+                "type": "text/javascript",
+                "exec": [
+                  "var token = pm.environment.get('authToken');",
+                  "if (token) {",
+                  "    pm.request.headers.upsert({key: 'Authorization', value: 'Bearer ' + token});",
+                  "}",
+                  "var pid = pm.environment.get('productId');",
+                  "if (!pid) {",
+                  "    pm.environment.set('productId', 'prod_001');",
+                  "}"
+                ],
+                "_lastExecutionId": "53f10879-ffd0-4778-8bb8-33a721d40271"
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "e8c13192-f780-42fb-a502-322fe290dab3",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status code is 200', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('Response time is under 500ms', function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(500);",
+                  "});",
+                  "",
+                  "pm.test('Content-Type is application/json', function () {",
+                  "    pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json');",
+                  "});",
+                  "",
+                  "pm.test('Cart updated with correct item and quantity', function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('cart_id').that.is.a('string');",
+                  "    pm.expect(jsonData).to.have.property('items').that.is.an('array').and.not.empty;",
+                  "    pm.expect(jsonData.items[0].quantity).to.eql(2);",
+                  "    pm.environment.set('cartId', jsonData.cart_id);",
+                  "});",
+                  "",
+                  "pm.test('Cart pricing calculation schema conforms', function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('total_items').that.is.a('number');",
+                  "    pm.expect(jsonData).to.have.property('subtotal').that.is.a('number');",
+                  "    pm.expect(jsonData.subtotal).to.be.above(0);",
+                  "});"
+                ],
+                "_lastExecutionId": "5b779923-3a45-4d4b-87a3-ce17ce3cd85a"
+              }
+            }
+          ]
+        },
+        "request": {
+          "description": {
+            "content": "Appends product to cart with authorization.",
+            "type": "text/plain"
+          },
+          "url": {
+            "protocol": "http",
+            "port": "8000",
+            "path": [
+              "api",
+              "v1",
+              "cart",
+              "items"
+            ],
+            "host": [
+              "127",
+              "0",
+              "0",
+              "1"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Accept",
+              "value": "application/json"
+            },
+            {
+              "key": "Authorization",
+              "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfODkyMWEiLCJyb2xlIjoiY3VzdG9tZXIifQ.mock_signature"
+            },
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.39.1",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "161f1f1c-c542-4cb3-8c19-5968b65192e2",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "127.0.0.1:8000",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            },
+            {
+              "key": "Content-Length",
+              "value": "47",
+              "system": true
+            }
+          ],
+          "method": "POST",
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"product_id\": \"prod_001\",\n  \"quantity\": 2\n}"
+          }
+        },
+        "response": {
+          "id": "356390bf-4740-47cf-b588-041eda7fbfdf",
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "date",
+              "value": "Sun, 11 Oct 2026 00:36:21 GMT"
+            },
+            {
+              "key": "server",
+              "value": "uvicorn"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-length",
+              "value": "180"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              34,
+              99,
+              97,
+              114,
+              116,
+              95,
+              105,
+              100,
+              34,
+              58,
+              34,
+              99,
+              97,
+              114,
+              116,
+              95,
+              57,
+              57,
+              48,
+              49,
+              34,
+              44,
+              34,
+              105,
+              116,
+              101,
+              109,
+              115,
+              34,
+              58,
+              91,
+              123,
+              34,
+              112,
+              114,
+              111,
+              100,
+              117,
+              99,
+              116,
+              95,
+              105,
+              100,
+              34,
+              58,
+              34,
+              112,
+              114,
+              111,
+              100,
+              95,
+              48,
+              48,
+              49,
+              34,
+              44,
+              34,
+              110,
+              97,
+              109,
+              101,
+              34,
+              58,
+              34,
+              77,
+              101,
+              99,
+              104,
+              97,
+              110,
+              105,
+              99,
+              97,
+              108,
+              32,
+              71,
+              97,
+              109,
+              105,
+              110,
+              103,
+              32,
+              75,
+              101,
+              121,
+              98,
+              111,
+              97,
+              114,
+              100,
+              34,
+              44,
+              34,
+              117,
+              110,
+              105,
+              116,
+              95,
+              112,
+              114,
+              105,
+              99,
+              101,
+              34,
+              58,
+              49,
+              50,
+              57,
+              46,
+              57,
+              57,
+              44,
+              34,
+              113,
+              117,
+              97,
+              110,
+              116,
+              105,
+              116,
+              121,
+              34,
+              58,
+              50,
+              44,
+              34,
+              115,
+              117,
+              98,
+              116,
+              111,
+              116,
+              97,
+              108,
+              34,
+              58,
+              50,
+              53,
+              57,
+              46,
+              57,
+              56,
+              125,
+              93,
+              44,
+              34,
+              116,
+              111,
+              116,
+              97,
+              108,
+              95,
+              105,
+              116,
+              101,
+              109,
+              115,
+              34,
+              58,
+              50,
+              44,
+              34,
+              115,
+              117,
+              98,
+              116,
+              111,
+              116,
+              97,
+              108,
+              34,
+              58,
+              50,
+              53,
+              57,
+              46,
+              57,
+              56,
+              125
+            ]
+          },
+          "cookie": [],
+          "responseTime": 110,
+          "responseSize": 180
+        },
+        "id": "b966c160-3aba-44be-9be3-bbf4a7b5e9ad",
+        "assertions": [
+          {
+            "assertion": "Status code is 200",
+            "skipped": false
+          },
+          {
+            "assertion": "Response time is under 500ms",
+            "skipped": false
+          },
+          {
+            "assertion": "Content-Type is application/json",
+            "skipped": false
+          },
+          {
+            "assertion": "Cart updated with correct item and quantity",
+            "skipped": false
+          },
+          {
+            "assertion": "Cart pricing calculation schema conforms",
+            "skipped": false
+          }
+        ]
+      },
+      {
+        "cursor": {
+          "ref": "5491303d-68f9-46e4-9904-f377d94672fa",
+          "length": 5,
+          "cycles": 1,
+          "position": 4,
+          "iteration": 0,
+          "httpRequestId": "47189388-2b46-4f28-b574-850d05d2c083"
+        },
+        "item": {
+          "id": "65babe35-323a-4e8f-ac26-9d0b014dfdaa",
+          "name": "Orders - Checkout Order",
+          "request": {
+            "description": {
+              "content": "Checks out active cart and creates confirmed order.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "orders",
+                "checkout"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{authToken}}"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"cart_id\": \"{{cartId}}\",\n  \"shipping_address\": {\n    \"street\": \"100 Market St\",\n    \"city\": \"San Francisco\",\n    \"postal_code\": \"94105\",\n    \"country\": \"USA\"\n  },\n  \"payment_method\": \"credit_card\"\n}"
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "80c3aac4-39dc-4dce-9eb8-c16cd71397c7",
+                "type": "text/javascript",
+                "exec": [
+                  "var token = pm.environment.get('authToken');",
+                  "if (token) {",
+                  "    pm.request.headers.upsert({key: 'Authorization', value: 'Bearer ' + token});",
+                  "}",
+                  "var cid = pm.environment.get('cartId');",
+                  "if (!cid) {",
+                  "    pm.environment.set('cartId', 'cart_9901');",
+                  "}"
+                ],
+                "_lastExecutionId": "c11b8808-5e0b-45d2-92c7-87fff052d311"
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "dda25f9c-d978-4c27-b332-74645ddde79c",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status code is 200', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('Response time is under 500ms', function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(500);",
+                  "});",
+                  "",
+                  "pm.test('Content-Type is application/json', function () {",
+                  "    pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json');",
+                  "});",
+                  "",
+                  "pm.test('Order confirmed with valid identifier', function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('order_id').that.is.a('string').and.not.empty;",
+                  "    pm.expect(jsonData).to.have.property('status', 'confirmed');",
+                  "});",
+                  "",
+                  "pm.test('Order financial status verified as paid', function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('total_amount').that.is.a('number').and.above(0);",
+                  "    pm.expect(jsonData).to.have.property('payment_status', 'paid');",
+                  "    pm.expect(jsonData).to.have.property('created_at').that.is.a('string');",
+                  "});"
+                ],
+                "_lastExecutionId": "a6b99e75-0705-4d08-a37a-d7fd5f76a24b"
+              }
+            }
+          ]
+        },
+        "request": {
+          "description": {
+            "content": "Checks out active cart and creates confirmed order.",
+            "type": "text/plain"
+          },
+          "url": {
+            "protocol": "http",
+            "port": "8000",
+            "path": [
+              "api",
+              "v1",
+              "orders",
+              "checkout"
+            ],
+            "host": [
+              "127",
+              "0",
+              "0",
+              "1"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Accept",
+              "value": "application/json"
+            },
+            {
+              "key": "Authorization",
+              "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfODkyMWEiLCJyb2xlIjoiY3VzdG9tZXIifQ.mock_signature"
+            },
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.39.1",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "e06b2743-c4d1-4a64-bb5f-8663bc586f09",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "127.0.0.1:8000",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            },
+            {
+              "key": "Content-Length",
+              "value": "201",
+              "system": true
+            }
+          ],
+          "method": "POST",
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"cart_id\": \"cart_9901\",\n  \"shipping_address\": {\n    \"street\": \"100 Market St\",\n    \"city\": \"San Francisco\",\n    \"postal_code\": \"94105\",\n    \"country\": \"USA\"\n  },\n  \"payment_method\": \"credit_card\"\n}"
+          }
+        },
+        "response": {
+          "id": "e0b58fac-f870-4094-96f0-628c157831b7",
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "date",
+              "value": "Sun, 11 Oct 2026 00:36:21 GMT"
+            },
+            {
+              "key": "server",
+              "value": "uvicorn"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-length",
+              "value": "161"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              34,
+              111,
+              114,
+              100,
+              101,
+              114,
+              95,
+              105,
+              100,
+              34,
+              58,
+              34,
+              111,
+              114,
+              100,
+              95,
+              55,
+              55,
+              49,
+              48,
+              50,
+              34,
+              44,
+              34,
+              99,
+              97,
+              114,
+              116,
+              95,
+              105,
+              100,
+              34,
+              58,
+              34,
+              99,
+              97,
+              114,
+              116,
+              95,
+              57,
+              57,
+              48,
+              49,
+              34,
+              44,
+              34,
+              115,
+              116,
+              97,
+              116,
+              117,
+              115,
+              34,
+              58,
+              34,
+              99,
+              111,
+              110,
+              102,
+              105,
+              114,
+              109,
+              101,
+              100,
+              34,
+              44,
+              34,
+              116,
+              111,
+              116,
+              97,
+              108,
+              95,
+              97,
+              109,
+              111,
+              117,
+              110,
+              116,
+              34,
+              58,
+              50,
+              53,
+              57,
+              46,
+              57,
+              56,
+              44,
+              34,
+              112,
+              97,
+              121,
+              109,
+              101,
+              110,
+              116,
+              95,
+              115,
+              116,
+              97,
+              116,
+              117,
+              115,
+              34,
+              58,
+              34,
+              112,
+              97,
+              105,
+              100,
+              34,
+              44,
+              34,
+              99,
+              114,
+              101,
+              97,
+              116,
+              101,
+              100,
+              95,
+              97,
+              116,
+              34,
+              58,
+              34,
+              50,
+              48,
+              50,
+              54,
+              45,
+              49,
+              48,
+              45,
+              49,
+              49,
+              84,
+              48,
+              48,
+              58,
+              51,
+              54,
+              58,
+              50,
+              50,
+              46,
+              54,
+              48,
+              51,
+              49,
+              55,
+              51,
+              43,
+              48,
+              48,
+              58,
+              48,
+              48,
+              34,
+              125
+            ]
+          },
+          "cookie": [],
+          "responseTime": 110,
+          "responseSize": 161
+        },
+        "id": "65babe35-323a-4e8f-ac26-9d0b014dfdaa",
+        "assertions": [
+          {
+            "assertion": "Status code is 200",
+            "skipped": false
+          },
+          {
+            "assertion": "Response time is under 500ms",
+            "skipped": false
+          },
+          {
+            "assertion": "Content-Type is application/json",
+            "skipped": false
+          },
+          {
+            "assertion": "Order confirmed with valid identifier",
+            "skipped": false
+          },
+          {
+            "assertion": "Order financial status verified as paid",
+            "skipped": false
+          }
+        ]
+      }
+    ],
+    "transfers": {
+      "responseTotal": 1131
+    },
+    "failures": [],
+    "error": null
+  }
+}

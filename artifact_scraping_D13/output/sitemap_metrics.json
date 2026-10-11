@@ -1,0 +1,15 @@
+{
+  "total_urls_extracted": 25000,
+  "sub_sitemaps_discovered": 10,
+  "sub_sitemaps_processed": 10,
+  "sub_sitemaps_failed": 0,
+  "corrupted_archives": [],
+  "rate_limit_retries": 0,
+  "elapsed_seconds": 0.819,
+  "throughput_urls_per_second": 30525.25,
+  "peak_memory_mb": 38.56,
+  "csv_path": "output\\sitemap_urls.csv",
+  "parquet_path": "output\\sitemap_urls.parquet",
+  "csv_bytes": 1826427,
+  "parquet_bytes": 213998
+}

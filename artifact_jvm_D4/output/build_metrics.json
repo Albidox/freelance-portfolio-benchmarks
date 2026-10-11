@@ -1,0 +1,39 @@
+{
+  "timestamp": "2026-10-11T00:57:54Z",
+  "baseline_size_bytes": 891094023,
+  "baseline_size_mb": 849.81,
+  "optimized_size_bytes": 74714142,
+  "optimized_size_mb": 71.25,
+  "runtime_size_mb": 48.84,
+  "app_size_mb": 22.42,
+  "reduction_percentage": 91.62,
+  "layers": {
+    "application": {
+      "bytes": 7868,
+      "mb": 0.01
+    },
+    "dependencies": {
+      "bytes": 23097563,
+      "mb": 22.03
+    },
+    "snapshot-dependencies": {
+      "bytes": 0,
+      "mb": 0.0
+    },
+    "spring-boot-loader": {
+      "bytes": 400216,
+      "mb": 0.38
+    }
+  },
+  "health_check": {
+    "endpoint": "/actuator/health",
+    "status": "UP",
+    "startup_latency_ms": 5590,
+    "heap_used_mb": 38
+  },
+  "assertions": {
+    "optimized_under_100mb": true,
+    "reduction_exceeds_85pct": true,
+    "health_up": true
+  }
+}

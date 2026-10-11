@@ -1,0 +1,114 @@
+{
+  "timestamp": "2026-10-11T01:33:33Z",
+  "artifact_id": "D5",
+  "round": "R1",
+  "service": "Redis / Valkey Caching Layer Integration",
+  "cold_metrics": {
+    "p50_ms": 169.856,
+    "p95_ms": 173.705,
+    "p99_ms": 484.191,
+    "mean_ms": 175.471,
+    "min_ms": 156.875,
+    "max_ms": 484.191,
+    "total_requests": 50
+  },
+  "warm_metrics": {
+    "p50_ms": 3.032,
+    "p95_ms": 5.275,
+    "p99_ms": 7.12,
+    "mean_ms": 3.287,
+    "min_ms": 0.908,
+    "max_ms": 63.453,
+    "total_requests": 10000
+  },
+  "speedup_factor": 56.02,
+  "cache_metrics": {
+    "nullCachingAllowed": false,
+    "hitRatioPercent": 99.5,
+    "putCount": 50,
+    "missCount": 50,
+    "ttlSeconds": 600,
+    "evictCount": 0,
+    "totalRequests": 10050,
+    "size": 50,
+    "hitCount": 10000,
+    "cacheName": "products"
+  },
+  "database_query_count": 50,
+  "eviction_verification": {
+    "sku": "PROD-00042",
+    "verified": true,
+    "updated_price": 888.88,
+    "fresh_read_verified": true
+  },
+  "gate_criteria_eval": {
+    "sub_5ms_warm_p50": true,
+    "speedup_exceeds_40x": true,
+    "hit_ratio_exceeds_99": true,
+    "eviction_verified": true
+  },
+  "round_2_stress_probe": {
+    "timestamp": "2026-10-11T01:53:18Z",
+    "stampede_probe": {
+      "concurrency": 500,
+      "hot_sku": "PROD-00001",
+      "unprotected": {
+        "db_queries_hit": 5,
+        "metrics": {
+          "p50_ms": 90.808,
+          "p95_ms": 211.157,
+          "p99_ms": 294.335,
+          "mean_ms": 106.3,
+          "min_ms": 16.286,
+          "max_ms": 401.795,
+          "total_requests": 500
+        }
+      },
+      "protected": {
+        "db_queries_hit": 1,
+        "metrics": {
+          "p50_ms": 97.973,
+          "p95_ms": 159.629,
+          "p99_ms": 192.828,
+          "mean_ms": 100.255,
+          "min_ms": 19.703,
+          "max_ms": 207.285,
+          "total_requests": 500
+        }
+      }
+    },
+    "penetration_probe": {
+      "key_count": 1000,
+      "unprotected": {
+        "pass1_db_hits": 1000,
+        "pass2_db_hits": 1000,
+        "total_db_hits": 2000
+      },
+      "negative_caching": {
+        "ttl_seconds": 60,
+        "pass1_db_hits": 1000,
+        "pass2_db_hits": 0,
+        "total_db_hits": 1000,
+        "repeat_absorption_rate_percent": 100.0
+      },
+      "bloom_filter": {
+        "pass1_db_hits": 0,
+        "pass2_db_hits": 0,
+        "total_db_hits": 0,
+        "edge_rejection_rate_percent": 100.0
+      }
+    },
+    "serialization_probe": {
+      "evolved_field": "manufacturer",
+      "default_value": "Enterprise Corp",
+      "backward_compatibility_verified": true,
+      "forward_compatibility_verified": true
+    },
+    "hero_metrics_verified": {
+      "stampede_mutex_single_query_proven": true,
+      "negative_caching_60s_ttl_proven": true,
+      "bloom_filter_zero_db_hits_proven": true,
+      "serialization_evolution_proven": true
+    }
+  }
+}

@@ -1,0 +1,488 @@
+{
+  "benchmark": "Playwright PDF Real-World Stress Probe and Zombie Process Audit",
+  "timestamp_utc": "2026-10-11T03:59:08Z",
+  "author": "Eric, Lead Software Engineering Specialist",
+  "soak_probe": {
+    "total_renders": 500,
+    "recycle_interval": 25,
+    "total_duration_seconds": 51.44,
+    "throughput_renders_per_sec": 9.72,
+    "latency_metrics_ms": {
+      "avg_ms": 93.1,
+      "p50_ms": 54.18,
+      "p95_ms": 168.2,
+      "p99_ms": 973.03,
+      "min_ms": 42.16,
+      "max_ms": 1317.47
+    },
+    "memory_metrics_mb": {
+      "peak_daemon_rss_mb": 62.51,
+      "peak_children_rss_mb": 340.95,
+      "peak_total_rss_mb": 402.17,
+      "daemon_ram_limit_mb": 300.0,
+      "ram_bounded_strictly": true
+    },
+    "zombie_audit": {
+      "active_pids_before_teardown": [
+        9320,
+        21628,
+        14724,
+        24208,
+        29476
+      ],
+      "remaining_child_pids": [],
+      "lingering_zombies_count": 0,
+      "zero_zombies_verified": true
+    },
+    "checkpoints": [
+      {
+        "render_count": 50,
+        "window_avg_latency_ms": 92.83,
+        "daemon_rss_mb": 59.6,
+        "children_rss_mb": 249.23,
+        "total_rss_mb": 308.83,
+        "active_child_pids_count": 5
+      },
+      {
+        "render_count": 100,
+        "window_avg_latency_ms": 103.01,
+        "daemon_rss_mb": 59.6,
+        "children_rss_mb": 243.88,
+        "total_rss_mb": 303.48,
+        "active_child_pids_count": 5
+      },
+      {
+        "render_count": 150,
+        "window_avg_latency_ms": 89.02,
+        "daemon_rss_mb": 59.61,
+        "children_rss_mb": 252.52,
+        "total_rss_mb": 312.13,
+        "active_child_pids_count": 5
+      },
+      {
+        "render_count": 200,
+        "window_avg_latency_ms": 84.54,
+        "daemon_rss_mb": 59.6,
+        "children_rss_mb": 252.52,
+        "total_rss_mb": 312.12,
+        "active_child_pids_count": 5
+      },
+      {
+        "render_count": 250,
+        "window_avg_latency_ms": 86.88,
+        "daemon_rss_mb": 59.61,
+        "children_rss_mb": 250.66,
+        "total_rss_mb": 310.27,
+        "active_child_pids_count": 5
+      },
+      {
+        "render_count": 300,
+        "window_avg_latency_ms": 87.48,
+        "daemon_rss_mb": 59.64,
+        "children_rss_mb": 254.21,
+        "total_rss_mb": 313.86,
+        "active_child_pids_count": 5
+      },
+      {
+        "render_count": 350,
+        "window_avg_latency_ms": 86.91,
+        "daemon_rss_mb": 59.65,
+        "children_rss_mb": 254.5,
+        "total_rss_mb": 314.14,
+        "active_child_pids_count": 5
+      },
+      {
+        "render_count": 400,
+        "window_avg_latency_ms": 98.82,
+        "daemon_rss_mb": 59.64,
+        "children_rss_mb": 256.64,
+        "total_rss_mb": 316.28,
+        "active_child_pids_count": 5
+      },
+      {
+        "render_count": 450,
+        "window_avg_latency_ms": 99.57,
+        "daemon_rss_mb": 59.65,
+        "children_rss_mb": 251.83,
+        "total_rss_mb": 311.48,
+        "active_child_pids_count": 5
+      },
+      {
+        "render_count": 500,
+        "window_avg_latency_ms": 101.97,
+        "daemon_rss_mb": 59.65,
+        "children_rss_mb": 252.57,
+        "total_rss_mb": 312.23,
+        "active_child_pids_count": 5
+      }
+    ]
+  },
+  "unicode_probe": {
+    "pdf_path": "output/invoice_unicode_stress.pdf",
+    "file_size_bytes": 230276,
+    "pages_rendered": 2,
+    "tofu_characters_count": 0,
+    "zero_tofu_verified": true,
+    "scripts_tested": [
+      "Chinese (Simplified)",
+      "Cyrillic (Russian)",
+      "Devanagari (Hindi)"
+    ],
+    "glyph_verification": {
+      "Chinese (Simplified)": {
+        "passed": true,
+        "phrases_tested": 5,
+        "matches": [
+          {
+            "phrase": "\u5317\u4eac\u5206\u5e03\u5f0f\u7cfb\u7edf\u79d1\u6280",
+            "matched": true
+          },
+          {
+            "phrase": "\u5206\u5e03\u5f0f\u9ad8\u53ef\u7528\u5171\u8bc6\u7b97\u6cd5\u72b6\u6001\u673a\u5b9e\u73b0\u4e0e\u9a8c\u8bc1",
+            "matched": true
+          },
+          {
+            "phrase": "\u5927\u89c4\u6a21\u4e91\u539f\u751f\u5fae\u670d\u52a1\u7f51\u683c\u6d41\u91cf\u7194\u65ad\u5668\u914d\u7f6e",
+            "matched": true
+          },
+          {
+            "phrase": "\u4f4e\u5ef6\u8fdf\u5206\u5e03\u5f0f\u5bf9\u8c61\u5b58\u50a8\u7cfb\u7edf\u4e00\u81f4\u6027\u54c8\u5e0c\u91cd\u5e73\u8861",
+            "matched": true
+          },
+          {
+            "phrase": "\u963f\u91cc\u5df4\u5df4\u7f51\u7edc",
+            "matched": true
+          }
+        ]
+      },
+      "Cyrillic (Russian)": {
+        "passed": true,
+        "phrases_tested": 5,
+        "matches": [
+          {
+            "phrase": "\u041e\u041e\u041e\u0410\u043f\u0435\u043a\u0441",
+            "matched": true
+          },
+          {
+            "phrase": "\u0412\u044b\u0441\u043e\u043a\u043e\u043d\u0430\u0433\u0440\u0443\u0436\u0435\u043d\u043d\u0430\u044f\u0440\u0435\u043f\u043b\u0438\u043a\u0430\u0446\u0438\u044fPostgreSQL\u0441\u0437\u0430\u0449\u0438\u0442\u043e\u0439\u043e\u0442\u0441\u043f\u043b\u0438\u0442-\u0431\u0440\u0435\u0439\u043d\u0430",
+            "matched": true
+          },
+          {
+            "phrase": "\u041e\u043f\u0442\u0438\u043c\u0438\u0437\u0430\u0446\u0438\u044f\u0431\u0440\u043e\u043a\u0435\u0440\u0430\u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0439\u043f\u043e\u0434100k\u0441\u043e\u0431\u044b\u0442\u0438\u0439/\u0441\u0435\u043a",
+            "matched": true
+          },
+          {
+            "phrase": "\u0410\u0443\u0434\u0438\u0442\u043a\u0440\u0438\u043f\u0442\u043e\u0433\u0440\u0430\u0444\u0438\u0447\u0435\u0441\u043a\u043e\u0439\u0437\u0430\u0449\u0438\u0442\u044b\u0438\u0440\u043e\u0442\u0430\u0446\u0438\u0438\u043a\u043b\u044e\u0447\u0435\u0439HMAC",
+            "matched": true
+          },
+          {
+            "phrase": "\u042f\u043d\u0434\u0435\u043a\u0441\u0422\u0435\u0445\u043d\u043e\u043b\u043e\u0433\u0438\u0438",
+            "matched": true
+          }
+        ]
+      },
+      "Devanagari (Hindi)": {
+        "passed": true,
+        "phrases_tested": 10,
+        "matches": [
+          {
+            "phrase": "\u090f\u092a\u0947\u0915\u094d\u0938",
+            "matched": true
+          },
+          {
+            "phrase": "\u0935\u093f\u0924\u0930\u093f\u0924",
+            "matched": true
+          },
+          {
+            "phrase": "\u0921\u0947\u091f\u093e\u092c\u0947\u0938",
+            "matched": true
+          },
+          {
+            "phrase": "\u0935\u093f\u092d\u093e\u091c\u0928",
+            "matched": true
+          },
+          {
+            "phrase": "\u092a\u0930\u0940\u0915\u094d\u0937\u0923",
+            "matched": true
+          },
+          {
+            "phrase": "\u0913\u092a\u0928",
+            "matched": true
+          },
+          {
+            "phrase": "\u092e\u0947\u092e\u0915\u0948\u0936",
+            "matched": true
+          },
+          {
+            "phrase": "\u0930\u0947\u0921\u093f\u0938",
+            "matched": true
+          },
+          {
+            "phrase": "\u091f\u093e\u091f\u093e",
+            "matched": true
+          },
+          {
+            "phrase": "\u0915\u0902\u0938\u0932\u094d\u091f\u0947\u0902\u0938\u0940",
+            "matched": true
+          }
+        ]
+      }
+    },
+    "missing_phrases_count": 0,
+    "all_glyphs_verified": true,
+    "embedded_fonts": [
+      "AAAAAA+TimesNewRomanPSMT",
+      "BAAAAA+SegoeUI-Semibold",
+      "CAAAAA+SegoeUI-Semibold",
+      "DAAAAA+SegoeUI-Bold",
+      "EAAAAA+MicrosoftYaHei-Bold",
+      "FAAAAA+NirmalaUI-Bold",
+      "GAAAAA+SegoeUI",
+      "HAAAAA+MicrosoftYaHei",
+      "IAAAAA+NirmalaUI",
+      "JAAAAA+SegoeUIBlack",
+      "KAAAAA+Consolas",
+      "LAAAAA+MicrosoftYaHei",
+      "MAAAAA+Consolas-Bold",
+      "NAAAAA+NirmalaUI",
+      "OAAAAA+Consolas-Bold"
+    ]
+  },
+  "massive_table_probe": {
+    "pdf_path": "output/invoice_500_line_items.pdf",
+    "file_size_bytes": 368576,
+    "total_line_items": 500,
+    "total_pages_rendered": 32,
+    "target_pages_threshold": 15,
+    "meets_page_threshold": true,
+    "clipping_errors_count": 0,
+    "zero_clipping_verified": true,
+    "all_running_totals_verified": true,
+    "pages_summary": [
+      {
+        "page_number": 1,
+        "items_count": 10,
+        "page_subtotal": 5108.0,
+        "cumulative_total": 5108.0,
+        "cumulative_total_verified": true
+      },
+      {
+        "page_number": 2,
+        "items_count": 16,
+        "page_subtotal": 14270.5,
+        "cumulative_total": 19378.5,
+        "cumulative_total_verified": true
+      },
+      {
+        "page_number": 3,
+        "items_count": 16,
+        "page_subtotal": 10628.0,
+        "cumulative_total": 30006.5,
+        "cumulative_total_verified": true
+      },
+      {
+        "page_number": 4,
+        "items_count": 16,
+        "page_subtotal": 11635.5,
+        "cumulative_total": 41642.0,
+        "cumulative_total_verified": true
+      },
+      {
+        "page_number": 5,
+        "items_count": 16,
+        "page_subtotal": 14968.0,
+        "cumulative_total": 56610.0,
+        "cumulative_total_verified": true
+      },
+      {
+        "page_number": 6,
+        "items_count": 16,
+        "page_subtotal": 9388.0,
+        "cumulative_total": 65998.0,
+        "cumulative_total_verified": true
+      },
+      {
+        "page_number": 7,
+        "items_count": 16,
+        "page_subtotal": 13108.0,
+        "cumulative_total": 79106.0,
+        "cumulative_total_verified": true
+      },
+      {
+        "page_number": 8,
+        "items_count": 16,
+        "page_subtotal": 13728.0,
+        "cumulative_total": 92834.0,
+        "cumulative_total_verified": true
+      },
+      {
+        "page_number": 9,
+        "items_count": 16,
+        "page_subtotal": 10085.5,
+        "cumulative_total": 102919.5,
+        "cumulative_total_verified": true
+      },
+      {
+        "page_number": 10,
+        "items_count": 16,
+        "page_subtotal": 13030.5,
+        "cumulative_total": 115950.0,
+        "cumulative_total_verified": true
+      },
+      {
+        "page_number": 11,
+        "items_count": 16,
+        "page_subtotal": 12488.0,
+        "cumulative_total": 128438.0,
+        "cumulative_total_verified": true
+      },
+      {
+        "page_number": 12,
+        "items_count": 16,
+        "page_subtotal": 10783.0,
+        "cumulative_total": 139221.0,
+        "cumulative_total_verified": true
+      },
+      {
+        "page_number": 13,
+        "items_count": 16,
+        "page_subtotal": 14503.0,
+        "cumulative_total": 153724.0,
+        "cumulative_total_verified": true
+      },
+      {
+        "page_number": 14,
+        "items_count": 16,
+        "page_subtotal": 11248.0,
+        "cumulative_total": 164972.0,
+        "cumulative_total_verified": true
+      },
+      {
+        "page_number": 15,
+        "items_count": 16,
+        "page_subtotal": 11480.5,
+        "cumulative_total": 176452.5,
+        "cumulative_total_verified": true
+      },
+      {
+        "page_number": 16,
+        "items_count": 16,
+        "page_subtotal": 14425.5,
+        "cumulative_total": 190878.0,
+        "cumulative_total_verified": true
+      },
+      {
+        "page_number": 17,
+        "items_count": 16,
+        "page_subtotal": 10008.0,
+        "cumulative_total": 200886.0,
+        "cumulative_total_verified": true
+      },
+      {
+        "page_number": 18,
+        "items_count": 16,
+        "page_subtotal": 12178.0,
+        "cumulative_total": 213064.0,
+        "cumulative_total_verified": true
+      },
+      {
+        "page_number": 19,
+        "items_count": 16,
+        "page_subtotal": 14348.0,
+        "cumulative_total": 227412.0,
+        "cumulative_total_verified": true
+      },
+      {
+        "page_number": 20,
+        "items_count": 16,
+        "page_subtotal": 10318.0,
+        "cumulative_total": 237730.0,
+        "cumulative_total_verified": true
+      },
+      {
+        "page_number": 21,
+        "items_count": 16,
+        "page_subtotal": 12875.5,
+        "cumulative_total": 250605.5,
+        "cumulative_total_verified": true
+      },
+      {
+        "page_number": 22,
+        "items_count": 16,
+        "page_subtotal": 13108.0,
+        "cumulative_total": 263713.5,
+        "cumulative_total_verified": true
+      },
+      {
+        "page_number": 23,
+        "items_count": 16,
+        "page_subtotal": 10240.5,
+        "cumulative_total": 273954.0,
+        "cumulative_total_verified": true
+      },
+      {
+        "page_number": 24,
+        "items_count": 16,
+        "page_subtotal": 13573.0,
+        "cumulative_total": 287527.0,
+        "cumulative_total_verified": true
+      },
+      {
+        "page_number": 25,
+        "items_count": 16,
+        "page_subtotal": 11868.0,
+        "cumulative_total": 299395.0,
+        "cumulative_total_verified": true
+      },
+      {
+        "page_number": 26,
+        "items_count": 16,
+        "page_subtotal": 11713.0,
+        "cumulative_total": 311108.0,
+        "cumulative_total_verified": true
+      },
+      {
+        "page_number": 27,
+        "items_count": 16,
+        "page_subtotal": 14270.5,
+        "cumulative_total": 325378.5,
+        "cumulative_total_verified": true
+      },
+      {
+        "page_number": 28,
+        "items_count": 16,
+        "page_subtotal": 10628.0,
+        "cumulative_total": 336006.5,
+        "cumulative_total_verified": true
+      },
+      {
+        "page_number": 29,
+        "items_count": 16,
+        "page_subtotal": 11635.5,
+        "cumulative_total": 347642.0,
+        "cumulative_total_verified": true
+      },
+      {
+        "page_number": 30,
+        "items_count": 16,
+        "page_subtotal": 14968.0,
+        "cumulative_total": 362610.0,
+        "cumulative_total_verified": true
+      },
+      {
+        "page_number": 31,
+        "items_count": 16,
+        "page_subtotal": 9388.0,
+        "cumulative_total": 371998.0,
+        "cumulative_total_verified": true
+      },
+      {
+        "page_number": 32,
+        "items_count": 10,
+        "page_subtotal": 10502.0,
+        "cumulative_total": 382500.0,
+        "cumulative_total_verified": true
+      }
+    ]
+  }
+}

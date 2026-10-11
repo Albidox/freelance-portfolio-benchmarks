@@ -1,0 +1,12 @@
+[2026-10-09T21:19:19.133460+00:00] Scraper run initiated. Backend: Playwright CDP (:9222)
+[2026-10-09T21:19:20.097503+00:00] Page 01: Extracted 10 quotes (valid=10, failures=0) in 0.96s
+[2026-10-09T21:19:22.337923+00:00] Page 02: Extracted 10 quotes (valid=20, failures=0) in 0.74s
+[2026-10-09T21:19:24.556083+00:00] Page 03: Extracted 10 quotes (valid=30, failures=0) in 0.72s
+[2026-10-09T21:19:26.801844+00:00] Page 04: Extracted 10 quotes (valid=40, failures=0) in 0.74s
+[2026-10-09T21:19:29.045374+00:00] Page 05: Extracted 10 quotes (valid=50, failures=0) in 0.74s
+[2026-10-09T21:19:31.270270+00:00] Page 06: Extracted 10 quotes (valid=60, failures=0) in 0.72s
+[2026-10-09T21:19:33.517118+00:00] Page 07: Extracted 10 quotes (valid=70, failures=0) in 0.75s
+[2026-10-09T21:19:35.745663+00:00] Page 08: Extracted 10 quotes (valid=80, failures=0) in 0.73s
+[2026-10-09T21:19:37.974907+00:00] Page 09: Extracted 10 quotes (valid=90, failures=0) in 0.73s
+[2026-10-09T21:19:40.222405+00:00] Page 10: Extracted 10 quotes (valid=100, failures=0) in 0.75s
+[2026-10-09T21:19:40.271020+00:00] Extraction complete in 22.07s. Backend: Playwright CDP (:9222). Total pages: 10. Total valid quotes: 100. Validation failures: 0.

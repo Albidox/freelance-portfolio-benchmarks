@@ -1,0 +1,113 @@
+{
+  "artifact_id": "D16",
+  "name": "Spring Security 6 Stateless RBAC Gate with JWT and RFC 7807 Problem Details",
+  "round": "Round 2: Real-World Stress Probe & Security Penetration Fuzzing",
+  "framework": "Spring Boot 3.4.1 / Spring Security 6.4.2",
+  "runtime": "Java 21 LTS (OpenJDK 21.0.11)",
+  "jwt_library": "io.jsonwebtoken:jjwt 0.11.5",
+  "build_tool": "Apache Maven 3.9.16",
+  "metrics": {
+    "total_test_cases": 53,
+    "tests_passed": 53,
+    "tests_failed": 0,
+    "tests_skipped": 0,
+    "test_pass_rate_percent": 100.0,
+    "execution_time_seconds": 9.999,
+    "deprecated_dsl_warnings_count": 0
+  },
+  "security_enforcement": {
+    "session_creation_policy": "STATELESS",
+    "lambda_dsl_configured": true,
+    "method_security_enabled": true,
+    "rfc_7807_problem_details_enforced": true,
+    "rfc_7807_media_type": "application/problem+json",
+    "strict_http_firewall_enforced": true,
+    "supported_role_tiers": [
+      "ROLE_USER",
+      "ROLE_MANAGER",
+      "ROLE_ADMIN"
+    ]
+  },
+  "stress_probes": {
+    "algorithm_confusion_probes_passed": 5,
+    "expired_token_drift_probes_passed": 3,
+    "strict_firewall_normalization_probes_passed": 4,
+    "role_privilege_escalation_boundary_probes_passed": 5,
+    "zero_stack_trace_leakage_verified": true,
+    "rfc_7807_compliance_verified": true
+  },
+  "test_breakdown": {
+    "public_endpoints_accessible_without_auth": 5,
+    "unauthenticated_requests_rejected_401_rfc7807": 8,
+    "tampered_or_invalid_tokens_rejected_401_rfc7807": 5,
+    "insufficient_roles_rejected_403_rfc7807": 7,
+    "authorized_role_requests_passed_200_ok": 11,
+    "r2_algorithm_confusion_probes": 5,
+    "r2_expired_token_and_leakage_probes": 3,
+    "r2_strict_firewall_traversal_probes": 4,
+    "r2_role_escalation_boundary_probes": 5
+  },
+  "endpoints_audited": [
+    {
+      "path": "/api/v1/auth/login",
+      "method": "POST",
+      "required_role": "PUBLIC",
+      "expected_unauthenticated_status": 200
+    },
+    {
+      "path": "/api/v1/auth/public",
+      "method": "GET",
+      "required_role": "PUBLIC",
+      "expected_unauthenticated_status": 200
+    },
+    {
+      "path": "/api/v1/user/profile",
+      "method": "GET",
+      "required_role": "USER, MANAGER, ADMIN",
+      "expected_unauthenticated_status": 401
+    },
+    {
+      "path": "/api/v1/user/data",
+      "method": "GET",
+      "required_role": "USER",
+      "expected_unauthenticated_status": 401
+    },
+    {
+      "path": "/api/v1/user/settings",
+      "method": "PUT",
+      "required_role": "USER, ADMIN",
+      "expected_unauthenticated_status": 401
+    },
+    {
+      "path": "/api/v1/manager/reports",
+      "method": "GET",
+      "required_role": "MANAGER, ADMIN",
+      "expected_unauthenticated_status": 401
+    },
+    {
+      "path": "/api/v1/manager/audit",
+      "method": "POST",
+      "required_role": "MANAGER",
+      "expected_unauthenticated_status": 401
+    },
+    {
+      "path": "/api/v1/admin/dashboard",
+      "method": "GET",
+      "required_role": "ADMIN",
+      "expected_unauthenticated_status": 401
+    },
+    {
+      "path": "/api/v1/admin/settings",
+      "method": "POST",
+      "required_role": "ADMIN",
+      "expected_unauthenticated_status": 401
+    },
+    {
+      "path": "/api/v1/admin/users/{id}",
+      "method": "DELETE",
+      "required_role": "ADMIN",
+      "expected_unauthenticated_status": 401
+    }
+  ],
+  "verification_status": "VERIFIED_PASS"
+}

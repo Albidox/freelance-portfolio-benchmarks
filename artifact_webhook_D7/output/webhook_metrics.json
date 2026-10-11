@@ -1,0 +1,39 @@
+{
+  "artifact": "Artifact D7 (Service 20): Idempotent Webhook Ingestion Engine with HMAC",
+  "phase": "Round 1: Sandbox Build",
+  "timestamp": "2026-10-11T02:58:22Z",
+  "tamper_verification": {
+    "tampered_signature_status": 401,
+    "rejection_latency_ms": 9.974,
+    "rejected_correctly": true
+  },
+  "workload_benchmark": {
+    "total_webhooks_sent": 500,
+    "unique_payments_processed": 375,
+    "duplicate_deliveries_handled": 125,
+    "errors_encountered": 0,
+    "total_duration_seconds": 1.582,
+    "throughput_req_per_sec": 316.07,
+    "latency_ms": {
+      "mean": 57.84,
+      "p50": 53.16,
+      "p95": 103.0,
+      "p99": 134.89,
+      "min": 13.59,
+      "max": 168.56
+    }
+  },
+  "database_verification": {
+    "db_processed_events_count": 375,
+    "db_payment_ledger_count": 375,
+    "double_credits_detected": 0,
+    "database_integrity_verified": true
+  },
+  "acceptance_criteria": {
+    "exactly_375_unique_payments_processed": true,
+    "zero_double_credits": true,
+    "all_125_duplicates_handled_with_http_200": true,
+    "tampered_signature_rejected_with_http_401": true,
+    "database_tables_in_sync": true
+  }
+}

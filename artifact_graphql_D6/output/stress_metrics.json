@@ -1,0 +1,89 @@
+{
+  "artifact": "D6-R2",
+  "description": "Real-World Stress Probe and Upstream Error Mapping Benchmark",
+  "partial_error_mapping": {
+    "scenario": "partial_error_mapping",
+    "verified": true,
+    "partial_error_http_status": 502,
+    "content_type": "application/problem+json",
+    "problem_title": "Upstream GraphQL Error",
+    "problem_detail": "Upstream GraphQL service reported execution errors for order: ORD-PARTIAL-ERROR",
+    "upstream_errors_count": 1,
+    "upstream_error_code": "DOWNSTREAM_SERVICE_UNAVAILABLE",
+    "upstream_error_path": [
+      "order",
+      "user"
+    ],
+    "not_found_http_status": 404,
+    "not_found_title": "Resource Not Found",
+    "elapsed_ms": 7.86320000042906
+  },
+  "upstream_timeout_handling": {
+    "scenario": "upstream_timeout_handling",
+    "verified": true,
+    "iterations": 5,
+    "mock_delay_seconds": 5.0,
+    "configured_timeout_ms": 1000,
+    "min_latency_ms": 1006.88,
+    "avg_latency_ms": 1018.13,
+    "max_latency_ms": 1023.27,
+    "all_under_sub_1_25s": true,
+    "benchmark_runs": [
+      {
+        "iteration": 1,
+        "status_code": 504,
+        "elapsed_ms": 1019.36,
+        "elapsed_seconds": 1.019,
+        "cutoff_enforced": true
+      },
+      {
+        "iteration": 2,
+        "status_code": 504,
+        "elapsed_ms": 1019.65,
+        "elapsed_seconds": 1.02,
+        "cutoff_enforced": true
+      },
+      {
+        "iteration": 3,
+        "status_code": 504,
+        "elapsed_ms": 1023.27,
+        "elapsed_seconds": 1.023,
+        "cutoff_enforced": true
+      },
+      {
+        "iteration": 4,
+        "status_code": 504,
+        "elapsed_ms": 1021.49,
+        "elapsed_seconds": 1.021,
+        "cutoff_enforced": true
+      },
+      {
+        "iteration": 5,
+        "status_code": 504,
+        "elapsed_ms": 1006.88,
+        "elapsed_seconds": 1.007,
+        "cutoff_enforced": true
+      }
+    ]
+  },
+  "high_concurrency_load_test": {
+    "scenario": "high_concurrency_load_test",
+    "verified": true,
+    "total_requests": 500,
+    "concurrency_workers": 50,
+    "successful_requests": 500,
+    "failed_requests": 0,
+    "socket_drops": 0,
+    "total_duration_seconds": 1.399,
+    "throughput_rps": 357.52,
+    "latencies_ms": {
+      "min": 8.08,
+      "avg": 51.41,
+      "p50": 38.17,
+      "p90": 105.03,
+      "p95": 133.3,
+      "p99": 181.61,
+      "max": 212.99
+    }
+  }
+}

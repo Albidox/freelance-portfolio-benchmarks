@@ -1,0 +1,54 @@
+{
+  "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "Greg-The-Skeptic-Auditor",
+          "fullName": "Greg (The Skeptic) Byzantine Auditor & Fleet Gatekeeper",
+          "version": "2.1.0",
+          "informationUri": "https://hermes-agent.nousresearch.com/docs",
+          "rules": [
+            {
+              "id": "D1-VAL-01",
+              "name": "RequiredArtifactMissing",
+              "shortDescription": {
+                "text": "A required output artifact file does not exist."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "id": "D1-VAL-02",
+              "name": "InvalidHeroMetrics",
+              "shortDescription": {
+                "text": "Hero metric SLA or verification criteria failed."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "id": "D1-VAL-03",
+              "name": "TypographicPolicyViolation",
+              "shortDescription": {
+                "text": "Zero em dash policy violated in documentation, scripts, or comments."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            }
+          ]
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "results": []
+    }
+  ]
+}

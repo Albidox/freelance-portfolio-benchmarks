@@ -1,0 +1,109 @@
+{
+  "artifact_id": "D11",
+  "round": "R1",
+  "service": "PostgreSQL Composite Indexing and Partial Index Setup",
+  "database_version": "PostgreSQL 18.0",
+  "port": 5433,
+  "schema": "d11_indexing_sandbox",
+  "table": "orders",
+  "timestamp_epoch": 1791696150.3633652,
+  "dataset": {
+    "total_rows": 1000000,
+    "active_rows": 49888,
+    "inactive_rows": 950112,
+    "active_percentage": 4.99
+  },
+  "query": "SELECT * FROM d11_indexing_sandbox.orders\n    WHERE status = 'ACTIVE'\n    ORDER BY created_at DESC\n    LIMIT 50;",
+  "storage": {
+    "table_bytes": 157523968,
+    "table_pretty": "150.23 MB",
+    "total_relation_bytes": 221405184,
+    "total_relation_pretty": "211.15 MB",
+    "composite_index_bytes": 40181760,
+    "composite_index_pretty": "38.32 MB",
+    "partial_index_bytes": 1138688,
+    "partial_index_pretty": "1.09 MB",
+    "footprint_reduction_bytes": 39043072,
+    "footprint_reduction_pretty": "37.23 MB",
+    "footprint_reduction_percent": 97.17,
+    "acceptance_criteria_passed_75pct_threshold": true
+  },
+  "benchmarks": {
+    "sequential_scan": {
+      "scan_type": "Seq Scan",
+      "server_explain": {
+        "planning_time_ms": 1.273,
+        "execution_time_ms": 163.434,
+        "shared_hit_blocks": 51700,
+        "shared_read_blocks": 25444,
+        "shared_total_blocks": 77144
+      },
+      "client_latencies": {
+        "iterations": 50,
+        "warmup": 3,
+        "min_ms": 106.8439,
+        "mean_ms": 148.9922,
+        "median_ms": 147.7862,
+        "p95_ms": 183.2983,
+        "p99_ms": 198.0586,
+        "max_ms": 198.0586,
+        "stddev_ms": 21.9883
+      }
+    },
+    "composite_index": {
+      "index_name": "idx_orders_composite_status_created",
+      "scan_type": "Index Scan",
+      "server_explain": {
+        "planning_time_ms": 0.34,
+        "execution_time_ms": 0.255,
+        "shared_hit_blocks": 76,
+        "shared_read_blocks": 30,
+        "shared_total_blocks": 106
+      },
+      "client_latencies": {
+        "iterations": 1000,
+        "warmup": 20,
+        "min_ms": 0.4204,
+        "mean_ms": 0.7663,
+        "median_ms": 0.6481,
+        "p95_ms": 1.3718,
+        "p99_ms": 1.9711,
+        "max_ms": 3.5306,
+        "stddev_ms": 0.3299
+      },
+      "server_speedup_vs_seq_scan": 640.92,
+      "client_speedup_vs_seq_scan": 194.43
+    },
+    "partial_index": {
+      "index_name": "idx_orders_partial_active_created",
+      "scan_type": "Index Scan",
+      "server_explain": {
+        "planning_time_ms": 0.925,
+        "execution_time_ms": 0.096,
+        "shared_hit_blocks": 100,
+        "shared_read_blocks": 4,
+        "shared_total_blocks": 104
+      },
+      "client_latencies": {
+        "iterations": 1000,
+        "warmup": 20,
+        "min_ms": 0.4442,
+        "mean_ms": 1.017,
+        "median_ms": 0.9099,
+        "p95_ms": 1.9207,
+        "p99_ms": 2.8353,
+        "max_ms": 4.8411,
+        "stddev_ms": 0.4827
+      },
+      "server_speedup_vs_seq_scan": 1702.44,
+      "client_speedup_vs_seq_scan": 146.5
+    }
+  },
+  "optimizations_summary": {
+    "query_latency_sequential_ms": 163.434,
+    "query_latency_partial_index_ms": 0.096,
+    "sub_millisecond_achieved": true,
+    "shared_buffer_reduction_percent": 99.87,
+    "storage_reduction_percent": 97.17
+  }
+}

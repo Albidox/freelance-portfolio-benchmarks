@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Invoice {{ invoice.invoice_number }}</title>
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 15mm 15mm 18mm 15mm;
+      @bottom-right {
+        content: "Page " counter(page) " of " counter(pages);
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Nirmala UI", "Microsoft YaHei", "PingFang SC", "Noto Sans Devanagari", "Noto Sans SC", "Noto Sans", sans-serif;
+      font-size: 9.5pt;
+      line-height: 1.45;
+      color: #1e293b;
+      background-color: #ffffff;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .container {
+      width: 100%;
+      padding: 0;
+    }
+
+    /* Header styling */
+    .header-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+
+    .header-table td {
+      vertical-align: top;
+    }
+
+    .brand-title {
+      font-size: 18pt;
+      font-weight: 700;
+      color: #0f172a;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+
+    .brand-subtitle {
+      font-size: 8.5pt;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .invoice-badge-title {
+      font-size: 20pt;
+      font-weight: 800;
+      color: #2563eb;
+      text-align: right;
+      letter-spacing: -0.02em;
+    }
+
+    .invoice-meta-table {
+      float: right;
+      border-collapse: collapse;
+      margin-top: 6px;
+    }
+
+    .invoice-meta-table td {
+      padding: 2px 4px;
+      font-size: 8.5pt;
+    }
+
+    .invoice-meta-label {
+      color: #64748b;
+      text-align: right;
+      font-weight: 500;
+    }
+
+    .invoice-meta-value {
+      color: #0f172a;
+      text-align: right;
+      font-weight: 600;
+      padding-left: 10px;
+    }
+
+    /* Billing info */
+    .party-info-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 24px;
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+
+    .party-info-table td {
+      width: 50%;
+      vertical-align: top;
+      padding: 12px 14px;
+      background-color: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 4px;
+    }
+
+    .party-info-table td:first-child {
+      border-right: none;
+    }
+
+    .party-header {
+      font-size: 7.5pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #475569;
+      margin-bottom: 6px;
+    }
+
+    .party-name {
+      font-size: 10.5pt;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 2px;
+    }
+
+    .party-details {
+      font-size: 8.5pt;
+      color: #475569;
+      line-height: 1.35;
+    }
+
+    /* Line items table */
+    .items-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+      page-break-inside: auto;
+    }
+
+    .items-table thead {
+      display: table-header-group;
+    }
+
+    .items-table thead th {
+      background-color: #0f172a;
+      color: #ffffff;
+      font-size: 8pt;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 8px 10px;
+      text-align: left;
+      border: 1px solid #0f172a;
+    }
+
+    .items-table thead th.text-right {
+      text-align: right;
+    }
+
+    .items-table thead th.text-center {
+      text-align: center;
+    }
+
+    .items-table tbody tr {
+      page-break-inside: avoid !important;
+      break-inside: avoid !important;
+    }
+
+    .items-table tbody tr:nth-child(even) {
+      background-color: #f8fafc;
+    }
+
+    .items-table tbody td {
+      padding: 7px 10px;
+      font-size: 8.5pt;
+      border-bottom: 1px solid #e2e8f0;
+      color: #334155;
+      vertical-align: middle;
+    }
+
+    .items-table tbody td.col-idx {
+      width: 32px;
+      text-align: center;
+      color: #94a3b8;
+      font-weight: 500;
+    }
+
+    .items-table tbody td.col-sku {
+      width: 80px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 8pt;
+      color: #475569;
+    }
+
+    .items-table tbody td.col-desc {
+      font-weight: 500;
+      color: #0f172a;
+    }
+
+    .items-table tbody td.col-qty {
+      width: 50px;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    .items-table tbody td.col-rate {
+      width: 85px;
+      text-align: right;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+
+    .items-table tbody td.col-total {
+      width: 95px;
+      text-align: right;
+      font-weight: 600;
+      color: #0f172a;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+
+    /* Totals table */
+    .totals-wrapper {
+      width: 100%;
+      margin-top: 10px;
+      margin-bottom: 24px;
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+
+    .totals-table {
+      width: 280px;
+      margin-left: auto;
+      border-collapse: collapse;
+    }
+
+    .totals-table td {
+      padding: 4px 8px;
+      font-size: 9pt;
+    }
+
+    .totals-label {
+      color: #64748b;
+      text-align: right;
+    }
+
+    .totals-value {
+      color: #0f172a;
+      text-align: right;
+      font-weight: 600;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+
+    .totals-divider {
+      border-top: 1px solid #cbd5e1;
+    }
+
+    .grand-total-row td {
+      padding-top: 8px;
+      padding-bottom: 8px;
+      font-size: 11.5pt;
+      font-weight: 700;
+      color: #2563eb;
+    }
+
+    /* Notes and Payment Information */
+    .footer-notes {
+      width: 100%;
+      border-top: 1px solid #e2e8f0;
+      padding-top: 14px;
+      margin-top: 16px;
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+
+    .footer-notes-title {
+      font-size: 8pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #475569;
+      margin-bottom: 4px;
+    }
+
+    .footer-notes-text {
+      font-size: 8pt;
+      color: #64748b;
+      line-height: 1.4;
+    }
+
+    /* OpenGraph thumbnail layout mode */
+    .og-container {
+      width: 1200px;
+      height: 630px;
+      padding: 48px 56px;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: #f8fafc;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+    }
+
+    .og-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      padding-bottom: 24px;
+    }
+
+    .og-badge {
+      background: #2563eb;
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 14pt;
+      padding: 6px 16px;
+      border-radius: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .og-content {
+      margin-top: 20px;
+    }
+
+    .og-title {
+      font-size: 34pt;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+      color: #ffffff;
+    }
+
+    .og-subtitle {
+      font-size: 16pt;
+      color: #94a3b8;
+      max-width: 900px;
+      line-height: 1.4;
+    }
+
+    .og-stats-row {
+      display: flex;
+      gap: 32px;
+      margin-top: 32px;
+    }
+
+    .og-stat-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 16px 24px;
+      border-radius: 8px;
+    }
+
+    .og-stat-value {
+      font-size: 22pt;
+      font-weight: 700;
+      color: #38bdf8;
+    }
+
+    .og-stat-label {
+      font-size: 11pt;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 2px;
+    }
+
+    .og-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      padding-top: 18px;
+      font-size: 12pt;
+      color: #64748b;
+    }
+
+    /* Paginated layout mode for massive table stress testing */
+    .page-container {
+      width: 100%;
+      box-sizing: border-box;
+      position: relative;
+    }
+
+    .page-break-after {
+      page-break-after: always;
+      break-after: page;
+    }
+
+    .running-header-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #2563eb;
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+
+    .running-header-title {
+      font-size: 11pt;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .running-header-sub {
+      font-size: 8pt;
+      color: #64748b;
+      margin-top: 2px;
+    }
+
+    .running-page-badge {
+      font-size: 8.5pt;
+      font-weight: 600;
+      color: #2563eb;
+      background-color: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 4px;
+      padding: 3px 8px;
+      display: inline-block;
+    }
+
+    .forward-row td {
+      background-color: #f1f5f9 !important;
+      font-size: 8pt !important;
+      font-weight: 600 !important;
+      color: #475569 !important;
+      border-bottom: 2px solid #cbd5e1 !important;
+    }
+
+    .forward-label {
+      text-align: right;
+      font-style: italic;
+      padding-right: 12px !important;
+    }
+
+    .forward-val {
+      text-align: right;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      color: #0f172a !important;
+    }
+
+    .page-footer-summary-row td {
+      background-color: #f8fafc;
+      font-size: 8.5pt;
+      border-top: 2px solid #cbd5e1;
+      border-bottom: 2px solid #cbd5e1;
+    }
+
+    .page-running-footer-bar {
+      margin-top: 10px;
+      padding-top: 6px;
+      border-top: 1px dashed #cbd5e1;
+      display: flex;
+      justify-content: space-between;
+      font-size: 7.5pt;
+      color: #64748b;
+      font-weight: 500;
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+
+    .col-running {
+      width: 105px;
+      text-align: right;
+      font-weight: 600;
+      color: #2563eb;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+  </style>
+</head>
+<body>
+
+{% if is_thumbnail %}
+<div class="og-container">
+  <div class="og-header">
+    <div>
+      <div style="font-size: 22pt; font-weight: 800; color: #ffffff;">{{ invoice.company.name }}</div>
+      <div style="font-size: 12pt; color: #94a3b8;">{{ invoice.company.tagline }}</div>
+    </div>
+    <div class="og-badge">Verified Invoice Daemon</div>
+  </div>
+
+  <div class="og-content">
+    <div class="og-title">Invoice #{{ invoice.invoice_number }}</div>
+    <div class="og-subtitle">Prepared for {{ invoice.client.name }}. Automated headless PDF rendering with zero table clipping and sub-second generation latency.</div>
+    <div class="og-stats-row">
+      <div class="og-stat-card">
+        <div class="og-stat-value">${{ "%.2f"|format(invoice.total_amount) }}</div>
+        <div class="og-stat-label">Total Amount</div>
+      </div>
+      <div class="og-stat-card">
+        <div class="og-stat-value">{{ invoice['items']|length }} Items</div>
+        <div class="og-stat-label">Billed Line Items</div>
+      </div>
+      <div class="og-stat-card">
+        <div class="og-stat-value">{{ invoice.issue_date }}</div>
+        <div class="og-stat-label">Issue Date</div>
+      </div>
+      <div class="og-stat-card">
+        <div class="og-stat-value">A4 Multi-Page</div>
+        <div class="og-stat-label">Format Standard</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="og-footer">
+    <div>Engineered by Eric, Backend and Distributed Systems Specialist</div>
+    <div>Ashfaq High-Performance Portfolio Artifact D8</div>
+  </div>
+</div>
+
+{% elif invoice.is_paginated %}
+
+<div class="container">
+  {% for page in invoice.pages %}
+  <div class="page-container {% if not loop.last %}page-break-after{% endif %}">
+    {% if page.is_first_page %}
+    <!-- Invoice Header -->
+    <table class="header-table">
+      <tr>
+        <td>
+          <div class="brand-title">{{ invoice.company.name }}</div>
+          <div class="brand-subtitle">{{ invoice.company.tagline }}</div>
+          <div style="font-size: 8.5pt; color: #475569; margin-top: 6px; line-height: 1.35;">
+            {{ invoice.company.address_line1 }}<br>
+            {{ invoice.company.city }}, {{ invoice.company.postal_code }}<br>
+            Tax ID: {{ invoice.company.tax_id }} | Email: {{ invoice.company.email }}
+          </div>
+        </td>
+        <td>
+          <div class="invoice-badge-title">INVOICE</div>
+          <table class="invoice-meta-table">
+            <tr>
+              <td class="invoice-meta-label">Invoice Number:</td>
+              <td class="invoice-meta-value">{{ invoice.invoice_number }}</td>
+            </tr>
+            <tr>
+              <td class="invoice-meta-label">Issue Date:</td>
+              <td class="invoice-meta-value">{{ invoice.issue_date }}</td>
+            </tr>
+            <tr>
+              <td class="invoice-meta-label">Due Date:</td>
+              <td class="invoice-meta-value">{{ invoice.due_date }}</td>
+            </tr>
+            <tr>
+              <td class="invoice-meta-label">Payment Terms:</td>
+              <td class="invoice-meta-value">{{ invoice.payment_terms }}</td>
+            </tr>
+            <tr>
+              <td class="invoice-meta-label">Currency:</td>
+              <td class="invoice-meta-value">{{ invoice.currency }}</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+
+    <!-- Billing info -->
+    <table class="party-info-table">
+      <tr>
+        <td>
+          <div class="party-header">Billed To (Client)</div>
+          <div class="party-name">{{ invoice.client.name }}</div>
+          <div class="party-details">
+            {{ invoice.client.department }}<br>
+            {{ invoice.client.address_line1 }}<br>
+            {{ invoice.client.city }}, {{ invoice.client.postal_code }}<br>
+            Attention: {{ invoice.client.contact_person }}<br>
+            Email: {{ invoice.client.email }}
+          </div>
+        </td>
+        <td>
+          <div class="party-header">Remit Payment To</div>
+          <div class="party-name">{{ invoice.remittance.bank_name }}</div>
+          <div class="party-details">
+            Account Holder: {{ invoice.company.name }}<br>
+            Account Number: {{ invoice.remittance.account_number }}<br>
+            Routing Number (ACH): {{ invoice.remittance.routing_number }}<br>
+            SWIFT / BIC: {{ invoice.remittance.swift_bic }}<br>
+            Reference: {{ invoice.invoice_number }}
+          </div>
+        </td>
+      </tr>
+    </table>
+    {% else %}
+    <!-- Subsequent Page Running Header -->
+    <table class="running-header-table">
+      <tr>
+        <td>
+          <div class="running-header-title">{{ invoice.company.name }} | Invoice #{{ invoice.invoice_number }}</div>
+          <div class="running-header-sub">Client: {{ invoice.client.name }} | Statement Date: {{ invoice.issue_date }}</div>
+        </td>
+        <td style="text-align: right;">
+          <div class="running-page-badge">Page {{ page.page_number }} of {{ page.total_pages }}</div>
+        </td>
+      </tr>
+    </table>
+    {% endif %}
+
+    <!-- Page Line Items Table -->
+    <table class="items-table">
+      <thead>
+        <tr>
+          <th class="text-center" style="width: 32px;">#</th>
+          <th style="width: 85px;">SKU</th>
+          <th>Description</th>
+          <th class="text-center" style="width: 50px;">Qty</th>
+          <th class="text-right" style="width: 85px;">Rate (USD)</th>
+          <th class="text-right" style="width: 95px;">Amount (USD)</th>
+          <th class="text-right" style="width: 105px;">Running (USD)</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% if not page.is_first_page %}
+        <tr class="forward-row">
+          <td colspan="6" class="forward-label">Brought Forward from Page {{ page.page_number - 1 }}</td>
+          <td class="forward-val">${{ "%.2f"|format(page.brought_forward) }}</td>
+        </tr>
+        {% endif %}
+        {% for item in page['items'] %}
+        <tr>
+          <td class="col-idx">{{ item.idx or loop.index }}</td>
+          <td class="col-sku">{{ item.sku }}</td>
+          <td class="col-desc">{{ item.description }}</td>
+          <td class="col-qty">{{ item.quantity }}</td>
+          <td class="col-rate">${{ "%.2f"|format(item.unit_price) }}</td>
+          <td class="col-total">${{ "%.2f"|format(item.total_price) }}</td>
+          <td class="col-running">${{ "%.2f"|format(item.running_total) }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+      <tfoot>
+        <tr class="page-footer-summary-row">
+          <td colspan="5" style="text-align: right; font-weight: 600; padding: 6px 10px;">
+            Page {{ page.page_number }} Subtotal:
+          </td>
+          <td style="text-align: right; font-weight: 700; padding: 6px 10px;">
+            ${{ "%.2f"|format(page.page_subtotal) }}
+          </td>
+          <td style="text-align: right; font-weight: 700; padding: 6px 10px; color: #2563eb;">
+            ${{ "%.2f"|format(page.cumulative_total) }}
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <!-- Page Running Footer Bar -->
+    <div class="page-running-footer-bar">
+      <span>Apex Distributed Systems LLC | Invoice {{ invoice.invoice_number }}</span>
+      <span>
+        {% if page.is_last_page %}
+          Statement Complete | Grand Total: ${{ "%.2f"|format(invoice.total_amount) }}
+        {% else %}
+          Carried Forward to Page {{ page.page_number + 1 }}: ${{ "%.2f"|format(page.cumulative_total) }}
+        {% endif %}
+      </span>
+      <span>Page {{ page.page_number }} of {{ page.total_pages }}</span>
+    </div>
+
+    {% if page.is_last_page %}
+    <!-- Totals Section -->
+    <div class="totals-wrapper">
+      <table class="totals-table">
+        <tr>
+          <td class="totals-label">Subtotal:</td>
+          <td class="totals-value">${{ "%.2f"|format(invoice.subtotal) }}</td>
+        </tr>
+        <tr>
+          <td class="totals-label">Sales Tax ({{ "%.1f"|format(invoice.tax_rate * 100) }}%):</td>
+          <td class="totals-value">${{ "%.2f"|format(invoice.tax_amount) }}</td>
+        </tr>
+        <tr>
+          <td class="totals-label">Shipping and Handling:</td>
+          <td class="totals-value">${{ "%.2f"|format(invoice.shipping_fee) }}</td>
+        </tr>
+        <tr class="totals-divider">
+          <td colspan="2"></td>
+        </tr>
+        <tr class="grand-total-row">
+          <td class="totals-label" style="color: #0f172a;">Total Due:</td>
+          <td class="totals-value">${{ "%.2f"|format(invoice.total_amount) }}</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Footer Notes -->
+    <div class="footer-notes">
+      <div class="footer-notes-title">Terms and Conditions</div>
+      <div class="footer-notes-text">
+        Payment is due within {{ invoice.payment_terms }} of invoice issuance. Late balances are subject to a 1.5% monthly finance charge.
+        All distributed computing consulting services, infrastructure deliverables, and architectural implementations are certified under Enterprise SLA terms.
+        For inquiries regarding this statement, please contact accounting@apex.systems.
+      </div>
+    </div>
+    {% endif %}
+  </div>
+  {% endfor %}
+</div>
+
+{% else %}
+
+<div class="container">
+  <!-- Invoice Header -->
+  <table class="header-table">
+    <tr>
+      <td>
+        <div class="brand-title">{{ invoice.company.name }}</div>
+        <div class="brand-subtitle">{{ invoice.company.tagline }}</div>
+        <div style="font-size: 8.5pt; color: #475569; margin-top: 6px; line-height: 1.35;">
+          {{ invoice.company.address_line1 }}<br>
+          {{ invoice.company.city }}, {{ invoice.company.postal_code }}<br>
+          Tax ID: {{ invoice.company.tax_id }} | Email: {{ invoice.company.email }}
+        </div>
+      </td>
+      <td>
+        <div class="invoice-badge-title">INVOICE</div>
+        <table class="invoice-meta-table">
+          <tr>
+            <td class="invoice-meta-label">Invoice Number:</td>
+            <td class="invoice-meta-value">{{ invoice.invoice_number }}</td>
+          </tr>
+          <tr>
+            <td class="invoice-meta-label">Issue Date:</td>
+            <td class="invoice-meta-value">{{ invoice.issue_date }}</td>
+          </tr>
+          <tr>
+            <td class="invoice-meta-label">Due Date:</td>
+            <td class="invoice-meta-value">{{ invoice.due_date }}</td>
+          </tr>
+          <tr>
+            <td class="invoice-meta-label">Payment Terms:</td>
+            <td class="invoice-meta-value">{{ invoice.payment_terms }}</td>
+          </tr>
+          <tr>
+            <td class="invoice-meta-label">Currency:</td>
+            <td class="invoice-meta-value">{{ invoice.currency }}</td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+
+  <!-- Billing info -->
+  <table class="party-info-table">
+    <tr>
+      <td>
+        <div class="party-header">Billed To (Client)</div>
+        <div class="party-name">{{ invoice.client.name }}</div>
+        <div class="party-details">
+          {{ invoice.client.department }}<br>
+          {{ invoice.client.address_line1 }}<br>
+          {{ invoice.client.city }}, {{ invoice.client.postal_code }}<br>
+          Attention: {{ invoice.client.contact_person }}<br>
+          Email: {{ invoice.client.email }}
+        </div>
+      </td>
+      <td>
+        <div class="party-header">Remit Payment To</div>
+        <div class="party-name">{{ invoice.remittance.bank_name }}</div>
+        <div class="party-details">
+          Account Holder: {{ invoice.company.name }}<br>
+          Account Number: {{ invoice.remittance.account_number }}<br>
+          Routing Number (ACH): {{ invoice.remittance.routing_number }}<br>
+          SWIFT / BIC: {{ invoice.remittance.swift_bic }}<br>
+          Reference: {{ invoice.invoice_number }}
+        </div>
+      </td>
+    </tr>
+  </table>
+
+  <!-- Line items table -->
+  <table class="items-table">
+    <thead>
+      <tr>
+        <th class="text-center" style="width: 32px;">#</th>
+        <th style="width: 85px;">SKU</th>
+        <th>Description</th>
+        <th class="text-center" style="width: 50px;">Qty</th>
+        <th class="text-right" style="width: 85px;">Rate (USD)</th>
+        <th class="text-right" style="width: 95px;">Amount (USD)</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in invoice['items'] %}
+      <tr>
+        <td class="col-idx">{{ loop.index }}</td>
+        <td class="col-sku">{{ item.sku }}</td>
+        <td class="col-desc">{{ item.description }}</td>
+        <td class="col-qty">{{ item.quantity }}</td>
+        <td class="col-rate">${{ "%.2f"|format(item.unit_price) }}</td>
+        <td class="col-total">${{ "%.2f"|format(item.total_price) }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <!-- Totals Section -->
+  <div class="totals-wrapper">
+    <table class="totals-table">
+      <tr>
+        <td class="totals-label">Subtotal:</td>
+        <td class="totals-value">${{ "%.2f"|format(invoice.subtotal) }}</td>
+      </tr>
+      <tr>
+        <td class="totals-label">Sales Tax ({{ "%.1f"|format(invoice.tax_rate * 100) }}%):</td>
+        <td class="totals-value">${{ "%.2f"|format(invoice.tax_amount) }}</td>
+      </tr>
+      <tr>
+        <td class="totals-label">Shipping and Handling:</td>
+        <td class="totals-value">${{ "%.2f"|format(invoice.shipping_fee) }}</td>
+      </tr>
+      <tr class="totals-divider">
+        <td colspan="2"></td>
+      </tr>
+      <tr class="grand-total-row">
+        <td class="totals-label" style="color: #0f172a;">Total Due:</td>
+        <td class="totals-value">${{ "%.2f"|format(invoice.total_amount) }}</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Footer Notes -->
+  <div class="footer-notes">
+    <div class="footer-notes-title">Terms and Conditions</div>
+    <div class="footer-notes-text">
+      Payment is due within {{ invoice.payment_terms }} of invoice issuance. Late balances are subject to a 1.5% monthly finance charge.
+      All distributed computing consulting services, infrastructure deliverables, and architectural implementations are certified under Enterprise SLA terms.
+      For inquiries regarding this statement, please contact accounting@apex.systems.
+    </div>
+  </div>
+</div>
+{% endif %}
+
+</body>
+</html>

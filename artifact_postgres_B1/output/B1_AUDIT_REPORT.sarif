@@ -1,0 +1,107 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "Hermes Byzantine Auditor",
+          "semanticVersion": "1.0.0",
+          "informationUri": "https://hermes-agent.nousresearch.com/docs",
+          "rules": [
+            {
+              "id": "ROLE_COMPLIANCE_01",
+              "name": "Role Boundary Compliance",
+              "shortDescription": {
+                "text": "Verifies that domain work is executed strictly by the assigned specialist with zero inline orchestration."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "id": "SEC_AST_01",
+              "name": "Security and AST Correctness",
+              "shortDescription": {
+                "text": "Verifies syntax, type boundaries, exception hierarchies, and strict security compliance."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "id": "CONCURRENCY_01",
+              "name": "Concurrency and Locking",
+              "shortDescription": {
+                "text": "Verifies thread safety, async deadlocks, shared state mutations, and valid timeout mechanisms."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            }
+          ]
+        }
+      },
+      "results": [
+        {
+          "ruleId": "ROLE_COMPLIANCE_01",
+          "message": {
+            "text": "Role compliance verified. Specialist performed native execution of PostgreSQL operations."
+          },
+          "kind": "pass",
+          "level": "none",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_postgres_B1/README.md"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "SEC_AST_01",
+          "message": {
+            "text": "SQL Syntax, constraints, and injection risks evaluated. Valid EXPLAIN (ANALYZE, BUFFERS) query structures verified with real metric derivations. Zero malicious execution patterns found."
+          },
+          "kind": "pass",
+          "level": "none",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_postgres_B1/seed_data.sql"
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_postgres_B1/broken_query.sql"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CONCURRENCY_01",
+          "message": {
+            "text": "Valid zero-downtime concurrent indexing rules applied. Proper SET lock_timeout = '5s' utilized prior to CREATE INDEX CONCURRENTLY, satisfying transactional safety invariants."
+          },
+          "kind": "pass",
+          "level": "none",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_postgres_B1/V2__optimize_tenant_transactions.sql"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

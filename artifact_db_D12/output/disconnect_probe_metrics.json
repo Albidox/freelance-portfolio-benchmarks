@@ -1,0 +1,27 @@
+{
+  "probe_name": "Mid-Flight Socket Disconnect Probe",
+  "task_id": "t_7abdcdec",
+  "artifact_id": "D12",
+  "round": "R2",
+  "database": {
+    "port": 5433,
+    "schema": "d12_copy_sandbox",
+    "target_table": "inventory_disconnect_probe",
+    "terminated_backend_pid": 26664
+  },
+  "disconnection_parameters": {
+    "disconnect_target_row": 300000,
+    "disconnect_method": "pg_terminate_backend on active backend socket",
+    "termination_triggered": true,
+    "caught_exception_type": "OperationalError",
+    "caught_exception_message": "server closed the connection unexpectedly\n\tThis probably means the server terminated abnormally\n\tbefore or while processing the request.\ninvalid socket"
+  },
+  "atomic_rollback_verification": {
+    "rows_streamed_prior_to_abort": 300000,
+    "table_row_count_after_abort": 0,
+    "partial_corruption_detected": false,
+    "atomic_rollback_confirmed": true,
+    "stray_active_backends": 0
+  },
+  "acceptance_criteria_verified": true
+}

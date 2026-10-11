@@ -1,0 +1,148 @@
+--- a/src/main/java/com/ashfaq/migration/model/Customer.java
++++ b/src/main/java/com/ashfaq/migration/model/Customer.java
+@@ -1,15 +1,15 @@
+ package com.ashfaq.migration.model;
+ 
+-import javax.persistence.Entity;
+-import javax.persistence.Table;
+-import javax.persistence.Id;
+-import javax.persistence.GeneratedValue;
+-import javax.persistence.GenerationType;
+-import javax.persistence.Column;
+-import javax.persistence.Transient;
+-import javax.validation.constraints.NotBlank;
+-import javax.validation.constraints.Email;
+-import javax.validation.constraints.NotNull;
++import jakarta.persistence.Entity;
++import jakarta.persistence.Table;
++import jakarta.persistence.Id;
++import jakarta.persistence.GeneratedValue;
++import jakarta.persistence.GenerationType;
++import jakarta.persistence.Column;
++import jakarta.persistence.Transient;
++import jakarta.validation.constraints.NotBlank;
++import jakarta.validation.constraints.Email;
++import jakarta.validation.constraints.NotNull;
+ import javax.sql.DataSource;
+ 
+ @Entity
+--- a/src/main/java/com/ashfaq/migration/model/Product.java
++++ b/src/main/java/com/ashfaq/migration/model/Product.java
+@@ -1,13 +1,13 @@
+ package com.ashfaq.migration.model;
+ 
+-import javax.persistence.Entity;
+-import javax.persistence.Table;
+-import javax.persistence.Id;
+-import javax.persistence.GeneratedValue;
+-import javax.persistence.GenerationType;
+-import javax.persistence.Column;
+-import javax.validation.constraints.NotNull;
+-import javax.validation.constraints.DecimalMin;
++import jakarta.persistence.Entity;
++import jakarta.persistence.Table;
++import jakarta.persistence.Id;
++import jakarta.persistence.GeneratedValue;
++import jakarta.persistence.GenerationType;
++import jakarta.persistence.Column;
++import jakarta.validation.constraints.NotNull;
++import jakarta.validation.constraints.DecimalMin;
+ import java.math.BigDecimal;
+ 
+ @Entity
+--- a/src/main/java/com/ashfaq/migration/model/OrderEntity.java
++++ b/src/main/java/com/ashfaq/migration/model/OrderEntity.java
+@@ -1,19 +1,19 @@
+ package com.ashfaq.migration.model;
+ 
+-import javax.persistence.Entity;
+-import javax.persistence.Table;
+-import javax.persistence.Id;
+-import javax.persistence.GeneratedValue;
+-import javax.persistence.GenerationType;
+-import javax.persistence.Column;
+-import javax.persistence.Enumerated;
+-import javax.persistence.EnumType;
+-import javax.persistence.ManyToOne;
+-import javax.persistence.OneToMany;
+-import javax.persistence.JoinColumn;
+-import javax.persistence.FetchType;
+-import javax.persistence.CascadeType;
+-import javax.validation.constraints.NotNull;
++import jakarta.persistence.Entity;
++import jakarta.persistence.Table;
++import jakarta.persistence.Id;
++import jakarta.persistence.GeneratedValue;
++import jakarta.persistence.GenerationType;
++import jakarta.persistence.Column;
++import jakarta.persistence.Enumerated;
++import jakarta.persistence.EnumType;
++import jakarta.persistence.ManyToOne;
++import jakarta.persistence.OneToMany;
++import jakarta.persistence.JoinColumn;
++import jakarta.persistence.FetchType;
++import jakarta.persistence.CascadeType;
++import jakarta.validation.constraints.NotNull;
+ import java.util.ArrayList;
+ import java.util.List;
+ 
+--- a/src/main/java/com/ashfaq/migration/model/Invoice.java
++++ b/src/main/java/com/ashfaq/migration/model/Invoice.java
+@@ -1,18 +1,18 @@
+ package com.ashfaq.migration.model;
+ 
+-import javax.persistence.Entity;
+-import javax.persistence.Table;
+-import javax.persistence.Id;
+-import javax.persistence.GeneratedValue;
+-import javax.persistence.GenerationType;
+-import javax.persistence.Column;
+-import javax.persistence.ManyToOne;
+-import javax.persistence.JoinColumn;
+-import javax.persistence.FetchType;
+-import javax.persistence.Temporal;
+-import javax.persistence.TemporalType;
+-import javax.validation.constraints.NotNull;
+-import javax.validation.constraints.Digits;
++import jakarta.persistence.Entity;
++import jakarta.persistence.Table;
++import jakarta.persistence.Id;
++import jakarta.persistence.GeneratedValue;
++import jakarta.persistence.GenerationType;
++import jakarta.persistence.Column;
++import jakarta.persistence.ManyToOne;
++import jakarta.persistence.JoinColumn;
++import jakarta.persistence.FetchType;
++import jakarta.persistence.Temporal;
++import jakarta.persistence.TemporalType;
++import jakarta.validation.constraints.NotNull;
++import jakarta.validation.constraints.Digits;
+ import java.math.BigDecimal;
+ import java.util.Date;
+ 
+--- a/src/main/java/com/ashfaq/migration/model/AuditLog.java
++++ b/src/main/java/com/ashfaq/migration/model/AuditLog.java
+@@ -1,14 +1,14 @@
+ package com.ashfaq.migration.model;
+ 
+-import javax.persistence.Entity;
+-import javax.persistence.Table;
+-import javax.persistence.Id;
+-import javax.persistence.GeneratedValue;
+-import javax.persistence.GenerationType;
+-import javax.persistence.Column;
+-import javax.persistence.PrePersist;
+-import javax.persistence.PreUpdate;
+-import javax.annotation.PostConstruct;
++import jakarta.persistence.Entity;
++import jakarta.persistence.Table;
++import jakarta.persistence.Id;
++import jakarta.persistence.GeneratedValue;
++import jakarta.persistence.GenerationType;
++import jakarta.persistence.Column;
++import jakarta.persistence.PrePersist;
++import jakarta.persistence.PreUpdate;
++import jakarta.annotation.PostConstruct;
+ import java.time.Instant;
+ 
+ @Entity

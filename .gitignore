@@ -1,0 +1,34 @@
+# Virtual environments
+.venv/
+venv/
+temp_venv/
+env/
+
+# Python cache & bytecode
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+
+# Maven & JVM build outputs
+target/
+dist/
+*.class
+
+# Node dependencies
+node_modules/
+
+# Local databases and locks
+*.db
+*.sqlite
+*.sqlite3
+
+# Large synthetic datasets and raw data bloat
+inventory_500k*.csv
+data/dirty_records*.jsonl
+data/fuzz_payloads.jsonl
+
+# Operating system files
+.DS_Store
+Thumbs.db

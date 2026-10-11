@@ -1,0 +1,7 @@
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: com.ashfaq.migration.EnterpriseJakartaMigration
+displayName: Enterprise javax to jakarta Lossless Migration
+description: Upgrades all enterprise persistence, validation, and annotation namespaces from javax to jakarta while preserving JDK javax packages.
+recipeList:
+  - org.openrewrite.java.migrate.jakarta.JavaxMigrationToJakarta

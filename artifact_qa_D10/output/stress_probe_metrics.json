@@ -1,0 +1,80 @@
+{
+  "artifact_id": "D10",
+  "round": "R2",
+  "service": "Automated Data Validation and Regression Test Harness",
+  "timestamp_epoch": 1791695558.2282512,
+  "total_duration_seconds": 11.111,
+  "status": "PASSED",
+  "probes": [
+    {
+      "probe_id": "PROBE_1_MIGRATION_VERSION_COLLISION",
+      "probe_schema": "d10_probe_collision_schema",
+      "name": "Migration Version Collision Probe",
+      "status": "PASSED",
+      "duration_seconds": 10.467,
+      "collision_detected": true,
+      "schema_preserved": true,
+      "exception_type": "org.flywaydb.core.api.FlywayException",
+      "diagnostic_message": "Diagnostic error text: Found more than one migration with version 2.0 Offenders: -> C:\\Users\\Skytron\\AppData\\Local\\Temp\\flyway_collision_probe_9044417775239285305\\V2_0__duplicate_reporting_table.sql (SQL) -> C:\\Users\\Skytron\\AppData\\Local\\Temp\\flyway_collision_probe_9044417775239285305\\V2_0__add_reporting_metrics.sql (SQL)",
+      "conflicting_versions": [
+        "V2_0__add_reporting_metrics.sql",
+        "V2_0__duplicate_reporting_table.sql"
+      ]
+    },
+    {
+      "probe_id": "PROBE_2_MISSING_FOREIGN_KEY_INDEX",
+      "name": "Missing Foreign Key Index Probe",
+      "status": "PASSED",
+      "duration_seconds": 0.119,
+      "unindexed_detected_count": 1,
+      "detected_unindexed_relations": [
+        {
+          "constraint_name": "transactions_account_id_fkey",
+          "child_table": "d10_probe_fk_schema.transactions",
+          "fk_column": "account_id",
+          "parent_table": "d10_probe_fk_schema.accounts",
+          "lock_contention_risk": "CRITICAL (table-level share lock during parent update/delete)"
+        }
+      ],
+      "remediation_verified": true,
+      "baseline_unindexed_count": 0,
+      "baseline_verified_indexes": [
+        {
+          "constraint_name": "fk_order_items_order",
+          "child_table": "d10_regression_sandbox.order_items",
+          "fk_column": "order_id",
+          "parent_table": "d10_regression_sandbox.orders",
+          "supporting_index": "idx_order_items_order_id"
+        },
+        {
+          "constraint_name": "fk_order_items_product",
+          "child_table": "d10_regression_sandbox.order_items",
+          "fk_column": "product_id",
+          "parent_table": "d10_regression_sandbox.products",
+          "supporting_index": "idx_order_items_product_id"
+        },
+        {
+          "constraint_name": "fk_orders_customer",
+          "child_table": "d10_regression_sandbox.orders",
+          "fk_column": "customer_id",
+          "parent_table": "d10_regression_sandbox.customers",
+          "supporting_index": "idx_orders_customer_id"
+        }
+      ]
+    },
+    {
+      "probe_id": "PROBE_3_TRANSACTIONAL_ISOLATION_LEAK",
+      "name": "Transactional Isolation Leak Probe",
+      "status": "PASSED",
+      "duration_seconds": 0.524,
+      "target_table": "d10_regression_sandbox.probe_isolation_events",
+      "rows_inserted": 1000,
+      "leak_detected": true,
+      "diagnostic_code": "DIRTY_STATE_LEAK_DETECTED",
+      "boundary_purge_enforced": true,
+      "post_purge_row_count": 0,
+      "transactional_rollback_verified": true,
+      "post_rollback_row_count": 0
+    }
+  ]
+}

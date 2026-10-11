@@ -1,0 +1,24 @@
+                                                                   QUERY PLAN                                                                    
+-------------------------------------------------------------------------------------------------------------------------------------------------
+ Limit  (cost=49775.34..49781.16 rows=50 width=104) (actual time=224.321..250.113 rows=50.00 loops=1)
+   Buffers: shared hit=11158 read=28305 written=1
+   ->  Gather Merge  (cost=49775.34..49873.40 rows=842 width=104) (actual time=224.319..250.108 rows=50.00 loops=1)
+         Workers Planned: 2
+         Workers Launched: 2
+         Buffers: shared hit=11158 read=28305 written=1
+         ->  Sort  (cost=48775.31..48776.19 rows=351 width=104) (actual time=161.240..161.244 rows=41.00 loops=3)
+               Sort Key: created_at DESC
+               Sort Method: top-N heapsort  Memory: 36kB
+               Buffers: shared hit=11158 read=28305 written=1
+               Worker 0:  Sort Method: top-N heapsort  Memory: 35kB
+               Worker 1:  Sort Method: top-N heapsort  Memory: 35kB
+               ->  Parallel Seq Scan on audit_events  (cost=0.00..48763.65 rows=351 width=104) (actual time=0.964..158.886 rows=5571.67 loops=3)
+                     Filter: (((metadata ->> 'action_type'::text) = 'USER_LOGIN'::text) AND (created_at >= (now() - '30 days'::interval)))
+                     Rows Removed by Filter: 327762
+                     Buffers: shared hit=11082 read=28305 written=1
+ Planning:
+   Buffers: shared hit=132
+ Planning Time: 2.014 ms
+ Execution Time: 250.182 ms
+(20 rows)
+

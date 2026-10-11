@@ -1,0 +1,70 @@
+{
+  "schema_version": "1.0",
+  "project": "artifact_scraping_A1",
+  "task": "t_07efdb2c",
+  "generated_at": "2026-10-10T00:56:00+05:30",
+  "leads": [
+    {
+      "id": "LEAD-01",
+      "priority": "P1",
+      "hypothesis": "Automated generation of native Excel charts (Sparklines, Pareto, and Distribution Histograms) via openpyxl increases perceived deliverable value by over 40% for agency clients.",
+      "search_vectors": [
+        "openpyxl chart BarChart Reference Series formatting",
+        "excel sparkline openpyxl generation client dashboard",
+        "freelance data visualization deliverable excel charts"
+      ],
+      "architectural_relevance": "Enables zero-touch generation of visual summaries in Tab 1 without external BI tools."
+    },
+    {
+      "id": "LEAD-02",
+      "priority": "P1",
+      "hypothesis": "Embedding an SQLite WebAssembly (wa-sqlite or sql.js) engine inside standalone HTML previews enables client-side SQL querying on 50,000+ scraped records without a backend server.",
+      "search_vectors": [
+        "sql.js single file html deliverable sqlite wasm",
+        "client side in browser sql query table preview",
+        "wa-sqlite standalone dashboard zero dependency"
+      ],
+      "architectural_relevance": "Unlocks enterprise-grade exploratory data analysis for technical clients receiving large datasets."
+    },
+    {
+      "id": "LEAD-03",
+      "priority": "P2",
+      "hypothesis": "Converting standalone HTML deliverables into self-contained executable desktop apps via Webview / Neutralinojs / PyInstaller provides white-label agency branding.",
+      "search_vectors": [
+        "neutralinojs single binary data dashboard client",
+        "pywebview portable offline client preview packager"
+      ],
+      "architectural_relevance": "Provides a branded enterprise software feel for high-ticket retainer engagements."
+    },
+    {
+      "id": "LEAD-04",
+      "priority": "P2",
+      "hypothesis": "Automating Google Sheets API push with cell-level formatting replicates openpyxl deliverable polish for teams using cloud-first collaborative workflows.",
+      "search_vectors": [
+        "google sheets api v4 batchUpdate repeatCell userEnteredFormat",
+        "python gspread formatting zebra striping freeze panes"
+      ],
+      "architectural_relevance": "Expands delivery channels to clients who refuse email attachments and demand live Google Drive links."
+    },
+    {
+      "id": "LEAD-05",
+      "priority": "P3",
+      "hypothesis": "Injecting JSON-LD schema metadata and data-dictionary documentation into Excel custom document properties enables programmatic ingestion by downstream corporate data lakes.",
+      "search_vectors": [
+        "openpyxl workbook custom document properties metadata",
+        "excel metadata tagging enterprise data catalog lineage"
+      ],
+      "architectural_relevance": "Positions the freelancer as a senior data engineer rather than a simple scraper."
+    },
+    {
+      "id": "LEAD-06",
+      "priority": "P3",
+      "hypothesis": "Generating PDF executive briefing one-pagers alongside Excel/HTML via Weasyprint or Typst closes the loop for C-suite deliverables.",
+      "search_vectors": [
+        "typst python data report generation executive summary",
+        "weasyprint html to pdf executive kpi card report"
+      ],
+      "architectural_relevance": "Provides a print-ready briefing for executive sponsors who review files on mobile or tablet."
+    }
+  ]
+}

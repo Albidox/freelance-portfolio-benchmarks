@@ -1,0 +1,29 @@
+{
+  "benchmark": "Headless Browser PDF & Thumbnail Generation Daemon",
+  "timestamp_utc": "2026-10-11T03:35:26Z",
+  "batch_size": 50,
+  "total_duration_seconds": 6.343,
+  "target_duration_seconds": 30.0,
+  "duration_compliant": true,
+  "throughput_invoices_per_second": 7.88,
+  "avg_latency_ms": 86.96,
+  "min_latency_ms": 44.39,
+  "max_latency_ms": 856.46,
+  "total_pages_rendered": 150,
+  "avg_pages_per_invoice": 3.0,
+  "all_invoices_multi_page": true,
+  "table_row_clipping_errors": 0,
+  "zero_clipping_verified": true,
+  "memory_metrics": {
+    "peak_daemon_rss_mb": 61.52,
+    "peak_children_rss_mb": 309.39,
+    "peak_total_rss_mb": 370.14,
+    "daemon_memory_limit_mb": 250.0,
+    "daemon_memory_compliant": true
+  },
+  "artifacts_generated": {
+    "invoices_directory": "output/invoices",
+    "invoices_count": 50,
+    "social_preview_thumbnail": "output/invoice_social_preview.png"
+  }
+}

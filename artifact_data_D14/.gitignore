@@ -1,0 +1,6 @@
+.venv/
+__pycache__/
+*.pyc
+data/dirty_records.jsonl
+data/dirty_records_1m.jsonl
+data/fuzz_payloads.jsonl

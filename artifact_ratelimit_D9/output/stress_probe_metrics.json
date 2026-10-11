@@ -1,0 +1,62 @@
+{
+  "artifact_id": "D9",
+  "round": "R2",
+  "service": "API Rate Limiter Stress Probe and Security Evasion",
+  "timestamp_epoch": 1791692800.4829803,
+  "probe1_ip_spoofing": {
+    "probe": "IP Header Spoofing Evasion",
+    "passed": true,
+    "genuine_client_ip": "198.51.100.42",
+    "spoofed_header_chain": "1.2.3.4, 5.6.7.8, 198.51.100.42",
+    "evasion_attempt_header": "99.88.77.66, 11.22.33.44, 198.51.100.42",
+    "evasion_status": 429,
+    "evasion_prevented": true,
+    "multihop_trusted_proxy_tested": true,
+    "multihop_resolved_ip": "198.51.100.77",
+    "ip_isolation_verified": true
+  },
+  "probe2_high_concurrency": {
+    "probe": "High-Concurrency Race Condition Defense",
+    "passed": true,
+    "total_requests": 100,
+    "bucket_capacity": 10,
+    "allowed_count": 10,
+    "rejected_count": 90,
+    "overflow_count": 0,
+    "zero_race_conditions_verified": true,
+    "allowed_latency_stats_ms": {
+      "min": 69.222,
+      "p50": 109.001,
+      "p90": 182.35,
+      "p99": 182.35,
+      "max": 182.35,
+      "avg": 111.274
+    },
+    "rejected_latency_stats_ms": {
+      "min": 105.45,
+      "p50": 187.54,
+      "p90": 234.719,
+      "p99": 245.431,
+      "max": 245.431,
+      "avg": 184.824
+    },
+    "server_rejection_latency_stats_ms": {
+      "min": 0.036,
+      "p50": 0.106,
+      "p90": 0.19,
+      "p99": 1.942,
+      "max": 1.942,
+      "avg": 0.141
+    }
+  },
+  "probe3_failover_degradation": {
+    "probe": "Failover Graceful Degradation",
+    "passed": true,
+    "fail_open_configured": true,
+    "tested_degraded_requests": 20,
+    "degraded_success_count": 20,
+    "degraded_header_emitted": true,
+    "api_crash_occurred": false,
+    "recovery_verified": true
+  }
+}

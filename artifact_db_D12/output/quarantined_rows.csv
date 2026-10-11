@@ -1,0 +1,2 @@
+id,sku,name,price,stock,category,warehouse_id,created_at,quarantine_reason
+corrupted-uuid-row-250000,SKU-05-0250000,Titanium Drive Mod-750,INVALID_PRICE_ABC,3854,Safety Equipment,WH-EAST-01,2026-01-17T10:00:00Z,INVALID_UUID_AND_INVALID_PRICE

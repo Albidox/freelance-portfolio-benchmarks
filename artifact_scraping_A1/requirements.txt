@@ -1,0 +1,6 @@
+scrapling>=0.2
+pydantic>=2.0
+pyarrow>=14.0
+openpyxl>=3.1
+beautifulsoup4>=4.12
+requests>=2.31

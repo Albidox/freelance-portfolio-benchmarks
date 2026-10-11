@@ -1,0 +1,50 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "Hermes Byzantine Auditor",
+          "rules": [
+            {
+              "id": "ROLE_COMPLIANCE",
+              "name": "RoleBoundaryCompliance",
+              "shortDescription": { "text": "Specialist remained in designated jurisdiction." }
+            },
+            {
+              "id": "ZERO_DEFECT_SEC",
+              "name": "ZeroDefectSecurity",
+              "shortDescription": { "text": "No critical vulnerabilities or race conditions." }
+            },
+            {
+              "id": "DATA_PROVENANCE",
+              "name": "LiveNetworkProvenance",
+              "shortDescription": { "text": "Artifact was sourced from live external network." }
+            }
+          ]
+        }
+      },
+      "results": [
+        {
+          "ruleId": "ROLE_COMPLIANCE",
+          "level": "none",
+          "message": { "text": "Role boundary compliance verified. Orchestrator did not execute inline domain work. Implementation executed cleanly by target specialist." },
+          "locations": [{"physicalLocation": {"artifactLocation": {"uri": "scraper.py"}}}]
+        },
+        {
+          "ruleId": "ZERO_DEFECT_SEC",
+          "level": "none",
+          "message": { "text": "Zero unhandled exceptions and no detected injection vectors. Cryptographic checksums valid." },
+          "locations": [{"physicalLocation": {"artifactLocation": {"uri": "scraper.py"}, "region": {"startLine": 1, "endLine": 182}}}]
+        },
+        {
+          "ruleId": "DATA_PROVENANCE",
+          "level": "none",
+          "message": { "text": "1,000 product records explicitly fetched from 50 pages via books.toscrape.com, matching logged SHA-256 artifacts." },
+          "locations": [{"physicalLocation": {"artifactLocation": {"uri": "output/run_log.txt"}}}]
+        }
+      ]
+    }
+  ]
+}

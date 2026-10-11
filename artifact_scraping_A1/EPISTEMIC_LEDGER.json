@@ -1,0 +1,76 @@
+{
+  "schema_version": "1.0",
+  "project": "artifact_scraping_A1",
+  "task": "t_07efdb2c",
+  "last_updated": "2026-10-10T00:55:00+05:30",
+  "verified_claims": [
+    {
+      "id": "V-01",
+      "topic": "Excel Dashboard Typography & Grid Alignment",
+      "canonical_url": "https://bigexcelenergy.com/excel-dashboard-design-principles/",
+      "verbatim_quotation": "choose one clean typeface (two at most), set a deliberate size scale (big for KPIs, medium for headings, small for labels) and format numbers consistently (same decimals, thousands separators, right-aligned in columns). Add padding inside every card.",
+      "status": "verified",
+      "relevance": "Direct design mandate for multi-tier typography in generated client workbooks."
+    },
+    {
+      "id": "V-02",
+      "topic": "Color Usage as Signal vs Decoration in Spreadsheets",
+      "canonical_url": "https://bigexcelenergy.com/excel-dashboard-design-principles/",
+      "verbatim_quotation": "set a column-and-gutter grid and snap every element to it, so card edges, chart edges, and text baselines line up... Not that: elements floating a few pixels off from each other. The eye notices misalignment even when it can't name it, and it quietly undermines trust in the data.",
+      "status": "verified",
+      "relevance": "Underpins client psychology of perceived data integrity and quality."
+    },
+    {
+      "id": "V-03",
+      "topic": "Corporate Slate & Executive Color Palettes",
+      "canonical_url": "https://bigexcelenergy.com/excel-dashboard-color-palette/",
+      "verbatim_quotation": "01 Corporate Blue Executive, finance, and general business reporting It reads like a report, not a spaceship: a neutral page, one reliable focal blue, and no decorative rainbow. Canvas #F5F7FA Surface #FFFFFF Text #172033 Muted #667085 Accent #2563EB Support #0F2A4A Positive #1E8E5A Warning #B7791F",
+      "status": "verified",
+      "relevance": "Primary color tokens for Corporate Slate and Fintech Navy Excel variants."
+    },
+    {
+      "id": "V-04",
+      "topic": "Single-File Standalone HTML Dashboard Pattern",
+      "canonical_url": "https://raw.githubusercontent.com/d-padmanabhan/agent-engineering-handbook/main/skills/single-file-dashboard/SKILL.md",
+      "verbatim_quotation": "One file. Zero dependencies. No CDN, no remote scripts, no web fonts, no images. Inlined CSS, inlined JS, inlined data, inlined SVG.",
+      "status": "verified",
+      "relevance": "Governs the architecture of all 5 interactive HTML preview variants."
+    },
+    {
+      "id": "V-05",
+      "topic": "HTML Sanitization & Offline Resilience",
+      "canonical_url": "https://raw.githubusercontent.com/d-padmanabhan/agent-engineering-handbook/main/skills/single-file-dashboard/SKILL.md",
+      "verbatim_quotation": "Escape user content. Every string pulled from data must be HTML-escaped. Never bypass. Renders identically offline. Test by disabling network; the dashboard must look unchanged.",
+      "status": "verified",
+      "relevance": "Adversarial prevention of XSS vulnerabilities and CDN-blocking failures in corporate email/airgap."
+    },
+    {
+      "id": "V-06",
+      "topic": "Excel Header Freezing and Number Formatting",
+      "canonical_url": "https://www.exceldemy.com/5-formatting-tricks-that-instantly-make-your-excel-sheets-look-professional/",
+      "verbatim_quotation": "Freeze your header row (View -> Freeze Panes -> Freeze Top Row) so formatting payoff remains visible while scrolling. Select cells with currency data. Go to the Home tab >> select Currency or Accounting from the Number group. Set decimal places to 2.",
+      "status": "verified",
+      "relevance": "Mandates freeze_panes = 'A2' and native currency number_format in openpyxl."
+    },
+    {
+      "id": "V-07",
+      "topic": "openpyxl Table Uniqueness and Header Constraints",
+      "canonical_url": "https://openpyxl.readthedocs.io/en/stable/worksheet_tables.html",
+      "verbatim_quotation": "Table names must be unique within a workbook. By default tables are created with a header from the first row and filters for all the columns and table headers and column headings must always contain strings.",
+      "status": "verified",
+      "relevance": "Prevents workbook corruption caused by duplicate or malformed table definitions in openpyxl."
+    }
+  ],
+  "unresolved_gaps": [
+    {
+      "id": "U-01",
+      "gap": "Evaluation of client rendering fidelity across Microsoft Excel desktop vs LibreOffice Calc vs Google Sheets for custom openpyxl theme fills.",
+      "impact": "Low to moderate; standard ARGB hex fills and basic borders render identically across modern spreadsheet software."
+    },
+    {
+      "id": "U-02",
+      "gap": "Empirical memory consumption footprint of client-side DOM rendering 10,000+ rows vs 1,000 rows in mobile Safari.",
+      "impact": "Addressed by introducing client-side pagination (25/50/100 rows per page) in HTML variants."
+    }
+  ]
+}

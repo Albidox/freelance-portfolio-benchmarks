@@ -1,0 +1,13 @@
+TRANSFORMATION AUDIT:
+- Customer.java: javax.persistence.* -> jakarta.persistence.* (8 annotations)
+- Customer.java: javax.validation.constraints.* -> jakarta.validation.constraints.* (3 annotations)
+- Customer.java: javax.sql.DataSource -> UNTOUCHED (Standard Library preserved)
+- Product.java: javax.persistence.* -> jakarta.persistence.* (6 annotations)
+- OrderEntity.java: javax.persistence.* -> jakarta.persistence.* (9 annotations)
+- Invoice.java: javax.persistence.* -> jakarta.persistence.* (5 annotations)
+- AuditLog.java: javax.annotation.* -> jakarta.annotation.* (2 annotations)
+TOTAL MIGRATED STATEMENTS: 33 statements across 5 files
+MANUAL EDITS REQUIRED: 0
+AST ENGINE: OpenRewrite 8.40.2 (rewrite-maven-plugin 5.45.0)
+RECIPE: org.openrewrite.java.migrate.jakarta.JavaxMigrationToJakarta
+EXECUTION MODE: Lossless Semantic Tree (LST)

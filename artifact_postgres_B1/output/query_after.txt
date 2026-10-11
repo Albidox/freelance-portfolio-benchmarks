@@ -1,0 +1,20 @@
+                                                                                    QUERY PLAN                                                                                     
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ GroupAggregate  (cost=750.19..902.20 rows=6756 width=40) (actual time=3.652..5.307 rows=91.00 loops=1)
+   Group Key: (date_trunc('day'::text, created_at))
+   Buffers: shared hit=48
+   ->  Sort  (cost=750.19..767.08 rows=6756 width=28) (actual time=3.640..3.888 rows=6814.00 loops=1)
+         Sort Key: (date_trunc('day'::text, created_at)) DESC
+         Sort Method: quicksort  Memory: 512kB
+         Buffers: shared hit=48
+         ->  Index Only Scan using idx_tenant_transactions_covering on tenant_transactions  (cost=0.43..320.44 rows=6756 width=28) (actual time=0.111..2.511 rows=6814.00 loops=1)
+               Index Cond: ((tenant_id = 'a1b2c3d4-0000-0000-0000-000000000001'::uuid) AND (created_at >= (now() - '90 days'::interval)))
+               Heap Fetches: 0
+               Index Searches: 1
+               Buffers: shared hit=45
+ Planning:
+   Buffers: shared hit=140
+ Planning Time: 3.170 ms
+ Execution Time: 5.604 ms
+(16 rows)
+

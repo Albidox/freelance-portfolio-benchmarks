@@ -1,0 +1,187 @@
+{
+  "artifact_id": "D9",
+  "round": "R1",
+  "service": "API Rate Limiter via Token Bucket and Bucket4j",
+  "timestamp_epoch": 1791692704.2519064,
+  "anonymous_load_test": {
+    "test_name": "anonymous_rate_limit_load_test",
+    "total_requests": 50,
+    "allowed_requests": 10,
+    "rejected_requests": 40,
+    "expected_allowed": 10,
+    "expected_rejected": 40,
+    "quota_enforced_strictly": true,
+    "rejection_latency_target_ms": 1.0,
+    "rejection_latency_server_avg_ms": 0.127,
+    "rejection_latency_server_p99_ms": 0.841,
+    "rejection_latency_client_avg_ms": 3.48,
+    "headers_rfc6585_verified": true,
+    "sample_requests": [
+      {
+        "seq": 1,
+        "status": 200,
+        "client_latency_ms": 5.69,
+        "limit": "10",
+        "remaining": "9",
+        "retry_after_seconds": null,
+        "rfc_retry_after": null,
+        "server_rejection_latency_ms": null
+      },
+      {
+        "seq": 2,
+        "status": 200,
+        "client_latency_ms": 3.587,
+        "limit": "10",
+        "remaining": "8",
+        "retry_after_seconds": null,
+        "rfc_retry_after": null,
+        "server_rejection_latency_ms": null
+      },
+      {
+        "seq": 3,
+        "status": 200,
+        "client_latency_ms": 3.966,
+        "limit": "10",
+        "remaining": "7",
+        "retry_after_seconds": null,
+        "rfc_retry_after": null,
+        "server_rejection_latency_ms": null
+      },
+      {
+        "seq": 4,
+        "status": 200,
+        "client_latency_ms": 5.531,
+        "limit": "10",
+        "remaining": "6",
+        "retry_after_seconds": null,
+        "rfc_retry_after": null,
+        "server_rejection_latency_ms": null
+      },
+      {
+        "seq": 5,
+        "status": 200,
+        "client_latency_ms": 4.381,
+        "limit": "10",
+        "remaining": "5",
+        "retry_after_seconds": null,
+        "rfc_retry_after": null,
+        "server_rejection_latency_ms": null
+      },
+      {
+        "seq": 6,
+        "status": 200,
+        "client_latency_ms": 3.46,
+        "limit": "10",
+        "remaining": "4",
+        "retry_after_seconds": null,
+        "rfc_retry_after": null,
+        "server_rejection_latency_ms": null
+      },
+      {
+        "seq": 7,
+        "status": 200,
+        "client_latency_ms": 4.197,
+        "limit": "10",
+        "remaining": "3",
+        "retry_after_seconds": null,
+        "rfc_retry_after": null,
+        "server_rejection_latency_ms": null
+      },
+      {
+        "seq": 8,
+        "status": 200,
+        "client_latency_ms": 6.151,
+        "limit": "10",
+        "remaining": "2",
+        "retry_after_seconds": null,
+        "rfc_retry_after": null,
+        "server_rejection_latency_ms": null
+      },
+      {
+        "seq": 9,
+        "status": 200,
+        "client_latency_ms": 3.26,
+        "limit": "10",
+        "remaining": "1",
+        "retry_after_seconds": null,
+        "rfc_retry_after": null,
+        "server_rejection_latency_ms": null
+      },
+      {
+        "seq": 10,
+        "status": 200,
+        "client_latency_ms": 2.926,
+        "limit": "10",
+        "remaining": "0",
+        "retry_after_seconds": null,
+        "rfc_retry_after": null,
+        "server_rejection_latency_ms": null
+      },
+      {
+        "seq": 11,
+        "status": 429,
+        "client_latency_ms": 3.714,
+        "limit": "10",
+        "remaining": "0",
+        "retry_after_seconds": "5",
+        "rfc_retry_after": "5",
+        "server_rejection_latency_ms": 0.16
+      },
+      {
+        "seq": 12,
+        "status": 429,
+        "client_latency_ms": 4.193,
+        "limit": "10",
+        "remaining": "0",
+        "retry_after_seconds": "5",
+        "rfc_retry_after": "5",
+        "server_rejection_latency_ms": 0.149
+      },
+      {
+        "seq": 13,
+        "status": 429,
+        "client_latency_ms": 4.158,
+        "limit": "10",
+        "remaining": "0",
+        "retry_after_seconds": "5",
+        "rfc_retry_after": "5",
+        "server_rejection_latency_ms": 0.104
+      },
+      {
+        "seq": 14,
+        "status": 429,
+        "client_latency_ms": 2.412,
+        "limit": "10",
+        "remaining": "0",
+        "retry_after_seconds": "5",
+        "rfc_retry_after": "5",
+        "server_rejection_latency_ms": 0.093
+      },
+      {
+        "seq": 15,
+        "status": 429,
+        "client_latency_ms": 2.297,
+        "limit": "10",
+        "remaining": "0",
+        "retry_after_seconds": "5",
+        "rfc_retry_after": "5",
+        "server_rejection_latency_ms": 0.082
+      }
+    ]
+  },
+  "authenticated_tier_test": {
+    "test_name": "authenticated_tier_verification",
+    "api_key": "prod-tier-alpha-key-9981",
+    "tested_requests": 20,
+    "allowed_requests": 20,
+    "quota_capacity": 100,
+    "final_remaining_tokens": 80,
+    "verified": true
+  },
+  "compliance_summary": {
+    "strictly_enforces_10_req_per_min": true,
+    "server_rejection_latency_under_1ms": true,
+    "rfc_6585_headers_present": true,
+    "multi_tier_supported": true
+  }
+}

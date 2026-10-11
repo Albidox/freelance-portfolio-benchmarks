@@ -1,0 +1,74 @@
+{
+  "version": "2.1.0",
+  "$schema": "http://json.schemastore.org/sarif-2.1.0-rtm.5",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "Hermes Byzantine Auditor",
+          "informationUri": "https://hermes-agent.nousresearch.com/docs",
+          "rules": [
+            {
+              "id": "SEC-001",
+              "name": "Zero-Defect Security",
+              "shortDescription": {"text": "Checks for OWASP top 10 and AST execution risks."}
+            },
+            {
+              "id": "ROLE-001",
+              "name": "Role Boundary Compliance",
+              "shortDescription": {"text": "Enforces strict domain specialization."}
+            },
+            {
+              "id": "NET-001",
+              "name": "Live Network Provenance",
+              "shortDescription": {"text": "Checks for actual live network requests instead of local spoofing."}
+            }
+          ]
+        }
+      },
+      "results": [
+        {
+          "ruleId": "SEC-001",
+          "level": "note",
+          "message": {"text": "AST Correctness verified. No malicious built-ins (eval/exec) or risky subprocess/shell execution found. Cryptographic hashes match on disk."},
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {"uri": "scraper.py"}
+              }
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {"uri": "probe_tables.py"}
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "ROLE-001",
+          "level": "note",
+          "message": {"text": "No inline orchestrator logic found in Python workers. Role bounds respected."},
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {"uri": "probe_tables.py"}
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "NET-001",
+          "level": "note",
+          "message": {"text": "Confirmed live remote fetching using requests, scrapling, and playwright. No spoofed payload playback found."},
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {"uri": "probe_tables.py"}
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

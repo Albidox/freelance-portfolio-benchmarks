@@ -1,0 +1,24 @@
+{
+  "id": "drift-env-001",
+  "name": "E-Commerce API Mutated Environment",
+  "values": [
+    {
+      "key": "baseUrl",
+      "value": "http://127.0.0.1:8001",
+      "type": "default",
+      "enabled": true
+    },
+    {
+      "key": "authToken",
+      "value": "",
+      "type": "default",
+      "enabled": true
+    },
+    {
+      "key": "productId",
+      "value": "prod_001",
+      "type": "default",
+      "enabled": true
+    }
+  ]
+}

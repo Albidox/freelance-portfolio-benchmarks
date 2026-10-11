@@ -1,0 +1,418 @@
+openapi: 3.0.3
+info:
+  title: E-Commerce Checkout and Catalog API
+  version: 1.0.0
+  description: Production-grade REST API specification for authentication, product catalog, cart management, and order checkout flows.
+servers:
+  - url: http://127.0.0.1:8000
+    description: Local mock server
+
+paths:
+  /api/v1/auth/login:
+    post:
+      summary: User authentication
+      description: Authenticates user credentials and issues a JWT bearer token.
+      operationId: loginUser
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginRequest'
+      responses:
+        '200':
+          description: Authentication successful
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LoginResponse'
+        '401':
+          description: Invalid credentials
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+
+  /api/v1/products:
+    get:
+      summary: List catalog products
+      description: Returns a paginated list of catalog products with stock information.
+      operationId: listProducts
+      parameters:
+        - name: limit
+          in: query
+          required: false
+          schema:
+            type: integer
+            default: 10
+        - name: category
+          in: query
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Product catalog retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductListResponse'
+        '400':
+          description: Invalid query parameters
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+
+  /api/v1/products/{id}:
+    get:
+      summary: Get product details
+      description: Retrieves detailed attributes for a specific product by ID.
+      operationId: getProductById
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Product details retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+        '404':
+          description: Product not found
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+
+  /api/v1/cart/items:
+    post:
+      summary: Add item to shopping cart
+      description: Appends a product item and quantity to the active user cart.
+      operationId: addCartItem
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CartItemRequest'
+      responses:
+        '200':
+          description: Item added to cart successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CartResponse'
+        '400':
+          description: Invalid request payload
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '401':
+          description: Unauthorized access
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '403':
+          description: Forbidden access
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+
+  /api/v1/orders/checkout:
+    post:
+      summary: Checkout active cart
+      description: Converts active cart into a confirmed order.
+      operationId: checkoutOrder
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CheckoutRequest'
+      responses:
+        '200':
+          description: Order confirmed and processed
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrderResponse'
+        '400':
+          description: Invalid checkout parameters
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '401':
+          description: Unauthorized access
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '403':
+          description: Forbidden access
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+  schemas:
+    ProblemDetails:
+      type: object
+      description: RFC 7807 Problem Details representation
+      required:
+        - type
+        - title
+        - status
+        - detail
+        - instance
+      properties:
+        type:
+          type: string
+          example: https://api.example.com/errors/invalid-credentials
+        title:
+          type: string
+          example: Invalid Credentials
+        status:
+          type: integer
+          example: 401
+        detail:
+          type: string
+          example: The provided email or password was incorrect.
+        instance:
+          type: string
+          example: /api/v1/auth/login
+
+    LoginRequest:
+      type: object
+      required:
+        - email
+        - password
+      properties:
+        email:
+          type: string
+          format: email
+          example: user@example.com
+        password:
+          type: string
+          format: password
+          example: SecurePassword123!
+
+    LoginResponse:
+      type: object
+      required:
+        - access_token
+        - token_type
+        - expires_in
+        - user_id
+      properties:
+        access_token:
+          type: string
+          example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.e30.mocktoken
+        token_type:
+          type: string
+          example: Bearer
+        expires_in:
+          type: integer
+          example: 3600
+        user_id:
+          type: string
+          example: usr_8921a
+
+    Product:
+      type: object
+      required:
+        - id
+        - name
+        - price
+        - stock
+        - category
+        - sku
+        - currency
+      properties:
+        id:
+          type: string
+          example: prod_001
+        name:
+          type: string
+          example: Mechanical Gaming Keyboard
+        price:
+          type: number
+          format: float
+          example: 129.99
+        stock:
+          type: integer
+          example: 42
+        category:
+          type: string
+          example: Electronics
+        sku:
+          type: string
+          example: KB-MECH-RGB-01
+        currency:
+          type: string
+          example: USD
+
+    ProductListResponse:
+      type: object
+      required:
+        - items
+        - total
+        - page
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Product'
+        total:
+          type: integer
+          example: 1
+        page:
+          type: integer
+          example: 1
+
+    CartItem:
+      type: object
+      required:
+        - product_id
+        - name
+        - unit_price
+        - quantity
+        - subtotal
+      properties:
+        product_id:
+          type: string
+          example: prod_001
+        name:
+          type: string
+          example: Mechanical Gaming Keyboard
+        unit_price:
+          type: number
+          example: 129.99
+        quantity:
+          type: integer
+          example: 2
+        subtotal:
+          type: number
+          example: 259.98
+
+    CartItemRequest:
+      type: object
+      required:
+        - product_id
+        - quantity
+      properties:
+        product_id:
+          type: string
+          example: prod_001
+        quantity:
+          type: integer
+          minimum: 1
+          example: 2
+
+    CartResponse:
+      type: object
+      required:
+        - cart_id
+        - items
+        - total_items
+        - subtotal
+      properties:
+        cart_id:
+          type: string
+          example: cart_9901
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/CartItem'
+        total_items:
+          type: integer
+          example: 2
+        subtotal:
+          type: number
+          example: 259.98
+
+    ShippingAddress:
+      type: object
+      required:
+        - street
+        - city
+        - postal_code
+        - country
+      properties:
+        street:
+          type: string
+          example: 100 Market St
+        city:
+          type: string
+          example: San Francisco
+        postal_code:
+          type: string
+          example: 94105
+        country:
+          type: string
+          example: USA
+
+    CheckoutRequest:
+      type: object
+      required:
+        - cart_id
+        - shipping_address
+        - payment_method
+      properties:
+        cart_id:
+          type: string
+          example: cart_9901
+        shipping_address:
+          $ref: '#/components/schemas/ShippingAddress'
+        payment_method:
+          type: string
+          example: credit_card
+
+    OrderResponse:
+      type: object
+      required:
+        - order_id
+        - cart_id
+        - status
+        - total_amount
+        - payment_status
+        - created_at
+      properties:
+        order_id:
+          type: string
+          example: ord_77102
+        cart_id:
+          type: string
+          example: cart_9901
+        status:
+          type: string
+          example: confirmed
+        total_amount:
+          type: number
+          example: 259.98
+        payment_status:
+          type: string
+          example: paid
+        created_at:
+          type: string
+          format: date-time
+          example: 2026-10-11T12:00:00Z

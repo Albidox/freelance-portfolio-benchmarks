@@ -1,0 +1,46 @@
+{
+  "artifact": "D12",
+  "environment": {
+    "database": "PostgreSQL 18 (Native Win64)",
+    "schema": "d12_copy_sandbox",
+    "dataset_rows": 500000
+  },
+  "results": {
+    "single_row_insert": {
+      "method": "Single-Row Standard INSERT",
+      "rows_tested": 5000,
+      "elapsed_seconds": 0.6962,
+      "throughput_rows_per_sec": 7181.81,
+      "initial_rss_mb": 38.73,
+      "final_rss_mb": 38.76,
+      "rss_delta_mb": 0.03
+    },
+    "batch_execute_values": {
+      "method": "Batch INSERT via execute_values (page_size=1000)",
+      "rows_tested": 25000,
+      "elapsed_seconds": 0.7382,
+      "throughput_rows_per_sec": 33867.49,
+      "initial_rss_mb": 38.77,
+      "final_rss_mb": 40.21,
+      "rss_delta_mb": 1.44
+    },
+    "streaming_copy_stdin": {
+      "method": "Streaming COPY FROM STDIN (cursor.copy_expert)",
+      "rows_tested": 500000,
+      "elapsed_seconds": 4.2344,
+      "throughput_rows_per_sec": 118080.79,
+      "mb_per_second": 15.15,
+      "initial_rss_mb": 39.56,
+      "peak_rss_mb": 39.59,
+      "final_rss_mb": 39.59,
+      "rss_delta_mb": 0.03
+    }
+  },
+  "comparisons": {
+    "copy_vs_single_speedup_factor": "16.44x",
+    "copy_vs_batch_speedup_factor": "3.49x",
+    "extrapolated_500k_single_insert_seconds": 69.62,
+    "extrapolated_500k_batch_insert_seconds": 14.76,
+    "actual_500k_streaming_copy_seconds": 4.2344
+  }
+}

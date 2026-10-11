@@ -1,0 +1,62 @@
+--- old_SecurityConfig.java	2026-10-10 05:06:57.326606700 +0530
++++ src/main/java/com/example/security/SecurityConfig.java	2026-10-10 05:06:05.548236700 +0530
+@@ -1,21 +1,49 @@
+ package com.example.security;
+ 
++import org.springframework.context.annotation.Bean;
+ import org.springframework.context.annotation.Configuration;
+ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
++import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
++import org.springframework.security.core.userdetails.User;
++import org.springframework.security.core.userdetails.UserDetails;
++import org.springframework.security.core.userdetails.UserDetailsService;
++import org.springframework.security.provisioning.InMemoryUserDetailsManager;
++import org.springframework.security.web.SecurityFilterChain;
++
++import static org.springframework.security.config.Customizer.withDefaults;
+ 
+ @Configuration
+-public class SecurityConfig extends WebSecurityConfigurerAdapter {
++@EnableWebSecurity
++public class SecurityConfig {
+ 
+-    @Override
+-    protected void configure(HttpSecurity http) throws Exception {
++    @Bean
++    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+         http
+-            .authorizeRequests()
+-                .antMatchers("/api/public/**").permitAll()
+-                .antMatchers("/api/user/**").hasRole("USER")
+-                .antMatchers("/api/admin/**").hasRole("ADMIN")
++            .authorizeHttpRequests(authz -> authz
++                .requestMatchers("/api/public/**").permitAll()
++                .requestMatchers("/api/user/**").hasRole("USER")
++                .requestMatchers("/api/admin/**").hasRole("ADMIN")
+                 .anyRequest().authenticated()
+-                .and()
+-            .httpBasic();
++            )
++            .httpBasic(withDefaults());
++            
++        return http.build();
++    }
++
++    @Bean
++    public UserDetailsService userDetailsService() {
++        UserDetails user = User.withDefaultPasswordEncoder()
++            .username("user")
++            .password("password")
++            .roles("USER")
++            .build();
++            
++        UserDetails admin = User.withDefaultPasswordEncoder()
++            .username("admin")
++            .password("password")
++            .roles("ADMIN", "USER")
++            .build();
++            
++        return new InMemoryUserDetailsManager(user, admin);
+     }
+ }

@@ -1,0 +1,62 @@
+=== HIBERNATE N+1 QUERY BASELINE VERIFICATION ===
+Endpoint: GET /api/users
+Status: 200 OK
+Users Count: 50
+Orders Hydrated: 250
+Total SQL Queries Fired: 51
+Pathology: 1 root query (SELECT * FROM users) + 50 lazy queries (SELECT * FROM orders WHERE user_id = ?)
+
+--- Captured Queries ---
+[QUERY-1] select u1_0.id,u1_0.email,u1_0.name from users u1_0
+[QUERY-2] select o1_0.user_id,o1_0.id,o1_0.amount,o1_0.status from orders o1_0 where o1_0.user_id=?
+[QUERY-3] select o1_0.user_id,o1_0.id,o1_0.amount,o1_0.status from orders o1_0 where o1_0.user_id=?
+[QUERY-4] select o1_0.user_id,o1_0.id,o1_0.amount,o1_0.status from orders o1_0 where o1_0.user_id=?
+[QUERY-5] select o1_0.user_id,o1_0.id,o1_0.amount,o1_0.status from orders o1_0 where o1_0.user_id=?
+[QUERY-6] select o1_0.user_id,o1_0.id,o1_0.amount,o1_0.status from orders o1_0 where o1_0.user_id=?
+[QUERY-7] select o1_0.user_id,o1_0.id,o1_0.amount,o1_0.status from orders o1_0 where o1_0.user_id=?
+[QUERY-8] select o1_0.user_id,o1_0.id,o1_0.amount,o1_0.status from orders o1_0 where o1_0.user_id=?
+[QUERY-9] select o1_0.user_id,o1_0.id,o1_0.amount,o1_0.status from orders o1_0 where o1_0.user_id=?
+[QUERY-10] select o1_0.user_id,o1_0.id,o1_0.amount,o1_0.status from orders o1_0 where o1_0.user_id=?
+[QUERY-11] select o1_0.user_id,o1_0.id,o1_0.amount,o1_0.status from orders o1_0 where o1_0.user_id=?
+[QUERY-12] select o1_0.user_id,o1_0.id,o1_0.amount,o1_0.status from orders o1_0 where o1_0.user_id=?
+[QUERY-13] select o1_0.user_id,o1_0.id,o1_0.amount,o1_0.status from orders o1_0 where o1_0.user_id=?
+[QUERY-14] select o1_0.user_id,o1_0.id,o1_0.amount,o1_0.status from orders o1_0 where o1_0.user_id=?
+[QUERY-15] select o1_0.user_id,o1_0.id,o1_0.amount,o1_0.status from orders o1_0 where o1_0.user_id=?
+[QUERY-16] select o1_0.user_id,o1_0.id,o1_0.amount,o1_0.status from orders o1_0 where o1_0.user_id=?
+[QUERY-17] select o1_0.user_id,o1_0.id,o1_0.amount,o1_0.status from orders o1_0 where o1_0.user_id=?
+[QUERY-18] select o1_0.user_id,o1_0.id,o1_0.amount,o1_0.status from orders o1_0 where o1_0.user_id=?
+[QUERY-19] select o1_0.user_id,o1_0.id,o1_0.amount,o1_0.status from orders o1_0 where o1_0.user_id=?
+[QUERY-20] select o1_0.user_id,o1_0.id,o1_0.amount,o1_0.status from orders o1_0 where o1_0.user_id=?
+[QUERY-21] select o1_0.user_id,o1_0.id,o1_0.amount,o1_0.status from orders o1_0 where o1_0.user_id=?
+[QUERY-22] select o1_0.user_id,o1_0.id,o1_0.amount,o1_0.status from orders o1_0 where o1_0.user_id=?
+[QUERY-23] select o1_0.user_id,o1_0.id,o1_0.amount,o1_0.status from orders o1_0 where o1_0.user_id=?
+[QUERY-24] select o1_0.user_id,o1_0.id,o1_0.amount,o1_0.status from orders o1_0 where o1_0.user_id=?
+[QUERY-25] select o1_0.user_id,o1_0.id,o1_0.amount,o1_0.status from orders o1_0 where o1_0.user_id=?
+[QUERY-26] select o1_0.user_id,o1_0.id,o1_0.amount,o1_0.status from orders o1_0 where o1_0.user_id=?
+[QUERY-27] select o1_0.user_id,o1_0.id,o1_0.amount,o1_0.status from orders o1_0 where o1_0.user_id=?
+[QUERY-28] select o1_0.user_id,o1_0.id,o1_0.amount,o1_0.status from orders o1_0 where o1_0.user_id=?
+[QUERY-29] select o1_0.user_id,o1_0.id,o1_0.amount,o1_0.status from orders o1_0 where o1_0.user_id=?
+[QUERY-30] select o1_0.user_id,o1_0.id,o1_0.amount,o1_0.status from orders o1_0 where o1_0.user_id=?
+[QUERY-31] select o1_0.user_id,o1_0.id,o1_0.amount,o1_0.status from orders o1_0 where o1_0.user_id=?
+[QUERY-32] select o1_0.user_id,o1_0.id,o1_0.amount,o1_0.status from orders o1_0 where o1_0.user_id=?
+[QUERY-33] select o1_0.user_id,o1_0.id,o1_0.amount,o1_0.status from orders o1_0 where o1_0.user_id=?
+[QUERY-34] select o1_0.user_id,o1_0.id,o1_0.amount,o1_0.status from orders o1_0 where o1_0.user_id=?
+[QUERY-35] select o1_0.user_id,o1_0.id,o1_0.amount,o1_0.status from orders o1_0 where o1_0.user_id=?
+[QUERY-36] select o1_0.user_id,o1_0.id,o1_0.amount,o1_0.status from orders o1_0 where o1_0.user_id=?
+[QUERY-37] select o1_0.user_id,o1_0.id,o1_0.amount,o1_0.status from orders o1_0 where o1_0.user_id=?
+[QUERY-38] select o1_0.user_id,o1_0.id,o1_0.amount,o1_0.status from orders o1_0 where o1_0.user_id=?
+[QUERY-39] select o1_0.user_id,o1_0.id,o1_0.amount,o1_0.status from orders o1_0 where o1_0.user_id=?
+[QUERY-40] select o1_0.user_id,o1_0.id,o1_0.amount,o1_0.status from orders o1_0 where o1_0.user_id=?
+[QUERY-41] select o1_0.user_id,o1_0.id,o1_0.amount,o1_0.status from orders o1_0 where o1_0.user_id=?
+[QUERY-42] select o1_0.user_id,o1_0.id,o1_0.amount,o1_0.status from orders o1_0 where o1_0.user_id=?
+[QUERY-43] select o1_0.user_id,o1_0.id,o1_0.amount,o1_0.status from orders o1_0 where o1_0.user_id=?
+[QUERY-44] select o1_0.user_id,o1_0.id,o1_0.amount,o1_0.status from orders o1_0 where o1_0.user_id=?
+[QUERY-45] select o1_0.user_id,o1_0.id,o1_0.amount,o1_0.status from orders o1_0 where o1_0.user_id=?
+[QUERY-46] select o1_0.user_id,o1_0.id,o1_0.amount,o1_0.status from orders o1_0 where o1_0.user_id=?
+[QUERY-47] select o1_0.user_id,o1_0.id,o1_0.amount,o1_0.status from orders o1_0 where o1_0.user_id=?
+[QUERY-48] select o1_0.user_id,o1_0.id,o1_0.amount,o1_0.status from orders o1_0 where o1_0.user_id=?
+[QUERY-49] select o1_0.user_id,o1_0.id,o1_0.amount,o1_0.status from orders o1_0 where o1_0.user_id=?
+[QUERY-50] select o1_0.user_id,o1_0.id,o1_0.amount,o1_0.status from orders o1_0 where o1_0.user_id=?
+[QUERY-51] select o1_0.user_id,o1_0.id,o1_0.amount,o1_0.status from orders o1_0 where o1_0.user_id=?
+
+CONCLUSION: Hibernate N+1 defect verified. 51 separate database queries executed.

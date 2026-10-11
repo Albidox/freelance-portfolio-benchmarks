@@ -1,0 +1,34 @@
+server:
+  port: 8088
+
+spring:
+  application:
+    name: artifact-webhook-d7
+  threads:
+    virtual:
+      enabled: true
+  datasource:
+    url: jdbc:postgresql://localhost:5433/artifact_d7_db?currentSchema=d7_webhook_sandbox
+    username: postgres
+    password: ""
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 30
+      minimum-idle: 10
+      idle-timeout: 30000
+      connection-timeout: 20000
+      pool-name: WebhookHikariPool
+
+webhook:
+  security:
+    hmac-secret: "webhook-secret-key-prod-d7-secure-2026"
+    tolerance-seconds: 300
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "health,info,metrics"
+  endpoint:
+    health:
+      show-details: always

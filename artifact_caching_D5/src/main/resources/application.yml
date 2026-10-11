@@ -1,0 +1,38 @@
+server:
+  port: 8085
+
+spring:
+  application:
+    name: artifact-caching-d5
+  datasource:
+    url: jdbc:postgresql://localhost:5433/postgres?currentSchema=d5_caching_sandbox
+    username: postgres
+    password: ""
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 20
+      minimum-idle: 5
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        default_schema: d5_caching_sandbox
+        jdbc:
+          lob:
+            non_contextual_creation: true
+    show-sql: false
+
+app:
+  caching:
+    ttl-seconds: 600
+    null-caching-allowed: false
+  simulation:
+    db-latency-ms: 150
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics

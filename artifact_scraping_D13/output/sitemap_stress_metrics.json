@@ -1,0 +1,41 @@
+{
+  "probe_scenario_1_broken_gzip": {
+    "status": "PASS",
+    "sub_sitemaps_discovered": 10,
+    "sub_sitemaps_processed": 9,
+    "sub_sitemaps_failed": 1,
+    "corrupted_archives": [
+      "http://127.0.0.1:18100/sitemaps/sitemap_part_5.xml.gz"
+    ],
+    "total_urls_extracted": 22500,
+    "csv_rows": 22500,
+    "parquet_rows": 22500,
+    "elapsed_seconds": 0.7368
+  },
+  "probe_scenario_2_malformed_xml_unit": {
+    "status": "PASS",
+    "strict_syntax_error_caught": true,
+    "nodes_recovered": 2,
+    "extracted_locs": [
+      "https://example.com/products/item-100",
+      "https://example.com/products/item-101=1"
+    ]
+  },
+  "probe_scenario_2_malformed_xml_e2e": {
+    "status": "PASS",
+    "sub_sitemaps_discovered": 10,
+    "sub_sitemaps_processed": 10,
+    "sub_sitemaps_failed": 0,
+    "total_urls_extracted": 25000,
+    "elapsed_seconds": 0.9012
+  },
+  "probe_scenario_3_rate_limiting": {
+    "status": "PASS",
+    "sub_sitemaps_discovered": 10,
+    "sub_sitemaps_processed": 10,
+    "sub_sitemaps_failed": 0,
+    "rate_limit_retries": 1,
+    "total_urls_extracted": 25000,
+    "elapsed_seconds": 1.5217
+  }
+}

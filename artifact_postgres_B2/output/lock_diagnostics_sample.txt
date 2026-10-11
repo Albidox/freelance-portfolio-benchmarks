@@ -1,0 +1,20 @@
+ blocked_pid | blocked_user | blocking_pid | blocking_user | lock_mode_requested |                        blocked_statement                        |              current_statement_in_blocking_process              
+-------------+--------------+--------------+---------------+---------------------+-----------------------------------------------------------------+-----------------------------------------------------------------
+       20004 | postgres     |        11296 | postgres      | ShareLock           | UPDATE products SET stock_count = stock_count - 1 WHERE id = 42 | UPDATE products SET stock_count = stock_count - 1 WHERE id = 42
+(1 row)
+
+ blocked_pid_tree | blocked_pid | blocker_pid | lock_mode |  wait_duration  |                              query                              
+------------------+-------------+-------------+-----------+-----------------+-----------------------------------------------------------------
+ 20004            |       20004 |       11296 | ShareLock | 00:00:02.044984 | UPDATE products SET stock_count = stock_count - 1 WHERE id = 42
+(1 row)
+
+       table_name       |            constraint_name             |                           fk_definition                            
+------------------------+----------------------------------------+--------------------------------------------------------------------
+ inventory_reservations | inventory_reservations_product_id_fkey | FOREIGN KEY (product_id) REFERENCES products(id)
+ order_line_items       | order_line_items_reservation_id_fkey   | FOREIGN KEY (reservation_id) REFERENCES inventory_reservations(id)
+(2 rows)
+
+ pid | usename | application_name | client_addr | state | duration | query | safe_cancel_command | emergency_terminate_command 
+-----+---------+------------------+-------------+-------+----------+-------+---------------------+-----------------------------
+(0 rows)
+

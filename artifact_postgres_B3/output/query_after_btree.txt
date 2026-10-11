@@ -1,0 +1,14 @@
+                                                                            QUERY PLAN                                                                            
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Limit  (cost=0.43..163.88 rows=50 width=104) (actual time=0.083..0.311 rows=50.00 loops=1)
+   Buffers: shared hit=53
+   ->  Index Scan using idx_audit_events_action_created on audit_events  (cost=0.43..55918.96 rows=17106 width=104) (actual time=0.081..0.305 rows=50.00 loops=1)
+         Index Cond: (((metadata ->> 'action_type'::text) = 'USER_LOGIN'::text) AND (created_at >= (now() - '30 days'::interval)))
+         Index Searches: 1
+         Buffers: shared hit=53
+ Planning:
+   Buffers: shared hit=186
+ Planning Time: 3.552 ms
+ Execution Time: 0.358 ms
+(10 rows)
+

@@ -1,0 +1,40 @@
+{
+  "probe_name": "Dirty Row Quarantine Probe",
+  "task_id": "t_7abdcdec",
+  "artifact_id": "D12",
+  "round": "R2",
+  "dataset": {
+    "file": "inventory_500k_dirty.csv",
+    "file_size_bytes": 67248806,
+    "file_size_mb": 64.13,
+    "total_rows_streamed": 500000
+  },
+  "quarantine_results": {
+    "staging_rows_ingested": 500000,
+    "valid_rows_committed": 499999,
+    "dirty_rows_isolated": 1,
+    "expected_valid_rows": 499999,
+    "expected_dirty_rows": 1,
+    "batch_aborted": false,
+    "quarantine_csv": "output\\quarantined_rows.csv",
+    "sample_quarantined_record": {
+      "id": "corrupted-uuid-row-250000",
+      "price": "INVALID_PRICE_ABC",
+      "reason": "INVALID_UUID_AND_INVALID_PRICE"
+    }
+  },
+  "performance": {
+    "staging_copy_seconds": 0.8968,
+    "validation_and_insert_seconds": 9.7798,
+    "total_pipeline_seconds": 10.6767,
+    "effective_throughput_rows_per_sec": 46831.13
+  },
+  "memory": {
+    "initial_rss_mb": 19.52,
+    "peak_rss_mb": 21.21,
+    "final_rss_mb": 21.21,
+    "target_max_rss_mb": 35.0,
+    "memory_gate_passed": true
+  },
+  "acceptance_criteria_verified": true
+}

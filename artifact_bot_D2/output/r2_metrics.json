@@ -1,0 +1,38 @@
+{
+  "scenario_1_rate_limit": {
+    "scenario": "SC-01_429_RATE_LIMIT",
+    "total_events": 500,
+    "delivered_alerts": 500,
+    "failed_alerts": 0,
+    "rate_limit_hits": 1017,
+    "elapsed_seconds": 12.824,
+    "avg_latency_s": 5.3891,
+    "p95_latency_s": 9.0996,
+    "max_latency_s": 12.821,
+    "status": "PASSED"
+  },
+  "scenario_2_network_dropout": {
+    "scenario": "SC-02_NETWORK_DROPOUT_RECOVERY",
+    "baseline_delivered": 5,
+    "outage_leads_buffered": 20,
+    "total_delivered": 25,
+    "total_failed": 0,
+    "network_errors_handled": 80,
+    "simulated_outage_seconds": 60.0,
+    "status": "PASSED"
+  },
+  "scenario_3_memory_soak": {
+    "scenario": "SC-03_MEMORY_LEAK_SOAK_TEST",
+    "total_ticks": 10000,
+    "unique_recorded": 7000,
+    "duplicates_suppressed": 3000,
+    "lock_timeouts": 0,
+    "peak_rss_mb": 1.46,
+    "final_rss_mb": 1.44,
+    "private_usage_mb": 113.45,
+    "elapsed_seconds": 54.8758,
+    "ticks_per_second": 182.2,
+    "status": "PASSED"
+  },
+  "timestamp": "2026-10-11 05:42:32"
+}

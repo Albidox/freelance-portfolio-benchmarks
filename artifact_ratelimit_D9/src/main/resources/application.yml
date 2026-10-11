@@ -1,0 +1,30 @@
+server:
+  port: 8085
+  shutdown: graceful
+
+spring:
+  application:
+    name: artifact-ratelimit-d9
+  main:
+    banner-mode: console
+
+rate-limiter:
+  enabled: true
+  anonymous-limit: 10
+  authenticated-limit: 100
+  refill-duration-seconds: 60
+  fail-open: true
+  trusted-proxies:
+    - 127.0.0.1
+    - "0:0:0:0:0:0:0:1"
+    - "::1"
+    - 10.0.0.1
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: always

@@ -1,0 +1,94 @@
+{
+  "timestamp_utc": "2026-10-11T06:57:16Z",
+  "artifact_id": "D14",
+  "round": "R2",
+  "status": "PASSED",
+  "fuzzing": {
+    "total_fuzz_payloads": 10000,
+    "quarantined_count": 9700,
+    "valid_count": 300,
+    "uncaught_exceptions": 0,
+    "execution_time_seconds": 0.29,
+    "throughput_payloads_per_second": 34477.11,
+    "mem_start_rss_mb": 29.88,
+    "mem_end_rss_mb": 30.65,
+    "error_distribution": {
+      "value_error": 6041,
+      "string_unicode": 400,
+      "json_decode_error": 400,
+      "string_too_long": 592,
+      "extra_forbidden": 334,
+      "string_type": 334,
+      "missing": 2565,
+      "model_type": 666,
+      "greater_than_equal": 300
+    },
+    "fuzz_quarantine_path": "output/fuzz_quarantined_records.jsonl"
+  },
+  "streaming_memory": {
+    "total_records_streamed": 1000000,
+    "valid_records_count": 849690,
+    "quarantined_records_count": 150310,
+    "execution_time_seconds": 15.7007,
+    "throughput_records_per_second": 63691.28,
+    "initial_rss_mb": 30.66,
+    "peak_rss_mb": 32.84,
+    "final_rss_mb": 30.83,
+    "net_rss_delta_mb": 2.18,
+    "peak_traced_heap_mb": 0.0,
+    "memory_bound_passed": true,
+    "checkpoints": [
+      {
+        "record_index": 1,
+        "rss_mb": 32.68
+      },
+      {
+        "record_index": 100000,
+        "rss_mb": 32.84
+      },
+      {
+        "record_index": 200000,
+        "rss_mb": 32.84
+      },
+      {
+        "record_index": 300000,
+        "rss_mb": 32.84
+      },
+      {
+        "record_index": 400000,
+        "rss_mb": 32.84
+      },
+      {
+        "record_index": 500000,
+        "rss_mb": 32.84
+      },
+      {
+        "record_index": 600000,
+        "rss_mb": 32.84
+      },
+      {
+        "record_index": 700000,
+        "rss_mb": 32.84
+      },
+      {
+        "record_index": 800000,
+        "rss_mb": 32.84
+      },
+      {
+        "record_index": 900000,
+        "rss_mb": 32.84
+      },
+      {
+        "record_index": 1000000,
+        "rss_mb": 32.84
+      }
+    ]
+  },
+  "precision": {
+    "float_equality_failure_proven": true,
+    "decimal_equality_success_proven": true,
+    "float_accumulation_100k_drift": -5e-08,
+    "decimal_accumulation_100k_drift": 0.0,
+    "currency_coercion_tests_passed": 11
+  }
+}

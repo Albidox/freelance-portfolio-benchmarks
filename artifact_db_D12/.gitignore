@@ -1,0 +1,4 @@
+# Large synthetic datasets
+inventory_500k*.csv
+.venv/
+__pycache__/

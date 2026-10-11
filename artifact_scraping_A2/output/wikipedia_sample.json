@@ -1,0 +1,452 @@
+[
+  {
+    "rank": 1,
+    "location": "World",
+    "population": 8232000000,
+    "percentage_of_world": "100%",
+    "date": "13 Jun 2025",
+    "source": "UN projection",
+    "notes": ""
+  },
+  {
+    "rank": 2,
+    "location": "India",
+    "population": 1429404000,
+    "percentage_of_world": "17.3%",
+    "date": "1 Jul 2026",
+    "source": "Official projection",
+    "notes": ""
+  },
+  {
+    "rank": 3,
+    "location": "China",
+    "population": 1404890000,
+    "percentage_of_world": "17.0%",
+    "date": "31 Dec 2025",
+    "source": "Official estimate",
+    "notes": ""
+  },
+  {
+    "rank": 4,
+    "location": "United States",
+    "population": 341784857,
+    "percentage_of_world": "4.1%",
+    "date": "1 Jul 2025",
+    "source": "Official estimate",
+    "notes": ""
+  },
+  {
+    "rank": 5,
+    "location": "Indonesia",
+    "population": 288315089,
+    "percentage_of_world": "3.5%",
+    "date": "31 Dec 2025",
+    "source": "National annual projection",
+    "notes": ""
+  },
+  {
+    "rank": 6,
+    "location": "Pakistan",
+    "population": 241499431,
+    "percentage_of_world": "2.9%",
+    "date": "1 Mar 2023",
+    "source": "2023 census result",
+    "notes": ""
+  },
+  {
+    "rank": 7,
+    "location": "Nigeria",
+    "population": 223800000,
+    "percentage_of_world": "2.7%",
+    "date": "1 Jul 2023",
+    "source": "Official projection",
+    "notes": ""
+  },
+  {
+    "rank": 8,
+    "location": "Brazil",
+    "population": 214211951,
+    "percentage_of_world": "2.6%",
+    "date": "1 Jul 2026",
+    "source": "Official estimate",
+    "notes": ""
+  },
+  {
+    "rank": 9,
+    "location": "Bangladesh",
+    "population": 169828911,
+    "percentage_of_world": "2.1%",
+    "date": "14 Jun 2022",
+    "source": "2022 census result",
+    "notes": ""
+  },
+  {
+    "rank": 10,
+    "location": "Russia",
+    "population": 146028325,
+    "percentage_of_world": "1.8%",
+    "date": "1 Jan 2025",
+    "source": "Official estimate",
+    "notes": ""
+  },
+  {
+    "rank": 11,
+    "location": "Mexico",
+    "population": 131231919,
+    "percentage_of_world": "1.6%",
+    "date": "30 Jun 2026",
+    "source": "National quarterly estimate",
+    "notes": ""
+  },
+  {
+    "rank": 12,
+    "location": "Japan",
+    "population": 122650000,
+    "percentage_of_world": "1.5%",
+    "date": "1 Sep 2026",
+    "source": "Monthly national estimate",
+    "notes": ""
+  },
+  {
+    "rank": 13,
+    "location": "Democratic Republic of the Congo",
+    "population": 116452162,
+    "percentage_of_world": "1.4%",
+    "date": "1 Jul 2026",
+    "source": "UN projection",
+    "notes": ""
+  },
+  {
+    "rank": 14,
+    "location": "Philippines",
+    "population": 114849400,
+    "percentage_of_world": "1.4%",
+    "date": "1 Jul 2026",
+    "source": "Official projection",
+    "notes": ""
+  },
+  {
+    "rank": 15,
+    "location": "Ethiopia",
+    "population": 111652998,
+    "percentage_of_world": "1.3%",
+    "date": "1 Jul 2025",
+    "source": "National annual projection",
+    "notes": ""
+  },
+  {
+    "rank": 16,
+    "location": "Egypt",
+    "population": 108613296,
+    "percentage_of_world": "1.3%",
+    "date": "1 Jan 2026",
+    "source": "Official estimate",
+    "notes": ""
+  },
+  {
+    "rank": 17,
+    "location": "Vietnam",
+    "population": 102300000,
+    "percentage_of_world": "1.2%",
+    "date": "31 Dec 2025",
+    "source": "Official estimate",
+    "notes": ""
+  },
+  {
+    "rank": 18,
+    "location": "Iran",
+    "population": 87134000,
+    "percentage_of_world": "1.1%",
+    "date": "21 Mar 2026",
+    "source": "Official estimate",
+    "notes": ""
+  },
+  {
+    "rank": 19,
+    "location": "Turkey",
+    "population": 86092168,
+    "percentage_of_world": "1.0%",
+    "date": "31 Dec 2025",
+    "source": "Official estimate",
+    "notes": ""
+  },
+  {
+    "rank": 20,
+    "location": "Germany",
+    "population": 83298787,
+    "percentage_of_world": "1.0%",
+    "date": "30 Jun 2026",
+    "source": "National quarterly estimate",
+    "notes": ""
+  },
+  {
+    "rank": 21,
+    "location": "Thailand",
+    "population": 70250751,
+    "percentage_of_world": "0.8%",
+    "date": "2025",
+    "source": "Preliminary census results",
+    "notes": ""
+  },
+  {
+    "rank": 22,
+    "location": "Tanzania",
+    "population": 70038850,
+    "percentage_of_world": "0.8%",
+    "date": "1 Jul 2026",
+    "source": "Official projection",
+    "notes": ""
+  },
+  {
+    "rank": 23,
+    "location": "United Kingdom",
+    "population": 69487000,
+    "percentage_of_world": "0.8%",
+    "date": "30 Jun 2025",
+    "source": "Official estimate",
+    "notes": ""
+  },
+  {
+    "rank": 24,
+    "location": "France",
+    "population": 69081996,
+    "percentage_of_world": "0.8%",
+    "date": "1 Jan 2026",
+    "source": "Yearly national estimate",
+    "notes": ""
+  },
+  {
+    "rank": 25,
+    "location": "South Africa",
+    "population": 63522380,
+    "percentage_of_world": "0.8%",
+    "date": "30 Jun 2026",
+    "source": "Official estimate",
+    "notes": ""
+  },
+  {
+    "rank": 26,
+    "location": "Italy",
+    "population": 58943673,
+    "percentage_of_world": "0.7%",
+    "date": "30 Jun 2026",
+    "source": "Monthly national estimate",
+    "notes": ""
+  },
+  {
+    "rank": 27,
+    "location": "Kenya",
+    "population": 54227015,
+    "percentage_of_world": "0.7%",
+    "date": "1 Jul 2026",
+    "source": "Official projection",
+    "notes": ""
+  },
+  {
+    "rank": 28,
+    "location": "Colombia",
+    "population": 53399171,
+    "percentage_of_world": "0.6%",
+    "date": "1 Jan 2026",
+    "source": "Official projection",
+    "notes": ""
+  },
+  {
+    "rank": 29,
+    "location": "Sudan",
+    "population": 53282719,
+    "percentage_of_world": "0.6%",
+    "date": "1 Jul 2026",
+    "source": "UN projection",
+    "notes": ""
+  },
+  {
+    "rank": 30,
+    "location": "Myanmar",
+    "population": 51375327,
+    "percentage_of_world": "0.6%",
+    "date": "15 Oct 2024",
+    "source": "2024 census result",
+    "notes": ""
+  },
+  {
+    "rank": 31,
+    "location": "South Korea",
+    "population": 51088284,
+    "percentage_of_world": "0.6%",
+    "date": "31 Jul 2026",
+    "source": "Monthly national estimate",
+    "notes": ""
+  },
+  {
+    "rank": 32,
+    "location": "Spain",
+    "population": 49801559,
+    "percentage_of_world": "0.6%",
+    "date": "1 Jul 2026",
+    "source": "National quarterly estimate",
+    "notes": ""
+  },
+  {
+    "rank": 33,
+    "location": "Algeria",
+    "population": 47400000,
+    "percentage_of_world": "0.6%",
+    "date": "1 Jan 2025",
+    "source": "National annual projection",
+    "notes": ""
+  },
+  {
+    "rank": 34,
+    "location": "Argentina",
+    "population": 46466688,
+    "percentage_of_world": "0.6%",
+    "date": "1 Jul 2026",
+    "source": "National annual projection",
+    "notes": ""
+  },
+  {
+    "rank": 35,
+    "location": "Iraq",
+    "population": 46118793,
+    "percentage_of_world": "0.6%",
+    "date": "21 Nov 2024",
+    "source": "2024 census result",
+    "notes": ""
+  },
+  {
+    "rank": 36,
+    "location": "Uganda",
+    "population": 45905417,
+    "percentage_of_world": "0.6%",
+    "date": "10 May 2024",
+    "source": "2024 census result",
+    "notes": ""
+  },
+  {
+    "rank": 37,
+    "location": "Afghanistan",
+    "population": 43844000,
+    "percentage_of_world": "0.5%",
+    "date": "1 Jul 2025",
+    "source": "UN projection (see note)",
+    "notes": ""
+  },
+  {
+    "rank": 38,
+    "location": "Canada",
+    "population": 41798407,
+    "percentage_of_world": "0.5%",
+    "date": "1 Jul 2026",
+    "source": "National quarterly estimate",
+    "notes": ""
+  },
+  {
+    "rank": 39,
+    "location": "Uzbekistan",
+    "population": 39047321,
+    "percentage_of_world": "0.5%",
+    "date": "15 Jan 2026",
+    "source": "2026 census result",
+    "notes": ""
+  },
+  {
+    "rank": 40,
+    "location": "Angola",
+    "population": 38778554,
+    "percentage_of_world": "0.5%",
+    "date": "1 Jan 2026",
+    "source": "National estimate",
+    "notes": ""
+  },
+  {
+    "rank": 41,
+    "location": "Morocco",
+    "population": 37254695,
+    "percentage_of_world": "0.5%",
+    "date": "1 Jul 2026",
+    "source": "National annual projection",
+    "notes": ""
+  },
+  {
+    "rank": 42,
+    "location": "Poland",
+    "population": 37232000,
+    "percentage_of_world": "0.4%",
+    "date": "31 Jul 2026",
+    "source": "Monthly national estimate",
+    "notes": ""
+  },
+  {
+    "rank": 43,
+    "location": "Saudi Arabia",
+    "population": 35300280,
+    "percentage_of_world": "0.4%",
+    "date": "1 Jul 2024",
+    "source": "Official estimate",
+    "notes": ""
+  },
+  {
+    "rank": 44,
+    "location": "Mozambique",
+    "population": 34958973,
+    "percentage_of_world": "0.4%",
+    "date": "1 Jul 2026",
+    "source": "National annual projection",
+    "notes": ""
+  },
+  {
+    "rank": 45,
+    "location": "Malaysia",
+    "population": 34389400,
+    "percentage_of_world": "0.4%",
+    "date": "30 Jun 2026",
+    "source": "National quarterly estimate",
+    "notes": ""
+  },
+  {
+    "rank": 46,
+    "location": "Ghana",
+    "population": 34378768,
+    "percentage_of_world": "0.4%",
+    "date": "1 Jul 2026",
+    "source": "National annual projection",
+    "notes": ""
+  },
+  {
+    "rank": 47,
+    "location": "Peru",
+    "population": 34157732,
+    "percentage_of_world": "0.4%",
+    "date": "4 Aug 2025",
+    "source": "Census 2025",
+    "notes": ""
+  },
+  {
+    "rank": 48,
+    "location": "Ivory Coast",
+    "population": 33293101,
+    "percentage_of_world": "0.4%",
+    "date": "1 Jul 2026",
+    "source": "National annual projection",
+    "notes": ""
+  },
+  {
+    "rank": 49,
+    "location": "Yemen",
+    "population": 32684503,
+    "percentage_of_world": "0.4%",
+    "date": "1 Jul 2023",
+    "source": "Official estimate",
+    "notes": ""
+  },
+  {
+    "rank": 50,
+    "location": "Madagascar",
+    "population": 32658977,
+    "percentage_of_world": "0.4%",
+    "date": "1 Jul 2026",
+    "source": "National annual projection",
+    "notes": ""
+  }
+]

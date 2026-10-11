@@ -1,0 +1,2 @@
+[HIBERNATE-SQL-1] select u1_0.id,u1_0.email,u1_0.name,o1_0.user_id,o1_0.id,o1_0.amount,o1_0.status from users u1_0 left join orders o1_0 on u1_0.id=o1_0.user_id
+TOTAL QUERIES CAPTURED: 1

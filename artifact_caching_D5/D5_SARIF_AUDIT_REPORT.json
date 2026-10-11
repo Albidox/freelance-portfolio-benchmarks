@@ -1,0 +1,289 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://json.schemastore.org/sarif-2.1.0.json",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "Greg The Skeptic (Byzantine Auditor)",
+          "version": "1.0.0",
+          "informationUri": "https://hermes-agent.nousresearch.com/docs",
+          "rules": [
+            {
+              "id": "ROLE-001",
+              "name": "RoleBoundaryCompliance",
+              "shortDescription": {
+                "text": "Verifies that all domain tasks were executed strictly by the assigned specialist without orchestrator inline bypass."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "id": "FILE-001",
+              "name": "OutputFilesVerification",
+              "shortDescription": {
+                "text": "Verifies all required artifact deliverables exist on disk and all SHA-256 hashes cryptographically match."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "id": "METRIC-LATENCY-001",
+              "name": "CacheHitLatencyVerification",
+              "shortDescription": {
+                "text": "Verifies warm cache hit median latency is under 5.0ms with greater than 40x speedup over cold lookup."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "id": "METRIC-HITRATIO-001",
+              "name": "CacheHitRatioVerification",
+              "shortDescription": {
+                "text": "Verifies warm cache hit ratio is greater than or equal to 99.0 percent."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "id": "METRIC-EVICTION-001",
+              "name": "CacheEvictionVerification",
+              "shortDescription": {
+                "text": "Verifies deterministic cache eviction upon entity update, ensuring fresh reads immediately."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "id": "METRIC-STAMPEDE-001",
+              "name": "CacheStampedeDefenseVerification",
+              "shortDescription": {
+                "text": "Verifies distributed mutex lock suppresses thundering herd, ensuring exactly 1 DB query under concurrent burst."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "id": "METRIC-PENETRATION-001",
+              "name": "CachePenetrationDefenseVerification",
+              "shortDescription": {
+                "text": "Verifies negative caching and Bloom filter prevent cache penetration and database DDoS."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "id": "METRIC-SERIALIZATION-001",
+              "name": "SerializationCompatibilityVerification",
+              "shortDescription": {
+                "text": "Verifies Jackson serialization handles schema evolution and backward compatibility without exceptions."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "id": "SECURITY-001",
+              "name": "SecurityAndOwaspVerification",
+              "shortDescription": {
+                "text": "Audits SQL injection immunity, concurrency thread-safety, deserialization guards, and credential leakage."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "id": "STYLE-EMDASH-001",
+              "name": "PunctuationStandard",
+              "shortDescription": {
+                "text": "Verifies strict zero em dashes across all code comments, configuration files, reports, and manifests."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            }
+          ]
+        }
+      },
+      "results": [
+        {
+          "ruleId": "ROLE-001",
+          "level": "none",
+          "kind": "pass",
+          "message": {
+            "text": "Role execution complies with strict boundaries: D5-R1 (Sandbox Build) and D5-R2 (Stress Probe) executed strictly by assigned specialist eric with zero orchestrator inline leakage."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "output/cache_resilience_probe_report.md"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "FILE-001",
+          "level": "none",
+          "kind": "pass",
+          "message": {
+            "text": "All 14 deliverables exist on disk and all 14 SHA-256 hashes cryptographically match output/SHA256SUMS.txt with 100 percent integrity."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "output/SHA256SUMS.txt"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "METRIC-LATENCY-001",
+          "level": "none",
+          "kind": "pass",
+          "message": {
+            "text": "Warm cache hit median latency verified at 3.032 ms (p50), strictly below the 5.0 ms threshold. Speedup factor over cold database lookup measured at 56.02x, strictly exceeding the 40.0x requirement."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "output/caching_metrics.json"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "METRIC-HITRATIO-001",
+          "level": "none",
+          "kind": "pass",
+          "message": {
+            "text": "Warm cache hit ratio verified at 99.50 percent across 10,000 warm requests (10,000 hits out of 10,050 total requests), strictly exceeding the 99.0 percent requirement."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "output/caching_metrics.json"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "METRIC-EVICTION-001",
+          "level": "none",
+          "kind": "pass",
+          "message": {
+            "text": "Deterministic cache eviction verified upon entity update: updating SKU PROD-00042 to price 888.88 purged both products and negative cache entries, and subsequent read immediately served fresh data from PostgreSQL."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/main/java/com/albidox/caching/service/ProductService.java"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "METRIC-STAMPEDE-001",
+          "level": "none",
+          "kind": "pass",
+          "message": {
+            "text": "Cache stampede mutex defense verified: KeyMutexLockManager double-checked locking ensured exactly 1 database query executed across 500 concurrent callers on expired hot key PROD-00001 (suppressing 99.8 percent of potential queries vs 5 queries on unprotected path)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/main/java/com/albidox/caching/config/KeyMutexLockManager.java"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "METRIC-PENETRATION-001",
+          "level": "none",
+          "kind": "pass",
+          "message": {
+            "text": "Cache penetration defense verified: Negative caching with 60-second TTL achieved 100.0 percent repeat attack absorption (0 DB hits on Pass 2 across 1,000 non-existent keys), and SkuBloomFilter achieved 100.0 percent edge rejection (0 DB hits across both passes)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/main/java/com/albidox/caching/config/SkuBloomFilter.java"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "METRIC-SERIALIZATION-001",
+          "level": "none",
+          "kind": "pass",
+          "message": {
+            "text": "Serialization compatibility and schema evolution verified: Jackson ObjectMapper handles both backward compatibility (v1 payloads missing newly added manufacturer field deserialize cleanly) and forward compatibility (v3 payloads containing unknown fields deserialize without exceptions)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/main/java/com/albidox/caching/config/CacheConfig.java"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "SECURITY-001",
+          "level": "none",
+          "kind": "pass",
+          "message": {
+            "text": "Security and OWASP audit passed: Spring Data JPA parameterized queries prevent SQL injection; Jackson polymorphic typing restricted to explicit DTO types without default typing vulnerabilities; KeyMutexLockManager properly cleans up unused locks preventing memory leaks; zero hardcoded credentials or leaked secrets."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/main/java/com/albidox/caching/repository/ProductRepository.java"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "STYLE-EMDASH-001",
+          "level": "none",
+          "kind": "pass",
+          "message": {
+            "text": "Strict zero em dashes check passed: 0 em dashes detected across all 14 project files, code comments, configuration manifests, and markdown reports."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "output/cache_resilience_probe_report.md"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

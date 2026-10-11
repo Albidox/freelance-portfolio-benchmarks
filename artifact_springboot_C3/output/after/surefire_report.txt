@@ -1,0 +1,101 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------< com.ashfaq.freelance:openrewrite-ast-migration >-----------
+[INFO] Building openrewrite-ast-migration 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.4.0:clean (default-clean) @ openrewrite-ast-migration ---
+[INFO] Deleting C:\AI\knowledge-vault\summary\freelance opportunity\portfolio_samples\artifact_springboot_C3\target
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ openrewrite-ast-migration ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ openrewrite-ast-migration ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 6 source files with javac [debug parameters release 21] to target\classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ openrewrite-ast-migration ---
+[INFO] skip non existing resourceDirectory C:\AI\knowledge-vault\summary\freelance opportunity\portfolio_samples\artifact_springboot_C3\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ openrewrite-ast-migration ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 1 source file with javac [debug parameters release 21] to target\test-classes
+[INFO] 
+[INFO] --- surefire:3.5.2:test (default-test) @ openrewrite-ast-migration ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.ashfaq.migration.EntityCompilationTest
+05:23:32.662 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.ashfaq.migration.EntityCompilationTest]: EntityCompilationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+05:23:33.020 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.ashfaq.migration.Application for test class com.ashfaq.migration.EntityCompilationTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.1)
+
+2026-10-10T05:23:34.037+05:30  INFO 22716 --- [openrewrite-ast-migration] [           main] c.a.migration.EntityCompilationTest      : Starting EntityCompilationTest using Java 21.0.11 with PID 22716 (started by Skytron in C:\AI\knowledge-vault\summary\freelance opportunity\portfolio_samples\artifact_springboot_C3)
+2026-10-10T05:23:34.040+05:30  INFO 22716 --- [openrewrite-ast-migration] [           main] c.a.migration.EntityCompilationTest      : No active profile set, falling back to 1 default profile: "default"
+2026-10-10T05:23:34.712+05:30  INFO 22716 --- [openrewrite-ast-migration] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-10T05:23:34.749+05:30  INFO 22716 --- [openrewrite-ast-migration] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17 ms. Found 0 JPA repository interfaces.
+2026-10-10T05:23:34.827+05:30  INFO 22716 --- [openrewrite-ast-migration] [           main] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
+2026-10-10T05:23:35.141+05:30  INFO 22716 --- [openrewrite-ast-migration] [           main] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:73fda02b-a5c3-44a9-a207-8fb6071a6c71;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2026-10-10T05:23:35.751+05:30  INFO 22716 --- [openrewrite-ast-migration] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-10-10T05:23:35.924+05:30  INFO 22716 --- [openrewrite-ast-migration] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.4.Final
+2026-10-10T05:23:35.996+05:30  INFO 22716 --- [openrewrite-ast-migration] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-10-10T05:23:36.612+05:30  INFO 22716 --- [openrewrite-ast-migration] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-10T05:23:36.713+05:30  WARN 22716 --- [openrewrite-ast-migration] [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-10-10T05:23:36.769+05:30  INFO 22716 --- [openrewrite-ast-migration] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory$EmbeddedDataSourceProxy@7d7ceca8']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-10T05:23:38.379+05:30  INFO 22716 --- [openrewrite-ast-migration] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: drop table if exists audit_logs cascade 
+Hibernate: drop table if exists customers cascade 
+Hibernate: drop table if exists invoices cascade 
+Hibernate: drop table if exists orders cascade 
+Hibernate: drop table if exists products cascade 
+Hibernate: create table audit_logs (created_at timestamp(6) with time zone not null, id bigint generated by default as identity, action varchar(255) not null, entity_name varchar(255) not null, primary key (id))
+Hibernate: create table customers (id bigint generated by default as identity, email varchar(255) not null unique, name varchar(255) not null, primary key (id))
+Hibernate: create table invoices (total_amount numeric(10,2) not null, id bigint generated by default as identity, issue_date timestamp(6) not null, order_id bigint, primary key (id))
+Hibernate: create table orders (customer_id bigint, id bigint generated by default as identity, order_number varchar(255) not null unique, status enum ('CANCELLED','CONFIRMED','DELIVERED','PENDING','SHIPPED') not null, primary key (id))
+Hibernate: create table products (price numeric(10,2) not null, id bigint generated by default as identity, sku varchar(255) not null unique, title varchar(255) not null, primary key (id))
+Hibernate: alter table if exists invoices add constraint FK4ko3y00tkkk2ya3p6wnefjj2f foreign key (order_id) references orders
+Hibernate: alter table if exists orders add constraint FKpxtb8awmi0dk6smoh2vp1litg foreign key (customer_id) references customers
+2026-10-10T05:23:38.451+05:30  INFO 22716 --- [openrewrite-ast-migration] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-10T05:23:38.579+05:30  INFO 22716 --- [openrewrite-ast-migration] [           main] c.a.migration.EntityCompilationTest      : Started EntityCompilationTest in 5.344 seconds (process running for 7.371)
+Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build what is described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org/mockito/Mockito.html#0.3
+WARNING: A Java agent has been loaded dynamically (C:\Users\Skytron\.m2\repository\net\bytebuddy\byte-buddy-agent\1.15.11\byte-buddy-agent-1.15.11.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+Hibernate: insert into customers (email,name,id) values (?,?,default)
+Hibernate: insert into products (price,sku,title,id) values (?,?,?,default)
+Hibernate: insert into orders (customer_id,order_number,status,id) values (?,?,?,default)
+Hibernate: insert into invoices (issue_date,order_id,total_amount,id) values (?,?,?,default)
+Hibernate: insert into audit_logs (action,created_at,entity_name,id) values (?,?,?,default)
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.342 s -- in com.ashfaq.migration.EntityCompilationTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  14.240 s
+[INFO] Finished at: 2026-10-10T05:23:39+05:30
+[INFO] ------------------------------------------------------------------------

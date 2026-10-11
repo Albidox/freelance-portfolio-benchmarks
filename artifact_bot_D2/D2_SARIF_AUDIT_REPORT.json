@@ -1,0 +1,123 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "Greg (The Skeptic) Byzantine Auditor",
+          "version": "1.0",
+          "informationUri": "https://hermes-agent.nousresearch.com/docs",
+          "rules": [
+            {
+              "id": "ROLE_COMPLIANCE_001",
+              "name": "RoleBoundaryCompliance",
+              "shortDescription": {
+                "text": "Verifies that all domain work was executed strictly by the assigned specialist."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "id": "SEC_INJECTION_001",
+              "name": "SQLInjectionCheck",
+              "shortDescription": {
+                "text": "Verifies parameterized queries are used."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "id": "PERF_MEMORY_001",
+              "name": "MemoryLeakCheck",
+              "shortDescription": {
+                "text": "Verifies RSS memory footprint under load."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "id": "TYPO_EM_DASH_001",
+              "name": "ZeroEmDashInvariant",
+              "shortDescription": {
+                "text": "Verifies strict zero em dashes."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            }
+          ]
+        }
+      },
+      "results": [
+        {
+          "ruleId": "ROLE_COMPLIANCE_001",
+          "level": "none",
+          "message": {
+            "text": "Role execution complies with strict boundaries."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "bot.py"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "SEC_INJECTION_001",
+          "level": "none",
+          "message": {
+            "text": "All SQL queries correctly use ? parameterization or bindings. No SQL injection vulnerabilities found."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "bot.py"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "PERF_MEMORY_001",
+          "level": "none",
+          "message": {
+            "text": "Memory footprint maintains strict <=45MB RAM cap, verified via soak tests."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "bot.py"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "TYPO_EM_DASH_001",
+          "level": "none",
+          "message": {
+            "text": "Zero em dash invariant verified across all artifact files."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "output/telegram_resilience_probe_report.md"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

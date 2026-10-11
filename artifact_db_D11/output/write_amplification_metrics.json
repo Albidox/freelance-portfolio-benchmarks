@@ -1,0 +1,55 @@
+{
+  "write_amplification": {
+    "operations_count": 100000,
+    "insert_count": 50000,
+    "update_count": 50000,
+    "full_index": {
+      "initial_bytes": 2457600,
+      "final_bytes": 7741440,
+      "growth_bytes": 5283840,
+      "pages_written": 645,
+      "insert_duration_s": 1.045,
+      "insert_tps": 47853.3,
+      "update_duration_s": 0.813,
+      "update_tps": 61531.6,
+      "total_duration_s": 1.857,
+      "overall_tps": 53837.2
+    },
+    "partial_index": {
+      "initial_bytes": 8192,
+      "final_bytes": 8192,
+      "growth_bytes": 0,
+      "pages_written": 0,
+      "insert_duration_s": 0.512,
+      "insert_tps": 97739.7,
+      "update_duration_s": 0.547,
+      "update_tps": 91389.2,
+      "total_duration_s": 1.059,
+      "overall_tps": 94457.8
+    },
+    "metrics": {
+      "index_write_maintenance_eliminated_percent": 100.0,
+      "workload_95_5_skew_write_eliminated_percent": 95.0,
+      "tps_improvement_percent": 75.45
+    }
+  },
+  "planner_probe": {
+    "query": "SELECT * FROM d11_indexing_sandbox.orders\n        WHERE status = 'ACTIVE' AND created_at > NOW() - INTERVAL '1 day';",
+    "ordered_query": "SELECT * FROM d11_indexing_sandbox.orders\n        WHERE status = 'ACTIVE' AND created_at > NOW() - INTERVAL '1 day'\n        ORDER BY created_at DESC\n        LIMIT 50;",
+    "speedup_factor": 90.3,
+    "buffer_reduction_percent": 98.6,
+    "partial_execution_time_ms": 2.453,
+    "seq_execution_time_ms": 221.595,
+    "ordered_execution_time_ms": 0.124
+  },
+  "expression_partial_index": {
+    "index_name": "idx_orders_partial_urgent_jsonb",
+    "index_bytes": 303104,
+    "index_pretty": "296.00 KB",
+    "urgent_rows": 12516,
+    "urgent_percent": 1.25,
+    "execution_time_ms": 0.062,
+    "speedup_factor": 3800.7,
+    "sub_millisecond": true
+  }
+}

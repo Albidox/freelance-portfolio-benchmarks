@@ -1,0 +1,267 @@
+{
+  "$schema": "https://json.schemastore.org/sarif-2.1.0.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "Greg The Skeptic (Byzantine Auditor)",
+          "version": "1.0.0",
+          "informationUri": "https://hermes-agent.nousresearch.com/docs",
+          "rules": [
+            {
+              "id": "ROLE-001",
+              "name": "RoleBoundaryCompliance",
+              "shortDescription": {
+                "text": "Verifies that all domain implementation tasks were executed strictly by assigned specialist eric without orchestrator inline bypass."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "id": "FILE-001",
+              "name": "DeliverablesAndChecksumIntegrity",
+              "shortDescription": {
+                "text": "Verifies all required artifact deliverables exist on disk and SHA-256 hashes cryptographically match output/SHA256SUMS.txt."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "id": "METRIC-TESTS-001",
+              "name": "IntegrationTestsPassRate",
+              "shortDescription": {
+                "text": "Verifies 35 integration tests pass cleanly with 100% success rate against PostgreSQL 18 dynamic schema on port 5433."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "id": "METRIC-DURATION-001",
+              "name": "TotalTestExecutionDuration",
+              "shortDescription": {
+                "text": "Verifies total test execution duration is strictly under the 20.0s SLA target."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "id": "RECEIPT-SUREFIRE-001",
+              "name": "SurefireReportsPresence",
+              "shortDescription": {
+                "text": "Verifies XML and HTML Surefire reports are present in target/surefire-reports/."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "id": "PROBE-COLLISION-001",
+              "name": "MigrationVersionCollisionDetection",
+              "shortDescription": {
+                "text": "Verifies duplicate Flyway migration versions are intercepted, halting build before schema execution."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "id": "PROBE-INDEX-001",
+              "name": "MissingForeignKeyIndexDetection",
+              "shortDescription": {
+                "text": "Verifies unindexed foreign keys are caught via catalog introspection to eliminate table lock contention."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "id": "PROBE-ISOLATION-001",
+              "name": "TransactionalIsolationBoundaryEnforcement",
+              "shortDescription": {
+                "text": "Verifies dirty test state leakage across boundaries is caught and transactional rollback is verified."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "id": "STYLE-EMDASH-001",
+              "name": "PunctuationStandardZeroEmDashes",
+              "shortDescription": {
+                "text": "Verifies strict zero em dashes across all code, comments, reports, and manifests."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            }
+          ]
+        }
+      },
+      "results": [
+        {
+          "ruleId": "ROLE-001",
+          "level": "none",
+          "kind": "pass",
+          "message": {
+            "text": "Role execution complies with strict boundaries: D10-R1 (Sandbox Build) and D10-R2 (Real-World Stress Probe) executed strictly by assigned specialist eric; reviewer audit gate executed by reviewer with zero orchestrator inline bypass."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "output/regression_harness_probe_report.md"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "FILE-001",
+          "level": "none",
+          "kind": "pass",
+          "message": {
+            "text": "All required deliverables exist on disk and SHA-256 checksums match output/SHA256SUMS.txt cryptographically with zero discrepancies."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "output/SHA256SUMS.txt"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "METRIC-TESTS-001",
+          "level": "none",
+          "kind": "pass",
+          "message": {
+            "text": "Hero metric confirmed: Exactly 35 integration tests executed and passed cleanly with 100% success rate (0 failures, 0 errors, 0 skipped) against PostgreSQL 18.0 dynamic schema d10_regression_sandbox on native port 5433."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "output/qa_metrics.json"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "METRIC-DURATION-001",
+          "level": "none",
+          "kind": "pass",
+          "message": {
+            "text": "Hero metric confirmed: Total Surefire test execution duration of 9.359s (wall clock 16.312s) meets the sub-20.0s SLA requirement."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "output/qa_metrics.json"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "RECEIPT-SUREFIRE-001",
+          "level": "none",
+          "kind": "pass",
+          "message": {
+            "text": "Surefire test receipts confirmed: XML reports (TEST-com.albidox.qa.OrderApiRegressionTest.xml, TEST-com.albidox.qa.SchemaMigrationTest.xml) and HTML receipts (index.html, surefire.html) are verified in target/surefire-reports/."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "target/surefire-reports/index.html"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "PROBE-COLLISION-001",
+          "level": "none",
+          "kind": "pass",
+          "message": {
+            "text": "Migration version collision probe confirmed: Injected parallel migrations with version V2_0 were intercepted by Flyway, raising org.flywaydb.core.api.FlywayException and preserving ephemeral schema state with 0 partial tables."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "output/stress_probe_metrics.json"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "PROBE-INDEX-001",
+          "level": "none",
+          "kind": "pass",
+          "message": {
+            "text": "Missing foreign key index probe confirmed: PostgreSQL system catalog introspection detected unindexed foreign key transactions_account_id_fkey, verified remediation via index creation, and validated 0 unindexed foreign keys in baseline schema d10_regression_sandbox."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "output/stress_probe_metrics.json"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "PROBE-ISOLATION-001",
+          "level": "none",
+          "kind": "pass",
+          "message": {
+            "text": "Transactional isolation leak probe confirmed: 1,000 non-transactional dirty rows were intercepted with diagnostic code DIRTY_STATE_LEAK_DETECTED, boundary purge cleared table to 0 rows, and transactional rollback cleared inserted rows to 0."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "output/stress_probe_metrics.json"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "STYLE-EMDASH-001",
+          "level": "none",
+          "kind": "pass",
+          "message": {
+            "text": "Strict zero em dashes check passed: 0 em dashes detected across all Java source code, test suites, Python harnesses, markdown reports, and JSON manifests."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "output/regression_harness_probe_report.md"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "properties": {
+        "verdict": "MERGE_APPROVED",
+        "auditOutcome": "ZERO_DEFECTS",
+        "reviewerProfile": "reviewer"
+      }
+    }
+  ]
+}

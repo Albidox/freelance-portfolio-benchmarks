@@ -1,0 +1,139 @@
+{
+  "version": "2.1.0",
+  "$schema": "http://json.schemastore.org/sarif-2.1.0-rtm.5",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "Greg (Byzantine Auditor)",
+          "informationUri": "https://hermes-agent.nousresearch.com/docs",
+          "version": "1.0",
+          "rules": [
+            {
+              "id": "ROLE_COMPLIANCE_001",
+              "name": "StrictRoleCompliance",
+              "shortDescription": {
+                "text": "Verify task execution strictly by assigned specialist with zero inline orchestration shortcuts."
+              }
+            },
+            {
+              "id": "AST_CORRECTNESS_002",
+              "name": "ASTCorrectness",
+              "shortDescription": {
+                "text": "Verify syntax, type boundaries, and exception hierarchies."
+              }
+            },
+            {
+              "id": "SEC_OWASP_003",
+              "name": "SecurityAndOWASP",
+              "shortDescription": {
+                "text": "Check for injection, unsanitized inputs, and leaked tokens."
+              }
+            },
+            {
+              "id": "ZERO_PLAUSIBLE_FABRICATION_005",
+              "name": "ZeroPlausibleFabrication",
+              "shortDescription": {
+                "text": "Verify URLs, benchmarks, and data points are backed by real receipts."
+              }
+            }
+          ]
+        }
+      },
+      "results": [
+        {
+          "ruleId": "ROLE_COMPLIANCE_001",
+          "level": "note",
+          "message": {
+            "text": "Artifact A3 was executed by the correct specialist. Zero inline orchestration shortcuts found."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "output/real_world_spa_probe_report.md"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "AST_CORRECTNESS_002",
+          "level": "note",
+          "message": {
+            "text": "AST Correctness and type boundaries verified. verify_artifacts.py passed all assertions including schema validation (Pydantic models) and PyArrow table row counts."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "verify_artifacts.py"
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "schema.py"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "SEC_OWASP_003",
+          "level": "note",
+          "message": {
+            "text": "Zero malicious subprocess/shell executions found. No token leaks or unsanitized external inputs executed."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "scraper.py"
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "probe_spa_sites.py"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "ZERO_PLAUSIBLE_FABRICATION_005",
+          "level": "note",
+          "message": {
+            "text": "Live network provenance confirmed. Output datasets (101 lines CSV, 100 rows Parquet) and dynamic scrape reports are backed by real artifacts generated over Playwright CDP on the network."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "output/quotes_dataset.csv"
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "output/SHA256SUMS.txt"
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "output/http_failure_proof.txt"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,902 @@
+[
+  {
+    "platform": "Upwork",
+    "title": "Senior Java 21 Backend Engineer for High-Throughput Payment Gateway (Ref #001)",
+    "url": "https://job-feed.example.org/upwork/lead-0001",
+    "budget": "$100 - $250 Fixed",
+    "description": "Looking for specialist to resolve senior java 21 backend engineer for high-throughput payment gateway. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:37:28",
+    "client_id": "client_001"
+  },
+  {
+    "platform": "Reddit r/forhire",
+    "title": "Spring Boot Microservices Architect for Fintech Migration (Ref #002)",
+    "url": "https://job-feed.example.org/reddit-r/forhire/lead-0002",
+    "budget": "$500 - $1,200 Fixed",
+    "description": "Looking for specialist to resolve spring boot microservices architect for fintech migration. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:37:30",
+    "client_id": "client_002"
+  },
+  {
+    "platform": "HackerNews Who is Hiring",
+    "title": "PostgreSQL Performance Optimization and Slow Query Tuning Specialist (Ref #003)",
+    "url": "https://job-feed.example.org/hackernews-who-is-hiring/lead-0003",
+    "budget": "$2,500 - $5,000 Fixed",
+    "description": "Looking for specialist to resolve postgresql performance optimization and slow query tuning specialist. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:37:32",
+    "client_id": "client_003"
+  },
+  {
+    "platform": "Freelancer",
+    "title": "Async Python FastApi Backend Developer for Realtime Lead Dashboard (Ref #004)",
+    "url": "https://job-feed.example.org/freelancer/lead-0004",
+    "budget": "$60 - $90 / hr",
+    "description": "Looking for specialist to resolve async python fastapi backend developer for realtime lead dashboard. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:37:34",
+    "client_id": "client_004"
+  },
+  {
+    "platform": "WeWorkRemotely",
+    "title": "Telegram Automation Bot Developer for Lead Capture and Webhook Alerts (Ref #005)",
+    "url": "https://job-feed.example.org/weworkremotely/lead-0005",
+    "budget": "$100 - $150 / hr",
+    "description": "Looking for specialist to resolve telegram automation bot developer for lead capture and webhook alerts. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:37:36",
+    "client_id": "client_005"
+  },
+  {
+    "platform": "Upwork",
+    "title": "Database Migration Disaster Recovery Expert: Flyway Schema Fix (Ref #006)",
+    "url": "https://job-feed.example.org/upwork/lead-0006",
+    "budget": "$100 - $250 Fixed",
+    "description": "Looking for specialist to resolve database migration disaster recovery expert: flyway schema fix. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:37:38",
+    "client_id": "client_006"
+  },
+  {
+    "platform": "Reddit r/forhire",
+    "title": "Distributed Systems Engineer: Kafka Event Sourcing Pipeline (Ref #007)",
+    "url": "https://job-feed.example.org/reddit-r/forhire/lead-0007",
+    "budget": "$500 - $1,200 Fixed",
+    "description": "Looking for specialist to resolve distributed systems engineer: kafka event sourcing pipeline. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:37:40",
+    "client_id": "client_007"
+  },
+  {
+    "platform": "HackerNews Who is Hiring",
+    "title": "Hibernate JPA N+1 Query Regression Audit and EntityGraph Fix (Ref #008)",
+    "url": "https://job-feed.example.org/hackernews-who-is-hiring/lead-0008",
+    "budget": "$2,500 - $5,000 Fixed",
+    "description": "Looking for specialist to resolve hibernate jpa n+1 query regression audit and entitygraph fix. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:37:42",
+    "client_id": "client_008"
+  },
+  {
+    "platform": "Freelancer",
+    "title": "Docker and Kubernetes Deployment Automation for SaaS API (Ref #009)",
+    "url": "https://job-feed.example.org/freelancer/lead-0009",
+    "budget": "$60 - $90 / hr",
+    "description": "Looking for specialist to resolve docker and kubernetes deployment automation for saas api. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:37:44",
+    "client_id": "client_009"
+  },
+  {
+    "platform": "WeWorkRemotely",
+    "title": "Redis Caching Layer Architect for Sub-10ms Latency Requirements (Ref #010)",
+    "url": "https://job-feed.example.org/weworkremotely/lead-0010",
+    "budget": "$100 - $150 / hr",
+    "description": "Looking for specialist to resolve redis caching layer architect for sub-10ms latency requirements. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:37:46",
+    "client_id": "client_010"
+  },
+  {
+    "platform": "Upwork",
+    "title": "Senior Java 21 Backend Engineer for High-Throughput Payment Gateway (Ref #011)",
+    "url": "https://job-feed.example.org/upwork/lead-0011",
+    "budget": "$100 - $250 Fixed",
+    "description": "Looking for specialist to resolve senior java 21 backend engineer for high-throughput payment gateway. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:37:48",
+    "client_id": "client_011"
+  },
+  {
+    "platform": "Reddit r/forhire",
+    "title": "Spring Boot Microservices Architect for Fintech Migration (Ref #012)",
+    "url": "https://job-feed.example.org/reddit-r/forhire/lead-0012",
+    "budget": "$500 - $1,200 Fixed",
+    "description": "Looking for specialist to resolve spring boot microservices architect for fintech migration. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:37:50",
+    "client_id": "client_012"
+  },
+  {
+    "platform": "HackerNews Who is Hiring",
+    "title": "PostgreSQL Performance Optimization and Slow Query Tuning Specialist (Ref #013)",
+    "url": "https://job-feed.example.org/hackernews-who-is-hiring/lead-0013",
+    "budget": "$2,500 - $5,000 Fixed",
+    "description": "Looking for specialist to resolve postgresql performance optimization and slow query tuning specialist. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:37:52",
+    "client_id": "client_013"
+  },
+  {
+    "platform": "Freelancer",
+    "title": "Async Python FastApi Backend Developer for Realtime Lead Dashboard (Ref #014)",
+    "url": "https://job-feed.example.org/freelancer/lead-0014",
+    "budget": "$60 - $90 / hr",
+    "description": "Looking for specialist to resolve async python fastapi backend developer for realtime lead dashboard. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:37:54",
+    "client_id": "client_014"
+  },
+  {
+    "platform": "WeWorkRemotely",
+    "title": "Telegram Automation Bot Developer for Lead Capture and Webhook Alerts (Ref #015)",
+    "url": "https://job-feed.example.org/weworkremotely/lead-0015",
+    "budget": "$100 - $150 / hr",
+    "description": "Looking for specialist to resolve telegram automation bot developer for lead capture and webhook alerts. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:37:56",
+    "client_id": "client_015"
+  },
+  {
+    "platform": "Upwork",
+    "title": "Database Migration Disaster Recovery Expert: Flyway Schema Fix (Ref #016)",
+    "url": "https://job-feed.example.org/upwork/lead-0016",
+    "budget": "$100 - $250 Fixed",
+    "description": "Looking for specialist to resolve database migration disaster recovery expert: flyway schema fix. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:37:58",
+    "client_id": "client_016"
+  },
+  {
+    "platform": "Reddit r/forhire",
+    "title": "Distributed Systems Engineer: Kafka Event Sourcing Pipeline (Ref #017)",
+    "url": "https://job-feed.example.org/reddit-r/forhire/lead-0017",
+    "budget": "$500 - $1,200 Fixed",
+    "description": "Looking for specialist to resolve distributed systems engineer: kafka event sourcing pipeline. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:38:00",
+    "client_id": "client_017"
+  },
+  {
+    "platform": "HackerNews Who is Hiring",
+    "title": "Hibernate JPA N+1 Query Regression Audit and EntityGraph Fix (Ref #018)",
+    "url": "https://job-feed.example.org/hackernews-who-is-hiring/lead-0018",
+    "budget": "$2,500 - $5,000 Fixed",
+    "description": "Looking for specialist to resolve hibernate jpa n+1 query regression audit and entitygraph fix. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:38:02",
+    "client_id": "client_018"
+  },
+  {
+    "platform": "Freelancer",
+    "title": "Docker and Kubernetes Deployment Automation for SaaS API (Ref #019)",
+    "url": "https://job-feed.example.org/freelancer/lead-0019",
+    "budget": "$60 - $90 / hr",
+    "description": "Looking for specialist to resolve docker and kubernetes deployment automation for saas api. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:38:04",
+    "client_id": "client_019"
+  },
+  {
+    "platform": "WeWorkRemotely",
+    "title": "Redis Caching Layer Architect for Sub-10ms Latency Requirements (Ref #020)",
+    "url": "https://job-feed.example.org/weworkremotely/lead-0020",
+    "budget": "$100 - $150 / hr",
+    "description": "Looking for specialist to resolve redis caching layer architect for sub-10ms latency requirements. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:38:06",
+    "client_id": "client_020"
+  },
+  {
+    "platform": "Upwork",
+    "title": "Senior Java 21 Backend Engineer for High-Throughput Payment Gateway (Ref #021)",
+    "url": "https://job-feed.example.org/upwork/lead-0021",
+    "budget": "$100 - $250 Fixed",
+    "description": "Looking for specialist to resolve senior java 21 backend engineer for high-throughput payment gateway. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:38:08",
+    "client_id": "client_021"
+  },
+  {
+    "platform": "Reddit r/forhire",
+    "title": "Spring Boot Microservices Architect for Fintech Migration (Ref #022)",
+    "url": "https://job-feed.example.org/reddit-r/forhire/lead-0022",
+    "budget": "$500 - $1,200 Fixed",
+    "description": "Looking for specialist to resolve spring boot microservices architect for fintech migration. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:38:10",
+    "client_id": "client_022"
+  },
+  {
+    "platform": "HackerNews Who is Hiring",
+    "title": "PostgreSQL Performance Optimization and Slow Query Tuning Specialist (Ref #023)",
+    "url": "https://job-feed.example.org/hackernews-who-is-hiring/lead-0023",
+    "budget": "$2,500 - $5,000 Fixed",
+    "description": "Looking for specialist to resolve postgresql performance optimization and slow query tuning specialist. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:38:12",
+    "client_id": "client_023"
+  },
+  {
+    "platform": "Freelancer",
+    "title": "Async Python FastApi Backend Developer for Realtime Lead Dashboard (Ref #024)",
+    "url": "https://job-feed.example.org/freelancer/lead-0024",
+    "budget": "$60 - $90 / hr",
+    "description": "Looking for specialist to resolve async python fastapi backend developer for realtime lead dashboard. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:38:14",
+    "client_id": "client_024"
+  },
+  {
+    "platform": "WeWorkRemotely",
+    "title": "Telegram Automation Bot Developer for Lead Capture and Webhook Alerts (Ref #025)",
+    "url": "https://job-feed.example.org/weworkremotely/lead-0025",
+    "budget": "$100 - $150 / hr",
+    "description": "Looking for specialist to resolve telegram automation bot developer for lead capture and webhook alerts. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:38:16",
+    "client_id": "client_025"
+  },
+  {
+    "platform": "Upwork",
+    "title": "Database Migration Disaster Recovery Expert: Flyway Schema Fix (Ref #026)",
+    "url": "https://job-feed.example.org/upwork/lead-0026",
+    "budget": "$100 - $250 Fixed",
+    "description": "Looking for specialist to resolve database migration disaster recovery expert: flyway schema fix. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:38:18",
+    "client_id": "client_026"
+  },
+  {
+    "platform": "Reddit r/forhire",
+    "title": "Distributed Systems Engineer: Kafka Event Sourcing Pipeline (Ref #027)",
+    "url": "https://job-feed.example.org/reddit-r/forhire/lead-0027",
+    "budget": "$500 - $1,200 Fixed",
+    "description": "Looking for specialist to resolve distributed systems engineer: kafka event sourcing pipeline. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:38:20",
+    "client_id": "client_027"
+  },
+  {
+    "platform": "HackerNews Who is Hiring",
+    "title": "Hibernate JPA N+1 Query Regression Audit and EntityGraph Fix (Ref #028)",
+    "url": "https://job-feed.example.org/hackernews-who-is-hiring/lead-0028",
+    "budget": "$2,500 - $5,000 Fixed",
+    "description": "Looking for specialist to resolve hibernate jpa n+1 query regression audit and entitygraph fix. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:38:22",
+    "client_id": "client_028"
+  },
+  {
+    "platform": "Freelancer",
+    "title": "Docker and Kubernetes Deployment Automation for SaaS API (Ref #029)",
+    "url": "https://job-feed.example.org/freelancer/lead-0029",
+    "budget": "$60 - $90 / hr",
+    "description": "Looking for specialist to resolve docker and kubernetes deployment automation for saas api. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:38:24",
+    "client_id": "client_029"
+  },
+  {
+    "platform": "WeWorkRemotely",
+    "title": "Redis Caching Layer Architect for Sub-10ms Latency Requirements (Ref #030)",
+    "url": "https://job-feed.example.org/weworkremotely/lead-0030",
+    "budget": "$100 - $150 / hr",
+    "description": "Looking for specialist to resolve redis caching layer architect for sub-10ms latency requirements. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:38:26",
+    "client_id": "client_030"
+  },
+  {
+    "platform": "Upwork",
+    "title": "Senior Java 21 Backend Engineer for High-Throughput Payment Gateway (Ref #031)",
+    "url": "https://job-feed.example.org/upwork/lead-0031",
+    "budget": "$100 - $250 Fixed",
+    "description": "Looking for specialist to resolve senior java 21 backend engineer for high-throughput payment gateway. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:38:28",
+    "client_id": "client_031"
+  },
+  {
+    "platform": "Upwork",
+    "title": "Senior Java 21 Backend Engineer for High-Throughput Payment Gateway (Ref #001)",
+    "url": "https://job-feed.example.org/upwork/lead-0001",
+    "budget": "$100 - $250 Fixed",
+    "description": "Looking for specialist to resolve senior java 21 backend engineer for high-throughput payment gateway. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:39:56",
+    "client_id": "client_001"
+  },
+  {
+    "platform": "Reddit r/forhire",
+    "title": "Spring Boot Microservices Architect for Fintech Migration (Ref #032)",
+    "url": "https://job-feed.example.org/reddit-r/forhire/lead-0032",
+    "budget": "$500 - $1,200 Fixed",
+    "description": "Looking for specialist to resolve spring boot microservices architect for fintech migration. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:38:30",
+    "client_id": "client_032"
+  },
+  {
+    "platform": "Reddit r/forhire",
+    "title": "Spring Boot Microservices Architect for Fintech Migration (Ref #002)",
+    "url": "https://job-feed.example.org/reddit-r/forhire/lead-0002",
+    "budget": "$500 - $1,200 Fixed",
+    "description": "Looking for specialist to resolve spring boot microservices architect for fintech migration. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:39:58",
+    "client_id": "client_002"
+  },
+  {
+    "platform": "HackerNews Who is Hiring",
+    "title": "PostgreSQL Performance Optimization and Slow Query Tuning Specialist (Ref #033)",
+    "url": "https://job-feed.example.org/hackernews-who-is-hiring/lead-0033",
+    "budget": "$2,500 - $5,000 Fixed",
+    "description": "Looking for specialist to resolve postgresql performance optimization and slow query tuning specialist. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:38:32",
+    "client_id": "client_033"
+  },
+  {
+    "platform": "HackerNews Who is Hiring",
+    "title": "PostgreSQL Performance Optimization and Slow Query Tuning Specialist (Ref #003)",
+    "url": "https://job-feed.example.org/hackernews-who-is-hiring/lead-0003",
+    "budget": "$2,500 - $5,000 Fixed",
+    "description": "Looking for specialist to resolve postgresql performance optimization and slow query tuning specialist. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:40:00",
+    "client_id": "client_003"
+  },
+  {
+    "platform": "Freelancer",
+    "title": "Async Python FastApi Backend Developer for Realtime Lead Dashboard (Ref #034)",
+    "url": "https://job-feed.example.org/freelancer/lead-0034",
+    "budget": "$60 - $90 / hr",
+    "description": "Looking for specialist to resolve async python fastapi backend developer for realtime lead dashboard. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:38:34",
+    "client_id": "client_034"
+  },
+  {
+    "platform": "Freelancer",
+    "title": "Async Python FastApi Backend Developer for Realtime Lead Dashboard (Ref #004)",
+    "url": "https://job-feed.example.org/freelancer/lead-0004",
+    "budget": "$60 - $90 / hr",
+    "description": "Looking for specialist to resolve async python fastapi backend developer for realtime lead dashboard. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:40:02",
+    "client_id": "client_004"
+  },
+  {
+    "platform": "WeWorkRemotely",
+    "title": "Telegram Automation Bot Developer for Lead Capture and Webhook Alerts (Ref #035)",
+    "url": "https://job-feed.example.org/weworkremotely/lead-0035",
+    "budget": "$100 - $150 / hr",
+    "description": "Looking for specialist to resolve telegram automation bot developer for lead capture and webhook alerts. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:38:36",
+    "client_id": "client_035"
+  },
+  {
+    "platform": "WeWorkRemotely",
+    "title": "Telegram Automation Bot Developer for Lead Capture and Webhook Alerts (Ref #005)",
+    "url": "https://job-feed.example.org/weworkremotely/lead-0005",
+    "budget": "$100 - $150 / hr",
+    "description": "Looking for specialist to resolve telegram automation bot developer for lead capture and webhook alerts. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:40:04",
+    "client_id": "client_005"
+  },
+  {
+    "platform": "Upwork",
+    "title": "Database Migration Disaster Recovery Expert: Flyway Schema Fix (Ref #036)",
+    "url": "https://job-feed.example.org/upwork/lead-0036",
+    "budget": "$100 - $250 Fixed",
+    "description": "Looking for specialist to resolve database migration disaster recovery expert: flyway schema fix. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:38:38",
+    "client_id": "client_036"
+  },
+  {
+    "platform": "Upwork",
+    "title": "Database Migration Disaster Recovery Expert: Flyway Schema Fix (Ref #006)",
+    "url": "https://job-feed.example.org/upwork/lead-0006",
+    "budget": "$100 - $250 Fixed",
+    "description": "Looking for specialist to resolve database migration disaster recovery expert: flyway schema fix. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:40:06",
+    "client_id": "client_006"
+  },
+  {
+    "platform": "Reddit r/forhire",
+    "title": "Distributed Systems Engineer: Kafka Event Sourcing Pipeline (Ref #037)",
+    "url": "https://job-feed.example.org/reddit-r/forhire/lead-0037",
+    "budget": "$500 - $1,200 Fixed",
+    "description": "Looking for specialist to resolve distributed systems engineer: kafka event sourcing pipeline. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:38:40",
+    "client_id": "client_037"
+  },
+  {
+    "platform": "Reddit r/forhire",
+    "title": "Distributed Systems Engineer: Kafka Event Sourcing Pipeline (Ref #007)",
+    "url": "https://job-feed.example.org/reddit-r/forhire/lead-0007",
+    "budget": "$500 - $1,200 Fixed",
+    "description": "Looking for specialist to resolve distributed systems engineer: kafka event sourcing pipeline. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:40:08",
+    "client_id": "client_007"
+  },
+  {
+    "platform": "HackerNews Who is Hiring",
+    "title": "Hibernate JPA N+1 Query Regression Audit and EntityGraph Fix (Ref #038)",
+    "url": "https://job-feed.example.org/hackernews-who-is-hiring/lead-0038",
+    "budget": "$2,500 - $5,000 Fixed",
+    "description": "Looking for specialist to resolve hibernate jpa n+1 query regression audit and entitygraph fix. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:38:42",
+    "client_id": "client_038"
+  },
+  {
+    "platform": "HackerNews Who is Hiring",
+    "title": "Hibernate JPA N+1 Query Regression Audit and EntityGraph Fix (Ref #008)",
+    "url": "https://job-feed.example.org/hackernews-who-is-hiring/lead-0008",
+    "budget": "$2,500 - $5,000 Fixed",
+    "description": "Looking for specialist to resolve hibernate jpa n+1 query regression audit and entitygraph fix. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:40:10",
+    "client_id": "client_008"
+  },
+  {
+    "platform": "Freelancer",
+    "title": "Docker and Kubernetes Deployment Automation for SaaS API (Ref #039)",
+    "url": "https://job-feed.example.org/freelancer/lead-0039",
+    "budget": "$60 - $90 / hr",
+    "description": "Looking for specialist to resolve docker and kubernetes deployment automation for saas api. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:38:44",
+    "client_id": "client_039"
+  },
+  {
+    "platform": "Freelancer",
+    "title": "Docker and Kubernetes Deployment Automation for SaaS API (Ref #009)",
+    "url": "https://job-feed.example.org/freelancer/lead-0009",
+    "budget": "$60 - $90 / hr",
+    "description": "Looking for specialist to resolve docker and kubernetes deployment automation for saas api. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:40:12",
+    "client_id": "client_009"
+  },
+  {
+    "platform": "WeWorkRemotely",
+    "title": "Redis Caching Layer Architect for Sub-10ms Latency Requirements (Ref #040)",
+    "url": "https://job-feed.example.org/weworkremotely/lead-0040",
+    "budget": "$100 - $150 / hr",
+    "description": "Looking for specialist to resolve redis caching layer architect for sub-10ms latency requirements. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:38:46",
+    "client_id": "client_040"
+  },
+  {
+    "platform": "WeWorkRemotely",
+    "title": "Redis Caching Layer Architect for Sub-10ms Latency Requirements (Ref #010)",
+    "url": "https://job-feed.example.org/weworkremotely/lead-0010",
+    "budget": "$100 - $150 / hr",
+    "description": "Looking for specialist to resolve redis caching layer architect for sub-10ms latency requirements. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:40:14",
+    "client_id": "client_010"
+  },
+  {
+    "platform": "Upwork",
+    "title": "Senior Java 21 Backend Engineer for High-Throughput Payment Gateway (Ref #041)",
+    "url": "https://job-feed.example.org/upwork/lead-0041",
+    "budget": "$100 - $250 Fixed",
+    "description": "Looking for specialist to resolve senior java 21 backend engineer for high-throughput payment gateway. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:38:48",
+    "client_id": "client_041"
+  },
+  {
+    "platform": "Upwork",
+    "title": "Senior Java 21 Backend Engineer for High-Throughput Payment Gateway (Ref #011)",
+    "url": "https://job-feed.example.org/upwork/lead-0011",
+    "budget": "$100 - $250 Fixed",
+    "description": "Looking for specialist to resolve senior java 21 backend engineer for high-throughput payment gateway. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:40:16",
+    "client_id": "client_011"
+  },
+  {
+    "platform": "Reddit r/forhire",
+    "title": "Spring Boot Microservices Architect for Fintech Migration (Ref #042)",
+    "url": "https://job-feed.example.org/reddit-r/forhire/lead-0042",
+    "budget": "$500 - $1,200 Fixed",
+    "description": "Looking for specialist to resolve spring boot microservices architect for fintech migration. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:38:50",
+    "client_id": "client_042"
+  },
+  {
+    "platform": "Reddit r/forhire",
+    "title": "Spring Boot Microservices Architect for Fintech Migration (Ref #012)",
+    "url": "https://job-feed.example.org/reddit-r/forhire/lead-0012",
+    "budget": "$500 - $1,200 Fixed",
+    "description": "Looking for specialist to resolve spring boot microservices architect for fintech migration. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:40:18",
+    "client_id": "client_012"
+  },
+  {
+    "platform": "HackerNews Who is Hiring",
+    "title": "PostgreSQL Performance Optimization and Slow Query Tuning Specialist (Ref #043)",
+    "url": "https://job-feed.example.org/hackernews-who-is-hiring/lead-0043",
+    "budget": "$2,500 - $5,000 Fixed",
+    "description": "Looking for specialist to resolve postgresql performance optimization and slow query tuning specialist. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:38:52",
+    "client_id": "client_043"
+  },
+  {
+    "platform": "HackerNews Who is Hiring",
+    "title": "PostgreSQL Performance Optimization and Slow Query Tuning Specialist (Ref #013)",
+    "url": "https://job-feed.example.org/hackernews-who-is-hiring/lead-0013",
+    "budget": "$2,500 - $5,000 Fixed",
+    "description": "Looking for specialist to resolve postgresql performance optimization and slow query tuning specialist. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:40:20",
+    "client_id": "client_013"
+  },
+  {
+    "platform": "Freelancer",
+    "title": "Async Python FastApi Backend Developer for Realtime Lead Dashboard (Ref #044)",
+    "url": "https://job-feed.example.org/freelancer/lead-0044",
+    "budget": "$60 - $90 / hr",
+    "description": "Looking for specialist to resolve async python fastapi backend developer for realtime lead dashboard. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:38:54",
+    "client_id": "client_044"
+  },
+  {
+    "platform": "Freelancer",
+    "title": "Async Python FastApi Backend Developer for Realtime Lead Dashboard (Ref #014)",
+    "url": "https://job-feed.example.org/freelancer/lead-0014",
+    "budget": "$60 - $90 / hr",
+    "description": "Looking for specialist to resolve async python fastapi backend developer for realtime lead dashboard. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:40:22",
+    "client_id": "client_014"
+  },
+  {
+    "platform": "WeWorkRemotely",
+    "title": "Telegram Automation Bot Developer for Lead Capture and Webhook Alerts (Ref #045)",
+    "url": "https://job-feed.example.org/weworkremotely/lead-0045",
+    "budget": "$100 - $150 / hr",
+    "description": "Looking for specialist to resolve telegram automation bot developer for lead capture and webhook alerts. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:38:56",
+    "client_id": "client_045"
+  },
+  {
+    "platform": "WeWorkRemotely",
+    "title": "Telegram Automation Bot Developer for Lead Capture and Webhook Alerts (Ref #015)",
+    "url": "https://job-feed.example.org/weworkremotely/lead-0015",
+    "budget": "$100 - $150 / hr",
+    "description": "Looking for specialist to resolve telegram automation bot developer for lead capture and webhook alerts. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:40:24",
+    "client_id": "client_015"
+  },
+  {
+    "platform": "Upwork",
+    "title": "Database Migration Disaster Recovery Expert: Flyway Schema Fix (Ref #046)",
+    "url": "https://job-feed.example.org/upwork/lead-0046",
+    "budget": "$100 - $250 Fixed",
+    "description": "Looking for specialist to resolve database migration disaster recovery expert: flyway schema fix. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:38:58",
+    "client_id": "client_046"
+  },
+  {
+    "platform": "Upwork",
+    "title": "Database Migration Disaster Recovery Expert: Flyway Schema Fix (Ref #016)",
+    "url": "https://job-feed.example.org/upwork/lead-0016",
+    "budget": "$100 - $250 Fixed",
+    "description": "Looking for specialist to resolve database migration disaster recovery expert: flyway schema fix. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:40:26",
+    "client_id": "client_016"
+  },
+  {
+    "platform": "Reddit r/forhire",
+    "title": "Distributed Systems Engineer: Kafka Event Sourcing Pipeline (Ref #047)",
+    "url": "https://job-feed.example.org/reddit-r/forhire/lead-0047",
+    "budget": "$500 - $1,200 Fixed",
+    "description": "Looking for specialist to resolve distributed systems engineer: kafka event sourcing pipeline. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:39:00",
+    "client_id": "client_047"
+  },
+  {
+    "platform": "Reddit r/forhire",
+    "title": "Distributed Systems Engineer: Kafka Event Sourcing Pipeline (Ref #017)",
+    "url": "https://job-feed.example.org/reddit-r/forhire/lead-0017",
+    "budget": "$500 - $1,200 Fixed",
+    "description": "Looking for specialist to resolve distributed systems engineer: kafka event sourcing pipeline. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:40:28",
+    "client_id": "client_017"
+  },
+  {
+    "platform": "HackerNews Who is Hiring",
+    "title": "Hibernate JPA N+1 Query Regression Audit and EntityGraph Fix (Ref #048)",
+    "url": "https://job-feed.example.org/hackernews-who-is-hiring/lead-0048",
+    "budget": "$2,500 - $5,000 Fixed",
+    "description": "Looking for specialist to resolve hibernate jpa n+1 query regression audit and entitygraph fix. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:39:02",
+    "client_id": "client_048"
+  },
+  {
+    "platform": "HackerNews Who is Hiring",
+    "title": "Hibernate JPA N+1 Query Regression Audit and EntityGraph Fix (Ref #018)",
+    "url": "https://job-feed.example.org/hackernews-who-is-hiring/lead-0018",
+    "budget": "$2,500 - $5,000 Fixed",
+    "description": "Looking for specialist to resolve hibernate jpa n+1 query regression audit and entitygraph fix. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:40:30",
+    "client_id": "client_018"
+  },
+  {
+    "platform": "Freelancer",
+    "title": "Docker and Kubernetes Deployment Automation for SaaS API (Ref #049)",
+    "url": "https://job-feed.example.org/freelancer/lead-0049",
+    "budget": "$60 - $90 / hr",
+    "description": "Looking for specialist to resolve docker and kubernetes deployment automation for saas api. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:39:04",
+    "client_id": "client_049"
+  },
+  {
+    "platform": "Freelancer",
+    "title": "Docker and Kubernetes Deployment Automation for SaaS API (Ref #019)",
+    "url": "https://job-feed.example.org/freelancer/lead-0019",
+    "budget": "$60 - $90 / hr",
+    "description": "Looking for specialist to resolve docker and kubernetes deployment automation for saas api. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:40:32",
+    "client_id": "client_019"
+  },
+  {
+    "platform": "WeWorkRemotely",
+    "title": "Redis Caching Layer Architect for Sub-10ms Latency Requirements (Ref #050)",
+    "url": "https://job-feed.example.org/weworkremotely/lead-0050",
+    "budget": "$100 - $150 / hr",
+    "description": "Looking for specialist to resolve redis caching layer architect for sub-10ms latency requirements. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:39:06",
+    "client_id": "client_050"
+  },
+  {
+    "platform": "WeWorkRemotely",
+    "title": "Redis Caching Layer Architect for Sub-10ms Latency Requirements (Ref #020)",
+    "url": "https://job-feed.example.org/weworkremotely/lead-0020",
+    "budget": "$100 - $150 / hr",
+    "description": "Looking for specialist to resolve redis caching layer architect for sub-10ms latency requirements. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:40:34",
+    "client_id": "client_020"
+  },
+  {
+    "platform": "Upwork",
+    "title": "Senior Java 21 Backend Engineer for High-Throughput Payment Gateway (Ref #051)",
+    "url": "https://job-feed.example.org/upwork/lead-0051",
+    "budget": "$100 - $250 Fixed",
+    "description": "Looking for specialist to resolve senior java 21 backend engineer for high-throughput payment gateway. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:39:08",
+    "client_id": "client_051"
+  },
+  {
+    "platform": "Upwork",
+    "title": "Senior Java 21 Backend Engineer for High-Throughput Payment Gateway (Ref #021)",
+    "url": "https://job-feed.example.org/upwork/lead-0021",
+    "budget": "$100 - $250 Fixed",
+    "description": "Looking for specialist to resolve senior java 21 backend engineer for high-throughput payment gateway. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:40:36",
+    "client_id": "client_021"
+  },
+  {
+    "platform": "Reddit r/forhire",
+    "title": "Spring Boot Microservices Architect for Fintech Migration (Ref #052)",
+    "url": "https://job-feed.example.org/reddit-r/forhire/lead-0052",
+    "budget": "$500 - $1,200 Fixed",
+    "description": "Looking for specialist to resolve spring boot microservices architect for fintech migration. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:39:10",
+    "client_id": "client_052"
+  },
+  {
+    "platform": "Reddit r/forhire",
+    "title": "Spring Boot Microservices Architect for Fintech Migration (Ref #022)",
+    "url": "https://job-feed.example.org/reddit-r/forhire/lead-0022",
+    "budget": "$500 - $1,200 Fixed",
+    "description": "Looking for specialist to resolve spring boot microservices architect for fintech migration. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:40:38",
+    "client_id": "client_022"
+  },
+  {
+    "platform": "HackerNews Who is Hiring",
+    "title": "PostgreSQL Performance Optimization and Slow Query Tuning Specialist (Ref #053)",
+    "url": "https://job-feed.example.org/hackernews-who-is-hiring/lead-0053",
+    "budget": "$2,500 - $5,000 Fixed",
+    "description": "Looking for specialist to resolve postgresql performance optimization and slow query tuning specialist. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:39:12",
+    "client_id": "client_053"
+  },
+  {
+    "platform": "HackerNews Who is Hiring",
+    "title": "PostgreSQL Performance Optimization and Slow Query Tuning Specialist (Ref #023)",
+    "url": "https://job-feed.example.org/hackernews-who-is-hiring/lead-0023",
+    "budget": "$2,500 - $5,000 Fixed",
+    "description": "Looking for specialist to resolve postgresql performance optimization and slow query tuning specialist. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:40:40",
+    "client_id": "client_023"
+  },
+  {
+    "platform": "Freelancer",
+    "title": "Async Python FastApi Backend Developer for Realtime Lead Dashboard (Ref #054)",
+    "url": "https://job-feed.example.org/freelancer/lead-0054",
+    "budget": "$60 - $90 / hr",
+    "description": "Looking for specialist to resolve async python fastapi backend developer for realtime lead dashboard. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:39:14",
+    "client_id": "client_054"
+  },
+  {
+    "platform": "Freelancer",
+    "title": "Async Python FastApi Backend Developer for Realtime Lead Dashboard (Ref #024)",
+    "url": "https://job-feed.example.org/freelancer/lead-0024",
+    "budget": "$60 - $90 / hr",
+    "description": "Looking for specialist to resolve async python fastapi backend developer for realtime lead dashboard. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:40:42",
+    "client_id": "client_024"
+  },
+  {
+    "platform": "WeWorkRemotely",
+    "title": "Telegram Automation Bot Developer for Lead Capture and Webhook Alerts (Ref #055)",
+    "url": "https://job-feed.example.org/weworkremotely/lead-0055",
+    "budget": "$100 - $150 / hr",
+    "description": "Looking for specialist to resolve telegram automation bot developer for lead capture and webhook alerts. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:39:16",
+    "client_id": "client_055"
+  },
+  {
+    "platform": "WeWorkRemotely",
+    "title": "Telegram Automation Bot Developer for Lead Capture and Webhook Alerts (Ref #025)",
+    "url": "https://job-feed.example.org/weworkremotely/lead-0025",
+    "budget": "$100 - $150 / hr",
+    "description": "Looking for specialist to resolve telegram automation bot developer for lead capture and webhook alerts. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:40:44",
+    "client_id": "client_025"
+  },
+  {
+    "platform": "Upwork",
+    "title": "Database Migration Disaster Recovery Expert: Flyway Schema Fix (Ref #056)",
+    "url": "https://job-feed.example.org/upwork/lead-0056",
+    "budget": "$100 - $250 Fixed",
+    "description": "Looking for specialist to resolve database migration disaster recovery expert: flyway schema fix. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:39:18",
+    "client_id": "client_056"
+  },
+  {
+    "platform": "Upwork",
+    "title": "Database Migration Disaster Recovery Expert: Flyway Schema Fix (Ref #026)",
+    "url": "https://job-feed.example.org/upwork/lead-0026",
+    "budget": "$100 - $250 Fixed",
+    "description": "Looking for specialist to resolve database migration disaster recovery expert: flyway schema fix. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:40:46",
+    "client_id": "client_026"
+  },
+  {
+    "platform": "Reddit r/forhire",
+    "title": "Distributed Systems Engineer: Kafka Event Sourcing Pipeline (Ref #057)",
+    "url": "https://job-feed.example.org/reddit-r/forhire/lead-0057",
+    "budget": "$500 - $1,200 Fixed",
+    "description": "Looking for specialist to resolve distributed systems engineer: kafka event sourcing pipeline. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:39:20",
+    "client_id": "client_057"
+  },
+  {
+    "platform": "Reddit r/forhire",
+    "title": "Distributed Systems Engineer: Kafka Event Sourcing Pipeline (Ref #027)",
+    "url": "https://job-feed.example.org/reddit-r/forhire/lead-0027",
+    "budget": "$500 - $1,200 Fixed",
+    "description": "Looking for specialist to resolve distributed systems engineer: kafka event sourcing pipeline. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:40:48",
+    "client_id": "client_027"
+  },
+  {
+    "platform": "HackerNews Who is Hiring",
+    "title": "Hibernate JPA N+1 Query Regression Audit and EntityGraph Fix (Ref #058)",
+    "url": "https://job-feed.example.org/hackernews-who-is-hiring/lead-0058",
+    "budget": "$2,500 - $5,000 Fixed",
+    "description": "Looking for specialist to resolve hibernate jpa n+1 query regression audit and entitygraph fix. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:39:22",
+    "client_id": "client_058"
+  },
+  {
+    "platform": "HackerNews Who is Hiring",
+    "title": "Hibernate JPA N+1 Query Regression Audit and EntityGraph Fix (Ref #028)",
+    "url": "https://job-feed.example.org/hackernews-who-is-hiring/lead-0028",
+    "budget": "$2,500 - $5,000 Fixed",
+    "description": "Looking for specialist to resolve hibernate jpa n+1 query regression audit and entitygraph fix. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:40:50",
+    "client_id": "client_028"
+  },
+  {
+    "platform": "Freelancer",
+    "title": "Docker and Kubernetes Deployment Automation for SaaS API (Ref #059)",
+    "url": "https://job-feed.example.org/freelancer/lead-0059",
+    "budget": "$60 - $90 / hr",
+    "description": "Looking for specialist to resolve docker and kubernetes deployment automation for saas api. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:39:24",
+    "client_id": "client_059"
+  },
+  {
+    "platform": "Freelancer",
+    "title": "Docker and Kubernetes Deployment Automation for SaaS API (Ref #029)",
+    "url": "https://job-feed.example.org/freelancer/lead-0029",
+    "budget": "$60 - $90 / hr",
+    "description": "Looking for specialist to resolve docker and kubernetes deployment automation for saas api. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:40:52",
+    "client_id": "client_029"
+  },
+  {
+    "platform": "WeWorkRemotely",
+    "title": "Redis Caching Layer Architect for Sub-10ms Latency Requirements (Ref #060)",
+    "url": "https://job-feed.example.org/weworkremotely/lead-0060",
+    "budget": "$100 - $150 / hr",
+    "description": "Looking for specialist to resolve redis caching layer architect for sub-10ms latency requirements. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:39:26",
+    "client_id": "client_060"
+  },
+  {
+    "platform": "WeWorkRemotely",
+    "title": "Redis Caching Layer Architect for Sub-10ms Latency Requirements (Ref #030)",
+    "url": "https://job-feed.example.org/weworkremotely/lead-0030",
+    "budget": "$100 - $150 / hr",
+    "description": "Looking for specialist to resolve redis caching layer architect for sub-10ms latency requirements. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:40:54",
+    "client_id": "client_030"
+  },
+  {
+    "platform": "Upwork",
+    "title": "Senior Java 21 Backend Engineer for High-Throughput Payment Gateway (Ref #061)",
+    "url": "https://job-feed.example.org/upwork/lead-0061",
+    "budget": "$100 - $250 Fixed",
+    "description": "Looking for specialist to resolve senior java 21 backend engineer for high-throughput payment gateway. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:39:28",
+    "client_id": "client_061"
+  },
+  {
+    "platform": "Reddit r/forhire",
+    "title": "Spring Boot Microservices Architect for Fintech Migration (Ref #062)",
+    "url": "https://job-feed.example.org/reddit-r/forhire/lead-0062",
+    "budget": "$500 - $1,200 Fixed",
+    "description": "Looking for specialist to resolve spring boot microservices architect for fintech migration. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:39:30",
+    "client_id": "client_062"
+  },
+  {
+    "platform": "HackerNews Who is Hiring",
+    "title": "PostgreSQL Performance Optimization and Slow Query Tuning Specialist (Ref #063)",
+    "url": "https://job-feed.example.org/hackernews-who-is-hiring/lead-0063",
+    "budget": "$2,500 - $5,000 Fixed",
+    "description": "Looking for specialist to resolve postgresql performance optimization and slow query tuning specialist. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:39:32",
+    "client_id": "client_063"
+  },
+  {
+    "platform": "Freelancer",
+    "title": "Async Python FastApi Backend Developer for Realtime Lead Dashboard (Ref #064)",
+    "url": "https://job-feed.example.org/freelancer/lead-0064",
+    "budget": "$60 - $90 / hr",
+    "description": "Looking for specialist to resolve async python fastapi backend developer for realtime lead dashboard. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:39:34",
+    "client_id": "client_064"
+  },
+  {
+    "platform": "WeWorkRemotely",
+    "title": "Telegram Automation Bot Developer for Lead Capture and Webhook Alerts (Ref #065)",
+    "url": "https://job-feed.example.org/weworkremotely/lead-0065",
+    "budget": "$100 - $150 / hr",
+    "description": "Looking for specialist to resolve telegram automation bot developer for lead capture and webhook alerts. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:39:36",
+    "client_id": "client_065"
+  },
+  {
+    "platform": "Upwork",
+    "title": "Database Migration Disaster Recovery Expert: Flyway Schema Fix (Ref #066)",
+    "url": "https://job-feed.example.org/upwork/lead-0066",
+    "budget": "$100 - $250 Fixed",
+    "description": "Looking for specialist to resolve database migration disaster recovery expert: flyway schema fix. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:39:38",
+    "client_id": "client_066"
+  },
+  {
+    "platform": "Reddit r/forhire",
+    "title": "Distributed Systems Engineer: Kafka Event Sourcing Pipeline (Ref #067)",
+    "url": "https://job-feed.example.org/reddit-r/forhire/lead-0067",
+    "budget": "$500 - $1,200 Fixed",
+    "description": "Looking for specialist to resolve distributed systems engineer: kafka event sourcing pipeline. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:39:40",
+    "client_id": "client_067"
+  },
+  {
+    "platform": "HackerNews Who is Hiring",
+    "title": "Hibernate JPA N+1 Query Regression Audit and EntityGraph Fix (Ref #068)",
+    "url": "https://job-feed.example.org/hackernews-who-is-hiring/lead-0068",
+    "budget": "$2,500 - $5,000 Fixed",
+    "description": "Looking for specialist to resolve hibernate jpa n+1 query regression audit and entitygraph fix. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:39:42",
+    "client_id": "client_068"
+  },
+  {
+    "platform": "Freelancer",
+    "title": "Docker and Kubernetes Deployment Automation for SaaS API (Ref #069)",
+    "url": "https://job-feed.example.org/freelancer/lead-0069",
+    "budget": "$60 - $90 / hr",
+    "description": "Looking for specialist to resolve docker and kubernetes deployment automation for saas api. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:39:44",
+    "client_id": "client_069"
+  },
+  {
+    "platform": "WeWorkRemotely",
+    "title": "Redis Caching Layer Architect for Sub-10ms Latency Requirements (Ref #070)",
+    "url": "https://job-feed.example.org/weworkremotely/lead-0070",
+    "budget": "$100 - $150 / hr",
+    "description": "Looking for specialist to resolve redis caching layer architect for sub-10ms latency requirements. Must demonstrate immediate production experience and minimal safe diffs.",
+    "detected_at": "2026-10-10 23:39:46",
+    "client_id": "client_070"
+  }
+]

@@ -1,0 +1,112 @@
+{
+  "artifact": "D15",
+  "round": "R2",
+  "service": "Service-22: PostgreSQL Table VACUUM & Bloat Remediation Script",
+  "timestamp_utc": "2026-10-11 07:33:48 UTC",
+  "probe_1_concurrency": {
+    "status": "PASSED",
+    "total_workers": 50,
+    "num_readers": 25,
+    "num_writers": 25,
+    "total_queries": 125159,
+    "read_queries": 62994,
+    "write_queries": 62165,
+    "throughput_qps": 30101.5,
+    "lock_timeouts": 0,
+    "aborted_transactions": 0,
+    "query_errors": 0,
+    "timing": {
+      "vacuum_seconds": 0.7348,
+      "reindex_seconds": 3.4199,
+      "total_remediation_seconds": 4.1579
+    },
+    "latencies_ms": {
+      "read": {
+        "p50": 0.473,
+        "p95": 1.668,
+        "p99": 2.971
+      },
+      "write": {
+        "p50": 1.632,
+        "p95": 5.547,
+        "p99": 8.356
+      }
+    }
+  },
+  "probe_2_autovacuum_lag": {
+    "status": "PASSED",
+    "updates_executed": 200000,
+    "update_duration_seconds": 3.2709,
+    "lagged_dead_tuples": 200000,
+    "lagged_dead_tuple_ratio_pct": 55.26,
+    "default_worker": {
+      "cost_limit": 200,
+      "cost_delay_ms": 2,
+      "duration_seconds": 1.2883,
+      "throughput_tuples_per_sec": 155243.3
+    },
+    "tuned_worker": {
+      "cost_limit": 1000,
+      "cost_delay_ms": 2,
+      "duration_seconds": 0.5079,
+      "throughput_tuples_per_sec": 196889.2
+    },
+    "worker_throughput_speedup": 2.54,
+    "post_tuning": {
+      "live_tuples": 162165,
+      "dead_tuples": 0,
+      "dead_tuple_ratio_pct": 0.0,
+      "table_bytes": 28024832,
+      "index_bytes": 11845632,
+      "total_bytes": 39903232
+    },
+    "active_reloptions": [
+      "autovacuum_enabled=true",
+      "autovacuum_vacuum_scale_factor=0.05",
+      "autovacuum_vacuum_cost_limit=1000",
+      "autovacuum_vacuum_cost_delay=2"
+    ]
+  },
+  "probe_3_index_rebuild": {
+    "status": "PASSED",
+    "index_name": "idx_orders_customer_status",
+    "bloated_index": {
+      "bytes": 5701632,
+      "pretty": "5568 kB",
+      "plan_execution_ms": 77.715,
+      "shared_hit_buffers": 250367,
+      "heap_fetches": 250050,
+      "latency_mean_ms": 92.969,
+      "latency_p50_ms": 92.008,
+      "latency_p95_ms": 109.629
+    },
+    "rebuilt_index": {
+      "bytes": 1138688,
+      "pretty": "1112 kB",
+      "plan_execution_ms": 4.673,
+      "shared_hit_buffers": 71,
+      "heap_fetches": 0,
+      "latency_mean_ms": 55.405,
+      "latency_p50_ms": 55.674,
+      "latency_p95_ms": 63.503
+    },
+    "reindex_duration_seconds": 0.701,
+    "space_reclaimed_pct": 80.03,
+    "buffer_reduction_ratio": 3526.3,
+    "speedup_metrics": {
+      "plan_speedup_ratio": 16.63,
+      "mean_latency_speedup_ratio": 1.68,
+      "p50_latency_speedup_ratio": 1.65,
+      "effective_speedup_ratio": 16.63
+    }
+  },
+  "acceptance_criteria": {
+    "concurrent_lock_timeouts_zero": true,
+    "concurrent_aborted_transactions_zero": true,
+    "concurrent_query_errors_zero": true,
+    "autovacuum_lag_simulation_200k_passed": true,
+    "autovacuum_worker_throughput_improved": true,
+    "index_scan_speedup_at_least_3x": true,
+    "zero_em_dashes_enforced": true
+  }
+}

@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.ashfaq.n1.UserN1QueryTest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.468 s -- in com.ashfaq.n1.UserN1QueryTest

@@ -1,0 +1,34 @@
+{
+  "task_id": "t_e89c9163",
+  "artifact_id": "D12",
+  "round": "R1",
+  "database": {
+    "engine": "PostgreSQL",
+    "port": 5433,
+    "schema": "d12_copy_sandbox",
+    "table": "inventory"
+  },
+  "dataset": {
+    "file": "inventory_500k.csv",
+    "file_size_bytes": 67248806,
+    "file_size_mb": 64.13,
+    "verified_row_count": 500000
+  },
+  "performance": {
+    "total_elapsed_seconds": 3.9519,
+    "commit_elapsed_seconds": 0.0099,
+    "rows_per_second": 126522.54,
+    "mb_per_second": 16.23,
+    "target_max_seconds": 5.0,
+    "target_min_rows_per_sec": 100000.0,
+    "timing_gate_passed": true
+  },
+  "memory": {
+    "initial_rss_mb": 18.45,
+    "peak_rss_mb": 20.29,
+    "final_rss_mb": 20.29,
+    "target_max_rss_mb": 35.0,
+    "memory_gate_passed": true
+  },
+  "acceptance_criteria_verified": true
+}

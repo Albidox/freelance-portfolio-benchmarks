@@ -1,0 +1,57 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "Greg Byzantine Auditor",
+          "informationUri": "https://hermes-agent.nousresearch.com",
+          "rules": [
+            {
+              "id": "ROLE_COMPLIANCE_001",
+              "name": "RoleBoundaryCompliance",
+              "shortDescription": { "text": "Ensure the orchestrator and specialists stayed within bounds." }
+            },
+            {
+              "id": "SEC_001",
+              "name": "ZeroDefectSecurity",
+              "shortDescription": { "text": "Ensure no severe vulnerabilities or data races." }
+            },
+            {
+              "id": "VERIF_001",
+              "name": "ZeroPlausibleFabrication",
+              "shortDescription": { "text": "Ensure metrics are real and tests pass." }
+            }
+          ]
+        }
+      },
+      "results": [
+        {
+          "ruleId": "ROLE_COMPLIANCE_001",
+          "level": "note",
+          "message": { "text": "Task was correctly executed by the assigned specialist with no inline orchestration." },
+          "locations": [{ "physicalLocation": { "artifactLocation": { "uri": "README.md" } } }]
+        },
+        {
+          "ruleId": "SEC_001",
+          "level": "note",
+          "message": { "text": "No vulnerabilities detected. Maven test logs pass perfectly with 3/3." },
+          "locations": [{ "physicalLocation": { "artifactLocation": { "uri": "pom.xml" } } }]
+        },
+        {
+          "ruleId": "VERIF_001",
+          "level": "note",
+          "message": { "text": "Statement count delta of 51 before vs 1 after matches actual surefire reports exactly." },
+          "locations": [{ "physicalLocation": { "artifactLocation": { "uri": "output/surefire_report.txt" } } }]
+        },
+        {
+          "ruleId": "VERIF_001",
+          "level": "note",
+          "message": { "text": "fix.patch is minimal and accurate." },
+          "locations": [{ "physicalLocation": { "artifactLocation": { "uri": "fix.patch" } } }]
+        }
+      ]
+    }
+  ]
+}

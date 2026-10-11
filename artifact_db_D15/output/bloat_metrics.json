@@ -1,0 +1,55 @@
+{
+  "artifact": "D15",
+  "round": "R1",
+  "service": "Service-22: PostgreSQL Table VACUUM & Bloat Remediation Script",
+  "database": {
+    "engine": "PostgreSQL 18.0",
+    "host": "127.0.0.1",
+    "port": 5433,
+    "schema": "d15_vacuum_sandbox",
+    "table": "orders"
+  },
+  "pre_remediation": {
+    "live_tuples": 100000,
+    "dead_tuples": 410000,
+    "dead_tuple_ratio_pct": 80.3921568627451,
+    "table_bytes": 42205184,
+    "index_bytes": 17997824,
+    "total_bytes": 60235776
+  },
+  "post_remediation": {
+    "live_tuples": 100000,
+    "dead_tuples": 0,
+    "dead_tuple_ratio_pct": 0.0,
+    "table_bytes": 8429568,
+    "index_bytes": 4710400,
+    "total_bytes": 13172736
+  },
+  "reclamation": {
+    "table_reclaimed_bytes": 33775616,
+    "table_reclaimed_pct": 80.02717391304348,
+    "index_reclaimed_bytes": 13287424,
+    "index_reclaimed_pct": 73.82794720072826,
+    "total_reclaimed_bytes": 47063040,
+    "total_reclaimed_pct": 78.1313749490004
+  },
+  "timing": {
+    "vacuum_seconds": 0.3272560000041267,
+    "reindex_seconds": 0.7708375000001979,
+    "total_remediation_seconds": 1.0980935000043246
+  },
+  "tuning_parameters": {
+    "autovacuum_enabled": true,
+    "autovacuum_vacuum_scale_factor": 0.05,
+    "autovacuum_vacuum_cost_limit": 1000
+  },
+  "acceptance_criteria": {
+    "dead_tuple_ratio_drop_under_2_pct": true,
+    "space_reclamation_over_70_pct": true,
+    "table_readable_zero_lock_timeouts": true,
+    "metrics_json_generated": true,
+    "sha256_manifest_generated": true,
+    "zero_em_dashes_enforced": true
+  },
+  "timestamp_utc": "2026-10-11 07:33:10"
+}

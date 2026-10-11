@@ -1,0 +1,11 @@
+Deadlock Reproduction Results:
+
+Worker 1: DEADLOCK in 1218.22 ms
+Error: deadlock detected
+DETAIL:  Process 24448 waits for ShareLock on transaction 910; blocked by process 18912.
+Process 18912 waits for ShareLock on transaction 911; blocked by process 24448.
+HINT:  See server log for query details.
+CONTEXT:  while updating tuple (7,106) in relation "products"
+
+Worker 2: SUCCESS in 1237.92 ms
+

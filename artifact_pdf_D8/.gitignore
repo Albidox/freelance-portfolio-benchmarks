@@ -1,0 +1,3 @@
+.pytest_cache/
+output/test_run/
+output/soak_probe/

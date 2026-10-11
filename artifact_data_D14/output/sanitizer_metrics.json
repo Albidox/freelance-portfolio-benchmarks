@@ -1,0 +1,24 @@
+{
+  "timestamp_utc": "2026-10-11T06:54:18Z",
+  "artifact_id": "D14",
+  "round": "R1",
+  "status": "PASSED",
+  "total_records_processed": 100000,
+  "valid_records_count": 84805,
+  "quarantined_records_count": 15195,
+  "uncaught_runtime_exceptions": 0,
+  "execution_time_seconds": 2.4738,
+  "throughput_records_per_second": 40423.5,
+  "peak_memory_rss_mb": 95.24,
+  "quarantine_error_path_compliance_pct": 100.0,
+  "field_error_distribution": {
+    "email": 7540,
+    "timestamp": 7527,
+    "amount": 7652
+  },
+  "acceptance_criteria": {
+    "under_2_point_5_seconds": true,
+    "zero_uncaught_exceptions": true,
+    "hundred_pct_error_paths": true
+  }
+}

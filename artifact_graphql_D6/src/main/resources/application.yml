@@ -1,0 +1,32 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: artifact-graphql-gateway-d6
+  threads:
+    virtual:
+      enabled: true
+
+graphql:
+  upstream:
+    url: http://127.0.0.1:4000/graphql
+    timeout-ms: 1000
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+    enabled: true
+  swagger-ui:
+    path: /swagger-ui.html
+    enabled: true
+  show-actuator: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: always

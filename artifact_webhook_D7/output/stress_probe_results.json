@@ -1,0 +1,37 @@
+{
+  "artifact": "Artifact D7 (Service 20): Idempotent Webhook Ingestion Engine with HMAC",
+  "phase": "Round 2: Real-World Stress Probe and Replay Attack Fuzzing",
+  "timestamp": "2026-10-11T02:59:40Z",
+  "probes": {
+    "replay_attack": {
+      "scenario": "Replay Attack Simulation",
+      "tolerance_window_seconds": 300,
+      "simulated_age_seconds": 360,
+      "http_status_code": 400,
+      "error_message": "Timestamp outside allowed tolerance window (300s)",
+      "latency_ms": 4.31,
+      "replay_rejected_with_400": true,
+      "future_timestamp_rejected_with_400": true
+    },
+    "signature_fuzzing": {
+      "scenario": "Signature Tampering Fuzzing",
+      "total_fuzz_iterations": 100,
+      "rejected_unauthorized_401_count": 100,
+      "pass_rate_percentage": 100.0,
+      "crypto_validation_p50_ms": 0.082,
+      "crypto_validation_under_point_two_ms": true,
+      "http_socket_roundtrip_p50_ms": 1.69
+    },
+    "database_crash_rollback": {
+      "scenario": "Mid-Flight Database Crash and Transactional Rollback",
+      "simulated_crash_status_code": 500,
+      "ghost_events_in_processed_events": 0,
+      "ghost_records_in_payment_ledger": 0,
+      "transactional_rollback_verified": true,
+      "retry_succeeded": true,
+      "subsequent_duplicate_suppressed": true,
+      "final_ledger_count": 1
+    }
+  },
+  "all_probes_passed": true
+}

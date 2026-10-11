@@ -1,0 +1,267 @@
+{
+  "$schema": "https://json.schemastore.org/sarif-2.1.0.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "Greg The Skeptic (Byzantine Auditor)",
+          "version": "1.0.0",
+          "informationUri": "https://hermes-agent.nousresearch.com/docs",
+          "rules": [
+            {
+              "id": "ROLE-001",
+              "name": "RoleBoundaryCompliance",
+              "shortDescription": {
+                "text": "Verifies that all domain implementation tasks were executed strictly by assigned specialist eric without orchestrator inline bypass."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "id": "FILE-001",
+              "name": "DeliverablesAndChecksumIntegrity",
+              "shortDescription": {
+                "text": "Verifies all required artifact deliverables exist on disk and SHA-256 hashes cryptographically match output/SHA256SUMS.txt."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "id": "METRIC-BATCH-001",
+              "name": "BatchRenderSpeedAndThroughput",
+              "shortDescription": {
+                "text": "Verifies 50 multi-page A4 PDFs rendered in under 30.0s threshold."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "id": "METRIC-CLIP-001",
+              "name": "ZeroTableRowClippingAcrossSplits",
+              "shortDescription": {
+                "text": "Verifies zero table row or cell clipping across page split boundaries using CSS page-break avoidance."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "id": "METRIC-MEM-001",
+              "name": "StrictlyBoundedMemoryFootprint",
+              "shortDescription": {
+                "text": "Verifies memory footprint strictly bounded (<250MB daemon RSS in R1, <300MB daemon RSS under 500-render probe in R2)."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "id": "METRIC-ZOMBIE-001",
+              "name": "ZeroZombieChromiumProcesses",
+              "shortDescription": {
+                "text": "Verifies deterministic process teardown with zero lingering Chromium child or zombie processes remaining."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "id": "METRIC-UNICODE-001",
+              "name": "MultilingualUnicodeGlyphFidelity",
+              "shortDescription": {
+                "text": "Verifies mixed Unicode character rendering across Chinese, Cyrillic, and Devanagari scripts with zero tofu boxes."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "id": "METRIC-PAGINATE-001",
+              "name": "MassiveTablePaginationAndRunningTotals",
+              "shortDescription": {
+                "text": "Verifies 500 line item massive table pagination across multiple pages with zero text clipping and 100 percent verified cumulative footers."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "id": "STYLE-EMDASH-001",
+              "name": "PunctuationStandardZeroEmDashes",
+              "shortDescription": {
+                "text": "Verifies strict zero em dashes across all code, comments, reports, and manifests."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            }
+          ]
+        }
+      },
+      "results": [
+        {
+          "ruleId": "ROLE-001",
+          "level": "none",
+          "kind": "pass",
+          "message": {
+            "text": "Role execution complies with strict boundaries: D8-R1 (Sandbox Build) and D8-R2 (Real-World Stress Probe) executed strictly by assigned specialist eric; reviewer audit gate executed by reviewer with zero orchestrator inline leakage."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "output/playwright_pdf_stress_report.md"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "FILE-001",
+          "level": "none",
+          "kind": "pass",
+          "message": {
+            "text": "All 56 required deliverables exist on disk and SHA-256 hashes cryptographically match output/SHA256SUMS.txt with 100 percent integrity."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "output/SHA256SUMS.txt"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "METRIC-BATCH-001",
+          "level": "none",
+          "kind": "pass",
+          "message": {
+            "text": "Hero metric batch render speed confirmed: 50 multi-page A4 PDFs rendered in 6.343s (threshold < 30.0s, throughput 7.88 invoices/sec, average 3.0 pages per invoice for 150 total pages rendered)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "output/pdf_metrics.json"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "METRIC-CLIP-001",
+          "level": "none",
+          "kind": "pass",
+          "message": {
+            "text": "Zero table row clipping verified: 0 clipping errors across 50 batch invoices (150 pages) and 0 clipping errors across 500-line-item massive document (32 pages), enforced via break-inside: avoid."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "templates/invoice.html"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "METRIC-MEM-001",
+          "level": "none",
+          "kind": "pass",
+          "message": {
+            "text": "Memory footprint strictly bounded: R1 batch peak daemon RSS was 61.52 MB (limit < 250 MB); R2 500-render soak probe peak daemon RSS was 62.51 MB with flat 59.65 MB steady state across 500 iterations (limit < 300 MB)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "output/pdf_stress_metrics.json"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "METRIC-ZOMBIE-001",
+          "level": "none",
+          "kind": "pass",
+          "message": {
+            "text": "Zero zombie processes verified: 5 active Chromium renderer/utility subprocesses cleanly terminated upon daemon close, leaving exactly 0 lingering zombie or orphan processes."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "output/pdf_stress_metrics.json"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "METRIC-UNICODE-001",
+          "level": "none",
+          "kind": "pass",
+          "message": {
+            "text": "Multilingual Unicode glyph fidelity verified: 0 tofu boxes (0 U+FFFD characters) across Simplified Chinese, Russian Cyrillic, and Devanagari Hindi with embedded font subsets (Microsoft YaHei, Nirmala UI, Segoe UI)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "output/invoice_unicode_stress.pdf"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "METRIC-PAGINATE-001",
+          "level": "none",
+          "kind": "pass",
+          "message": {
+            "text": "Massive table pagination verified: 500 line items rendered across 32 pages (threshold >= 15 pages) with zero text clipping and 100 percent cumulative running footers verified matching final total 382,500.00."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "output/invoice_500_line_items.pdf"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "STYLE-EMDASH-001",
+          "level": "none",
+          "kind": "pass",
+          "message": {
+            "text": "Strict zero em dashes check passed: 0 em dashes detected across all python source code, HTML templates, test suites, markdown reports, and JSON manifests."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "output/playwright_pdf_stress_report.md"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "properties": {
+        "verdict": "MERGE_APPROVED",
+        "auditOutcome": "ZERO_DEFECTS",
+        "reviewerProfile": "reviewer"
+      }
+    }
+  ]
+}

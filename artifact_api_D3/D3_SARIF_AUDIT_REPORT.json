@@ -1,0 +1,98 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://json.schemastore.org/sarif-2.1.0.json",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "Greg The Skeptic (Byzantine Auditor)",
+          "version": "1.0.0",
+          "informationUri": "https://hermes-agent.nousresearch.com/docs",
+          "rules": [
+            {
+              "id": "ROLE-001",
+              "name": "RoleCompliance",
+              "shortDescription": {
+                "text": "Role Boundary Compliance"
+              }
+            },
+            {
+              "id": "METRIC-001",
+              "name": "HeroMetricsVerification",
+              "shortDescription": {
+                "text": "Hero Metrics Validated"
+              }
+            },
+            {
+              "id": "STYLE-001",
+              "name": "PunctuationStandard",
+              "shortDescription": {
+                "text": "Zero Em Dashes Constraint"
+              }
+            },
+            {
+              "id": "FILE-001",
+              "name": "OutputFilesVerification",
+              "shortDescription": {
+                "text": "Artifact Output Completeness"
+              }
+            }
+          ]
+        }
+      },
+      "results": [
+        {
+          "ruleId": "FILE-001",
+          "level": "none",
+          "kind": "pass",
+          "message": {
+            "text": "All output files exist: collection.json, SHA256SUMS.txt, contract_drift_probe_report.md"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "output/SHA256SUMS.txt"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "METRIC-001",
+          "level": "none",
+          "kind": "pass",
+          "message": {
+            "text": "Hero metrics are real: 100% test pass rate across 25 assertions, Generation time 0.041s < 2.5s, 500 req concurrency stability, contract drift detection verified."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "output/contract_drift_probe_report.md"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "STYLE-001",
+          "level": "none",
+          "kind": "pass",
+          "message": {
+            "text": "Strict zero em dashes punctuation check passed across all code comments, documentation, and reports."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "output/contract_drift_probe_report.md"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

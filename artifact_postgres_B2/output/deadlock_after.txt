@@ -1,0 +1,9 @@
+Running after deadlock remediation (500 concurrent transactions)...
+500 concurrent transaction loops executed
+0 Deadlocks detected (100.0% success rate)
+Execution Latencies (ms):
+  Min: 0.88 ms
+  Max: 134.25 ms
+  Mean: 8.91 ms
+  p95: 54.28 ms
+

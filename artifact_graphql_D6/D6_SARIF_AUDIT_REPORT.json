@@ -1,0 +1,294 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://json.schemastore.org/sarif-2.1.0.json",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "Greg The Skeptic (Byzantine Auditor)",
+          "version": "1.0.0",
+          "informationUri": "https://hermes-agent.nousresearch.com/docs",
+          "rules": [
+            {
+              "id": "ROLE-001",
+              "name": "RoleBoundaryCompliance",
+              "shortDescription": {
+                "text": "Verifies that all domain tasks were executed strictly by the assigned specialist without orchestrator inline bypass."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "id": "FILE-001",
+              "name": "OutputFilesVerification",
+              "shortDescription": {
+                "text": "Verifies all required artifact deliverables exist on disk and all SHA-256 hashes cryptographically match."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "id": "METRIC-PARITY-001",
+              "name": "FieldParityMappingVerification",
+              "shortDescription": {
+                "text": "Verifies 100 percent field parity mapping from upstream nested GraphQL to REST DTO with zero schema drift."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "id": "METRIC-OPENAPI-001",
+              "name": "OpenApiDocumentationValidity",
+              "shortDescription": {
+                "text": "Verifies OpenAPI / Swagger documentation validity at /v3/api-docs with zero compile warnings."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "id": "METRIC-OVERFETCH-001",
+              "name": "ZeroOverfetchingVerification",
+              "shortDescription": {
+                "text": "Verifies zero over-fetching by ensuring GraphQL document requests strictly the 5 fields required by the REST DTO."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "id": "METRIC-RFC7807-001",
+              "name": "ProblemDetailsErrorMappingVerification",
+              "shortDescription": {
+                "text": "Verifies upstream partial GraphQL failures translate into RFC 7807 problem details instead of swallowing errors."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "id": "METRIC-TIMEOUT-001",
+              "name": "GatewayTimeoutEnforcementVerification",
+              "shortDescription": {
+                "text": "Verifies gateway timeout is enforced at sub-1.1s returning HTTP 504 on delayed upstream GraphQL servers."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "id": "METRIC-CONCURRENCY-001",
+              "name": "HighConcurrencyStabilityVerification",
+              "shortDescription": {
+                "text": "Verifies gateway stability under 500 concurrent requests with zero socket drops and non-blocking Virtual Threads."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "id": "SECURITY-001",
+              "name": "SecurityAndOwaspVerification",
+              "shortDescription": {
+                "text": "Audits parameterized GraphQL queries, safe exception handling, sanitized inputs, and secret leakage prevention."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "id": "STYLE-EMDASH-001",
+              "name": "PunctuationStandard",
+              "shortDescription": {
+                "text": "Verifies strict zero em dashes across all code comments, configuration files, reports, and manifests."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            }
+          ]
+        }
+      },
+      "results": [
+        {
+          "ruleId": "ROLE-001",
+          "level": "none",
+          "kind": "pass",
+          "message": {
+            "text": "Role execution complies with strict boundaries: D6-R1 (Sandbox Build) and D6-R2 (Stress Probe) executed strictly by assigned specialist eric with zero orchestrator inline leakage."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "output/graphql_error_mapping_report.md"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "FILE-001",
+          "level": "none",
+          "kind": "pass",
+          "message": {
+            "text": "All 24 deliverables exist on disk and all 24 SHA-256 hashes cryptographically match output/SHA256SUMS.txt with 100 percent integrity."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "output/SHA256SUMS.txt"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "METRIC-PARITY-001",
+          "level": "none",
+          "kind": "pass",
+          "message": {
+            "text": "Field parity mapping verified: 100 percent parity rate across 100 requests mapping upstream nested GraphQL User -> Orders -> LineItems entities into OrderSummaryDTO with p50 latency 6.22 ms and zero failures."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "output/gateway_metrics.json"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "METRIC-OPENAPI-001",
+          "level": "none",
+          "kind": "pass",
+          "message": {
+            "text": "OpenAPI documentation verified: Schema published at /v3/api-docs exposes /api/v1/orders/{id}/summary with full OpenAPI annotations, schema models for OrderSummaryDTO and ProblemDetail, and zero compilation warnings."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/main/java/com/albidox/gateway/config/OpenApiConfig.java"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "METRIC-OVERFETCH-001",
+          "level": "none",
+          "kind": "pass",
+          "message": {
+            "text": "Zero over-fetching verified: GraphQL document in GraphQLUpstreamClient strictly requests the 5 projected fields (order.id, order.status, order.totalAmount, user.name, lineItems.id) with zero query inclusion of extraneous user or line item attributes."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/main/java/com/albidox/gateway/client/GraphQLUpstreamClient.java"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "METRIC-RFC7807-001",
+          "level": "none",
+          "kind": "pass",
+          "message": {
+            "text": "RFC 7807 Problem Details mapping verified: Upstream partial errors return HTTP 502 Bad Gateway with application/problem+json and preserved upstreamErrors array; entity not found maps cleanly to HTTP 404 Problem Details."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/main/java/com/albidox/gateway/exception/GlobalExceptionHandler.java"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "METRIC-TIMEOUT-001",
+          "level": "none",
+          "kind": "pass",
+          "message": {
+            "text": "Gateway timeout enforcement verified: Reactive WebClient timeout configured at 1000ms severed 5.0s mock upstream delays across 5 runs with min latency 1006.88 ms, max 1023.27 ms, avg 1018.13 ms, consistently returning HTTP 504 Gateway Timeout in sub-1.1s."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "output/stress_metrics.json"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "METRIC-CONCURRENCY-001",
+          "level": "none",
+          "kind": "pass",
+          "message": {
+            "text": "High concurrency stability verified: 500 requests across 50 concurrent workers completed with 100 percent success (500/500), 0 socket drops, throughput of 357.52 req/s, median latency of 38.17 ms, and p95 latency of 133.3 ms using Java 21 Virtual Threads."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "output/stress_metrics.json"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "SECURITY-001",
+          "level": "none",
+          "kind": "pass",
+          "message": {
+            "text": "Security and OWASP audit passed: Parameterized GraphQL variables prevent GraphQL query injection; non-blocking WebClient pipeline eliminates thread starvation; GlobalExceptionHandler prevents raw stack trace leakage; zero hardcoded secrets or credentials."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/main/java/com/albidox/gateway/client/GraphQLUpstreamClient.java"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "STYLE-EMDASH-001",
+          "level": "none",
+          "kind": "pass",
+          "message": {
+            "text": "Strict zero em dashes check passed: 0 em dashes detected across all 24 project files, code comments, configuration manifests, and markdown reports."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "output/graphql_error_mapping_report.md"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "properties": {
+        "verdict": "MERGE_APPROVED",
+        "auditOutcome": "ZERO_DEFECTS",
+        "reviewerProfile": "reviewer"
+      }
+    }
+  ]
+}

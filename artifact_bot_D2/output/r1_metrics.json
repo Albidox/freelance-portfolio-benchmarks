@@ -1,0 +1,14 @@
+{
+  "total_processed": 100,
+  "unique_leads_recorded": 70,
+  "duplicates_suppressed": 30,
+  "total_leads_in_db": 70,
+  "lock_timeouts": 0,
+  "delivered_alerts": 70,
+  "failed_alerts": 0,
+  "avg_latency_seconds": 0.0137,
+  "max_latency_seconds": 0.018,
+  "elapsed_seconds": 1.0796,
+  "peak_rss_mb": 1.65,
+  "duplicate_suppression_rate_percent": 30.0
+}

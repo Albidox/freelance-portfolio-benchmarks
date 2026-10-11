@@ -1,0 +1,31 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "Greg Byzantine Auditor",
+          "version": "1.0.0",
+          "rules": [
+            {
+              "id": "ZERO_FABRICATION",
+              "name": "Zero Plausible Fabrication",
+              "shortDescription": {
+                "text": "Metric tables must EXACTLY match empirical output."
+              }
+            },
+            {
+              "id": "NO_EM_DASHES",
+              "name": "No Em Dashes",
+              "shortDescription": {
+                "text": "No em dashes are allowed in project files."
+              }
+            }
+          ]
+        }
+      },
+      "results": []
+    }
+  ]
+}

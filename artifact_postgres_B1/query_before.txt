@@ -1,0 +1,26 @@
+                                                                      QUERY PLAN                                                                       
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+ GroupAggregate  (cost=12078.73..13033.58 rows=6997 width=40) (actual time=71.563..109.212 rows=91.00 loops=1)
+   Group Key: (date_trunc('day'::text, created_at))
+   Buffers: shared hit=358 read=6385, temp read=33 written=38
+   ->  Gather Merge  (cost=12078.73..12893.64 rows=6997 width=28) (actual time=71.545..106.748 rows=6814.00 loops=1)
+         Workers Planned: 2
+         Workers Launched: 2
+         Buffers: shared hit=358 read=6385, temp read=33 written=38
+         ->  Sort  (cost=11078.70..11085.99 rows=2915 width=28) (actual time=42.026..42.645 rows=2271.33 loops=3)
+               Sort Key: (date_trunc('day'::text, created_at)) DESC
+               Sort Method: external merge  Disk: 152kB
+               Buffers: shared hit=358 read=6385, temp read=33 written=38
+               Worker 0:  Sort Method: external merge  Disk: 40kB
+               Worker 1:  Sort Method: external merge  Disk: 72kB
+               ->  Parallel Seq Scan on tenant_transactions  (cost=0.00..10840.95 rows=2915 width=28) (actual time=0.681..39.687 rows=2271.33 loops=3)
+                     Filter: ((tenant_id = 'a1b2c3d4-0000-0000-0000-000000000001'::uuid) AND (created_at >= (now() - '90 days'::interval)))
+                     Rows Removed by Filter: 164395
+                     Buffers: shared hit=282 read=6385
+ Settings: work_mem = '64kB'
+ Planning:
+   Buffers: shared hit=116
+ Planning Time: 2.510 ms
+ Execution Time: 115.714 ms
+(22 rows)
+

@@ -1,0 +1,31 @@
+{
+  "id": "1a14f386-774a-4253-a99e-b4107fcf4a51",
+  "name": "Local Mock Server Environment",
+  "values": [
+    {
+      "key": "baseUrl",
+      "value": "http://127.0.0.1:8000",
+      "type": "default",
+      "enabled": true
+    },
+    {
+      "key": "authToken",
+      "value": "",
+      "type": "secret",
+      "enabled": true
+    },
+    {
+      "key": "productId",
+      "value": "prod_001",
+      "type": "default",
+      "enabled": true
+    },
+    {
+      "key": "cartId",
+      "value": "cart_9901",
+      "type": "default",
+      "enabled": true
+    }
+  ],
+  "_postman_variable_scope": "environment"
+}

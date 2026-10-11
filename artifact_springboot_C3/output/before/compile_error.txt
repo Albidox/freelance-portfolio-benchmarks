@@ -1,0 +1,397 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------< com.ashfaq.freelance:openrewrite-ast-migration >-----------
+[INFO] Building openrewrite-ast-migration 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ openrewrite-ast-migration ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ openrewrite-ast-migration ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 6 source files with javac [debug parameters release 21] to target\classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/AuditLog.java:[3,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/AuditLog.java:[4,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/AuditLog.java:[5,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/AuditLog.java:[6,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/AuditLog.java:[7,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/AuditLog.java:[8,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/AuditLog.java:[9,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/AuditLog.java:[10,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/AuditLog.java:[11,24] package javax.annotation does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/AuditLog.java:[14,2] cannot find symbol
+  symbol: class Entity
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/AuditLog.java:[15,2] cannot find symbol
+  symbol: class Table
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Customer.java:[3,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Customer.java:[4,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Customer.java:[5,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Customer.java:[6,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Customer.java:[7,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Customer.java:[8,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Customer.java:[9,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Customer.java:[10,36] package javax.validation.constraints does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Customer.java:[11,36] package javax.validation.constraints does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Customer.java:[12,36] package javax.validation.constraints does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Customer.java:[15,2] cannot find symbol
+  symbol: class Entity
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Customer.java:[16,2] cannot find symbol
+  symbol: class Table
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Invoice.java:[3,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Invoice.java:[4,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Invoice.java:[5,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Invoice.java:[6,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Invoice.java:[7,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Invoice.java:[8,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Invoice.java:[9,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Invoice.java:[10,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Invoice.java:[11,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Invoice.java:[12,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Invoice.java:[13,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Invoice.java:[14,36] package javax.validation.constraints does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Invoice.java:[15,36] package javax.validation.constraints does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Invoice.java:[19,2] cannot find symbol
+  symbol: class Entity
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Invoice.java:[20,2] cannot find symbol
+  symbol: class Table
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/OrderEntity.java:[3,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/OrderEntity.java:[4,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/OrderEntity.java:[5,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/OrderEntity.java:[6,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/OrderEntity.java:[7,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/OrderEntity.java:[8,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/OrderEntity.java:[9,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/OrderEntity.java:[10,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/OrderEntity.java:[11,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/OrderEntity.java:[12,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/OrderEntity.java:[13,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/OrderEntity.java:[14,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/OrderEntity.java:[15,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/OrderEntity.java:[16,36] package javax.validation.constraints does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/OrderEntity.java:[20,2] cannot find symbol
+  symbol: class Entity
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/OrderEntity.java:[21,2] cannot find symbol
+  symbol: class Table
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Product.java:[3,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Product.java:[4,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Product.java:[5,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Product.java:[6,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Product.java:[7,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Product.java:[8,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Product.java:[9,36] package javax.validation.constraints does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Product.java:[10,36] package javax.validation.constraints does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Product.java:[13,2] cannot find symbol
+  symbol: class Entity
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Product.java:[14,2] cannot find symbol
+  symbol: class Table
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/AuditLog.java:[18,6] cannot find symbol
+  symbol:   class Id
+  location: class com.ashfaq.migration.model.AuditLog
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/AuditLog.java:[19,6] cannot find symbol
+  symbol:   class GeneratedValue
+  location: class com.ashfaq.migration.model.AuditLog
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/AuditLog.java:[19,32] cannot find symbol
+  symbol:   variable GenerationType
+  location: class com.ashfaq.migration.model.AuditLog
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/AuditLog.java:[22,6] cannot find symbol
+  symbol:   class Column
+  location: class com.ashfaq.migration.model.AuditLog
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/AuditLog.java:[25,6] cannot find symbol
+  symbol:   class Column
+  location: class com.ashfaq.migration.model.AuditLog
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/AuditLog.java:[28,6] cannot find symbol
+  symbol:   class Column
+  location: class com.ashfaq.migration.model.AuditLog
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/AuditLog.java:[39,6] cannot find symbol
+  symbol:   class PostConstruct
+  location: class com.ashfaq.migration.model.AuditLog
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/AuditLog.java:[44,6] cannot find symbol
+  symbol:   class PrePersist
+  location: class com.ashfaq.migration.model.AuditLog
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/AuditLog.java:[49,6] cannot find symbol
+  symbol:   class PreUpdate
+  location: class com.ashfaq.migration.model.AuditLog
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Customer.java:[19,6] cannot find symbol
+  symbol:   class Id
+  location: class com.ashfaq.migration.model.Customer
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Customer.java:[20,6] cannot find symbol
+  symbol:   class GeneratedValue
+  location: class com.ashfaq.migration.model.Customer
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Customer.java:[20,32] cannot find symbol
+  symbol:   variable GenerationType
+  location: class com.ashfaq.migration.model.Customer
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Customer.java:[23,6] cannot find symbol
+  symbol:   class NotBlank
+  location: class com.ashfaq.migration.model.Customer
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Customer.java:[24,6] cannot find symbol
+  symbol:   class Column
+  location: class com.ashfaq.migration.model.Customer
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Customer.java:[27,6] cannot find symbol
+  symbol:   class NotBlank
+  location: class com.ashfaq.migration.model.Customer
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Customer.java:[28,6] cannot find symbol
+  symbol:   class Email
+  location: class com.ashfaq.migration.model.Customer
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Customer.java:[29,6] cannot find symbol
+  symbol:   class Column
+  location: class com.ashfaq.migration.model.Customer
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Customer.java:[32,6] cannot find symbol
+  symbol:   class Transient
+  location: class com.ashfaq.migration.model.Customer
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Invoice.java:[23,6] cannot find symbol
+  symbol:   class Id
+  location: class com.ashfaq.migration.model.Invoice
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Invoice.java:[24,6] cannot find symbol
+  symbol:   class GeneratedValue
+  location: class com.ashfaq.migration.model.Invoice
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Invoice.java:[24,32] cannot find symbol
+  symbol:   variable GenerationType
+  location: class com.ashfaq.migration.model.Invoice
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Invoice.java:[27,6] cannot find symbol
+  symbol:   class ManyToOne
+  location: class com.ashfaq.migration.model.Invoice
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Invoice.java:[27,24] cannot find symbol
+  symbol:   variable FetchType
+  location: class com.ashfaq.migration.model.Invoice
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Invoice.java:[28,6] cannot find symbol
+  symbol:   class JoinColumn
+  location: class com.ashfaq.migration.model.Invoice
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Invoice.java:[31,6] cannot find symbol
+  symbol:   class NotNull
+  location: class com.ashfaq.migration.model.Invoice
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Invoice.java:[32,6] cannot find symbol
+  symbol:   class Digits
+  location: class com.ashfaq.migration.model.Invoice
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Invoice.java:[33,6] cannot find symbol
+  symbol:   class Column
+  location: class com.ashfaq.migration.model.Invoice
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Invoice.java:[36,6] cannot find symbol
+  symbol:   class NotNull
+  location: class com.ashfaq.migration.model.Invoice
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Invoice.java:[37,6] cannot find symbol
+  symbol:   class Temporal
+  location: class com.ashfaq.migration.model.Invoice
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Invoice.java:[37,15] cannot find symbol
+  symbol:   variable TemporalType
+  location: class com.ashfaq.migration.model.Invoice
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Invoice.java:[38,6] cannot find symbol
+  symbol:   class Column
+  location: class com.ashfaq.migration.model.Invoice
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/OrderEntity.java:[28,6] cannot find symbol
+  symbol:   class Id
+  location: class com.ashfaq.migration.model.OrderEntity
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/OrderEntity.java:[29,6] cannot find symbol
+  symbol:   class GeneratedValue
+  location: class com.ashfaq.migration.model.OrderEntity
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/OrderEntity.java:[29,32] cannot find symbol
+  symbol:   variable GenerationType
+  location: class com.ashfaq.migration.model.OrderEntity
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/OrderEntity.java:[32,6] cannot find symbol
+  symbol:   class NotNull
+  location: class com.ashfaq.migration.model.OrderEntity
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/OrderEntity.java:[33,6] cannot find symbol
+  symbol:   class Column
+  location: class com.ashfaq.migration.model.OrderEntity
+[INFO] 100 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  3.961 s
+[INFO] Finished at: 2026-10-10T05:16:13+05:30
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.13.0:compile (default-compile) on project openrewrite-ast-migration: Compilation failure: Compilation failure: 
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/AuditLog.java:[3,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/AuditLog.java:[4,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/AuditLog.java:[5,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/AuditLog.java:[6,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/AuditLog.java:[7,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/AuditLog.java:[8,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/AuditLog.java:[9,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/AuditLog.java:[10,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/AuditLog.java:[11,24] package javax.annotation does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/AuditLog.java:[14,2] cannot find symbol
+[ERROR]   symbol: class Entity
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/AuditLog.java:[15,2] cannot find symbol
+[ERROR]   symbol: class Table
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Customer.java:[3,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Customer.java:[4,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Customer.java:[5,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Customer.java:[6,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Customer.java:[7,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Customer.java:[8,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Customer.java:[9,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Customer.java:[10,36] package javax.validation.constraints does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Customer.java:[11,36] package javax.validation.constraints does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Customer.java:[12,36] package javax.validation.constraints does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Customer.java:[15,2] cannot find symbol
+[ERROR]   symbol: class Entity
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Customer.java:[16,2] cannot find symbol
+[ERROR]   symbol: class Table
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Invoice.java:[3,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Invoice.java:[4,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Invoice.java:[5,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Invoice.java:[6,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Invoice.java:[7,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Invoice.java:[8,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Invoice.java:[9,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Invoice.java:[10,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Invoice.java:[11,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Invoice.java:[12,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Invoice.java:[13,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Invoice.java:[14,36] package javax.validation.constraints does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Invoice.java:[15,36] package javax.validation.constraints does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Invoice.java:[19,2] cannot find symbol
+[ERROR]   symbol: class Entity
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Invoice.java:[20,2] cannot find symbol
+[ERROR]   symbol: class Table
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/OrderEntity.java:[3,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/OrderEntity.java:[4,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/OrderEntity.java:[5,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/OrderEntity.java:[6,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/OrderEntity.java:[7,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/OrderEntity.java:[8,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/OrderEntity.java:[9,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/OrderEntity.java:[10,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/OrderEntity.java:[11,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/OrderEntity.java:[12,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/OrderEntity.java:[13,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/OrderEntity.java:[14,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/OrderEntity.java:[15,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/OrderEntity.java:[16,36] package javax.validation.constraints does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/OrderEntity.java:[20,2] cannot find symbol
+[ERROR]   symbol: class Entity
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/OrderEntity.java:[21,2] cannot find symbol
+[ERROR]   symbol: class Table
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Product.java:[3,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Product.java:[4,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Product.java:[5,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Product.java:[6,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Product.java:[7,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Product.java:[8,25] package javax.persistence does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Product.java:[9,36] package javax.validation.constraints does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Product.java:[10,36] package javax.validation.constraints does not exist
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Product.java:[13,2] cannot find symbol
+[ERROR]   symbol: class Entity
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Product.java:[14,2] cannot find symbol
+[ERROR]   symbol: class Table
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/AuditLog.java:[18,6] cannot find symbol
+[ERROR]   symbol:   class Id
+[ERROR]   location: class com.ashfaq.migration.model.AuditLog
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/AuditLog.java:[19,6] cannot find symbol
+[ERROR]   symbol:   class GeneratedValue
+[ERROR]   location: class com.ashfaq.migration.model.AuditLog
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/AuditLog.java:[19,32] cannot find symbol
+[ERROR]   symbol:   variable GenerationType
+[ERROR]   location: class com.ashfaq.migration.model.AuditLog
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/AuditLog.java:[22,6] cannot find symbol
+[ERROR]   symbol:   class Column
+[ERROR]   location: class com.ashfaq.migration.model.AuditLog
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/AuditLog.java:[25,6] cannot find symbol
+[ERROR]   symbol:   class Column
+[ERROR]   location: class com.ashfaq.migration.model.AuditLog
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/AuditLog.java:[28,6] cannot find symbol
+[ERROR]   symbol:   class Column
+[ERROR]   location: class com.ashfaq.migration.model.AuditLog
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/AuditLog.java:[39,6] cannot find symbol
+[ERROR]   symbol:   class PostConstruct
+[ERROR]   location: class com.ashfaq.migration.model.AuditLog
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/AuditLog.java:[44,6] cannot find symbol
+[ERROR]   symbol:   class PrePersist
+[ERROR]   location: class com.ashfaq.migration.model.AuditLog
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/AuditLog.java:[49,6] cannot find symbol
+[ERROR]   symbol:   class PreUpdate
+[ERROR]   location: class com.ashfaq.migration.model.AuditLog
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Customer.java:[19,6] cannot find symbol
+[ERROR]   symbol:   class Id
+[ERROR]   location: class com.ashfaq.migration.model.Customer
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Customer.java:[20,6] cannot find symbol
+[ERROR]   symbol:   class GeneratedValue
+[ERROR]   location: class com.ashfaq.migration.model.Customer
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Customer.java:[20,32] cannot find symbol
+[ERROR]   symbol:   variable GenerationType
+[ERROR]   location: class com.ashfaq.migration.model.Customer
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Customer.java:[23,6] cannot find symbol
+[ERROR]   symbol:   class NotBlank
+[ERROR]   location: class com.ashfaq.migration.model.Customer
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Customer.java:[24,6] cannot find symbol
+[ERROR]   symbol:   class Column
+[ERROR]   location: class com.ashfaq.migration.model.Customer
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Customer.java:[27,6] cannot find symbol
+[ERROR]   symbol:   class NotBlank
+[ERROR]   location: class com.ashfaq.migration.model.Customer
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Customer.java:[28,6] cannot find symbol
+[ERROR]   symbol:   class Email
+[ERROR]   location: class com.ashfaq.migration.model.Customer
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Customer.java:[29,6] cannot find symbol
+[ERROR]   symbol:   class Column
+[ERROR]   location: class com.ashfaq.migration.model.Customer
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Customer.java:[32,6] cannot find symbol
+[ERROR]   symbol:   class Transient
+[ERROR]   location: class com.ashfaq.migration.model.Customer
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Invoice.java:[23,6] cannot find symbol
+[ERROR]   symbol:   class Id
+[ERROR]   location: class com.ashfaq.migration.model.Invoice
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Invoice.java:[24,6] cannot find symbol
+[ERROR]   symbol:   class GeneratedValue
+[ERROR]   location: class com.ashfaq.migration.model.Invoice
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Invoice.java:[24,32] cannot find symbol
+[ERROR]   symbol:   variable GenerationType
+[ERROR]   location: class com.ashfaq.migration.model.Invoice
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Invoice.java:[27,6] cannot find symbol
+[ERROR]   symbol:   class ManyToOne
+[ERROR]   location: class com.ashfaq.migration.model.Invoice
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Invoice.java:[27,24] cannot find symbol
+[ERROR]   symbol:   variable FetchType
+[ERROR]   location: class com.ashfaq.migration.model.Invoice
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Invoice.java:[28,6] cannot find symbol
+[ERROR]   symbol:   class JoinColumn
+[ERROR]   location: class com.ashfaq.migration.model.Invoice
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Invoice.java:[31,6] cannot find symbol
+[ERROR]   symbol:   class NotNull
+[ERROR]   location: class com.ashfaq.migration.model.Invoice
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Invoice.java:[32,6] cannot find symbol
+[ERROR]   symbol:   class Digits
+[ERROR]   location: class com.ashfaq.migration.model.Invoice
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Invoice.java:[33,6] cannot find symbol
+[ERROR]   symbol:   class Column
+[ERROR]   location: class com.ashfaq.migration.model.Invoice
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Invoice.java:[36,6] cannot find symbol
+[ERROR]   symbol:   class NotNull
+[ERROR]   location: class com.ashfaq.migration.model.Invoice
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Invoice.java:[37,6] cannot find symbol
+[ERROR]   symbol:   class Temporal
+[ERROR]   location: class com.ashfaq.migration.model.Invoice
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Invoice.java:[37,15] cannot find symbol
+[ERROR]   symbol:   variable TemporalType
+[ERROR]   location: class com.ashfaq.migration.model.Invoice
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/Invoice.java:[38,6] cannot find symbol
+[ERROR]   symbol:   class Column
+[ERROR]   location: class com.ashfaq.migration.model.Invoice
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/OrderEntity.java:[28,6] cannot find symbol
+[ERROR]   symbol:   class Id
+[ERROR]   location: class com.ashfaq.migration.model.OrderEntity
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/OrderEntity.java:[29,6] cannot find symbol
+[ERROR]   symbol:   class GeneratedValue
+[ERROR]   location: class com.ashfaq.migration.model.OrderEntity
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/OrderEntity.java:[29,32] cannot find symbol
+[ERROR]   symbol:   variable GenerationType
+[ERROR]   location: class com.ashfaq.migration.model.OrderEntity
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/OrderEntity.java:[32,6] cannot find symbol
+[ERROR]   symbol:   class NotNull
+[ERROR]   location: class com.ashfaq.migration.model.OrderEntity
+[ERROR] /C:/AI/knowledge-vault/summary/freelance opportunity/portfolio_samples/artifact_springboot_C3/src/main/java/com/ashfaq/migration/model/OrderEntity.java:[33,6] cannot find symbol
+[ERROR]   symbol:   class Column
+[ERROR]   location: class com.ashfaq.migration.model.OrderEntity
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

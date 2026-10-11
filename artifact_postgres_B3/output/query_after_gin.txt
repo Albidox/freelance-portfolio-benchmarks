@@ -1,0 +1,18 @@
+                                                                      QUERY PLAN                                                                       
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+ Limit  (cost=39.11..232.43 rows=50 width=104) (actual time=0.483..0.493 rows=3.00 loops=1)
+   Buffers: shared hit=34
+   ->  Bitmap Heap Scan on audit_events  (cost=39.11..425.75 rows=100 width=104) (actual time=0.481..0.491 rows=3.00 loops=1)
+         Recheck Cond: (metadata @> '{"ip_address": "192.168.1.10", "action_type": "USER_LOGIN"}'::jsonb)
+         Heap Blocks: exact=3
+         Buffers: shared hit=34
+         ->  Bitmap Index Scan on idx_audit_events_metadata_path_ops  (cost=0.00..39.09 rows=100 width=0) (actual time=0.446..0.446 rows=3.00 loops=1)
+               Index Cond: (metadata @> '{"ip_address": "192.168.1.10", "action_type": "USER_LOGIN"}'::jsonb)
+               Index Searches: 1
+               Buffers: shared hit=31
+ Planning:
+   Buffers: shared hit=142
+ Planning Time: 3.203 ms
+ Execution Time: 0.560 ms
+(14 rows)
+

@@ -1,0 +1,267 @@
+{
+  "$schema": "https://json.schemastore.org/sarif-2.1.0.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "Greg The Skeptic (Byzantine Auditor)",
+          "version": "1.0.0",
+          "informationUri": "https://hermes-agent.nousresearch.com/docs",
+          "rules": [
+            {
+              "id": "ROLE-001",
+              "name": "RoleBoundaryCompliance",
+              "shortDescription": {
+                "text": "Verifies that all domain implementation tasks were executed strictly by assigned specialist eric without orchestrator inline bypass."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "id": "FILE-001",
+              "name": "DeliverablesAndChecksumIntegrity",
+              "shortDescription": {
+                "text": "Verifies all required artifact deliverables exist on disk and SHA-256 hashes cryptographically match output/SHA256SUMS.txt."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "id": "METRIC-RATELIMIT-001",
+              "name": "AnonymousRateLimitEnforcement",
+              "shortDescription": {
+                "text": "Verifies anonymous rate limit is enforced strictly at 10 requests per minute with exact quota cut-off."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "id": "METRIC-LATENCY-001",
+              "name": "RejectionResponseLatency",
+              "shortDescription": {
+                "text": "Verifies rejection response latency is strictly under the 1.0ms SLA target."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "id": "METRIC-RFC6585-001",
+              "name": "RFC6585HeadersValidation",
+              "shortDescription": {
+                "text": "Verifies standard RFC 6585 rate limiting headers (X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Retry-After-Seconds, Retry-After) are emitted on all responses."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "id": "METRIC-SPOOF-001",
+              "name": "IPSpoofingResistance",
+              "shortDescription": {
+                "text": "Verifies IP header spoofing resistance across direct untrusted sockets and multi-hop trusted reverse proxies."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "id": "METRIC-RACE-001",
+              "name": "HighConcurrencyRaceConditionDefense",
+              "shortDescription": {
+                "text": "Verifies high-concurrency race condition defense where 100 simultaneous requests against 10 tokens allow exactly 10 and 0 overflows."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "id": "METRIC-DEGRADATION-001",
+              "name": "FailoverGracefulDegradation",
+              "shortDescription": {
+                "text": "Verifies graceful fail-open degradation under simulated cache outage with X-RateLimit-Degraded header and zero API container crashes."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "id": "STYLE-EMDASH-001",
+              "name": "PunctuationStandardZeroEmDashes",
+              "shortDescription": {
+                "text": "Verifies strict zero em dashes across all code, comments, reports, and manifests."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            }
+          ]
+        }
+      },
+      "results": [
+        {
+          "ruleId": "ROLE-001",
+          "level": "none",
+          "kind": "pass",
+          "message": {
+            "text": "Role execution complies with strict boundaries: D9-R1 (Sandbox Build) and D9-R2 (Real-World Stress Probe) executed strictly by assigned specialist eric; reviewer audit gate executed by reviewer with zero orchestrator inline bypass."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "output/rate_limiter_stress_and_security_report.md"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "FILE-001",
+          "level": "none",
+          "kind": "pass",
+          "message": {
+            "text": "All required deliverables exist on disk and SHA-256 hashes cryptographically match output/SHA256SUMS.txt with 100 percent integrity."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "output/SHA256SUMS.txt"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "METRIC-RATELIMIT-001",
+          "level": "none",
+          "kind": "pass",
+          "message": {
+            "text": "Hero metric anonymous rate limit confirmed: strictly 10 requests allowed (HTTP 200) followed by 40 rejections (HTTP 429) on anonymous client, with authenticated tier quota confirmed at 100 requests per minute."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "output/ratelimit_metrics.json"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "METRIC-LATENCY-001",
+          "level": "none",
+          "kind": "pass",
+          "message": {
+            "text": "Hero metric rejection latency confirmed: server rejection latency averaged 0.127ms (P99 0.841ms) during R1 load test and 0.141ms (P50 0.106ms, P90 0.190ms) during R2 stress probe, strictly under the 1.0ms SLA target."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "output/ratelimit_metrics.json"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "METRIC-RFC6585-001",
+          "level": "none",
+          "kind": "pass",
+          "message": {
+            "text": "Hero metric RFC 6585 headers confirmed: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Retry-After-Seconds, and standard Retry-After headers verified on all HTTP 429 rejections."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/main/java/com/albidox/ratelimit/filter/RateLimitingFilter.java"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "METRIC-SPOOF-001",
+          "level": "none",
+          "kind": "pass",
+          "message": {
+            "text": "Hero metric IP spoofing resistance confirmed: untrusted direct connections drop forged X-Forwarded-For headers; trusted reverse proxies correctly resolve genuine client IP via backward traversal, preventing header rotation evasion."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "output/stress_probe_metrics.json"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "METRIC-RACE-001",
+          "level": "none",
+          "kind": "pass",
+          "message": {
+            "text": "Hero metric high-concurrency race condition defense confirmed: 100 simultaneous requests against 10 tokens yielded exactly 10 allowed (HTTP 200), 90 rejected (HTTP 429), and 0 overflows, backed by atomic CAS token operations."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "output/stress_probe_metrics.json"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "METRIC-DEGRADATION-001",
+          "level": "none",
+          "kind": "pass",
+          "message": {
+            "text": "Hero metric degradation probe confirmed: simulated backend outage resulted in graceful fail-open with X-RateLimit-Degraded header emitted across 20/20 requests and 0 API crashes, with configurable fail-closed mode returning HTTP 503 RFC 7807 problem details."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "output/stress_probe_metrics.json"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "STYLE-EMDASH-001",
+          "level": "none",
+          "kind": "pass",
+          "message": {
+            "text": "Strict zero em dashes check passed: 0 em dashes detected across all Java source code, test suites, Python harnesses, markdown reports, and JSON manifests."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "output/rate_limiter_stress_and_security_report.md"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "properties": {
+        "verdict": "MERGE_APPROVED",
+        "auditOutcome": "ZERO_DEFECTS",
+        "reviewerProfile": "reviewer"
+      }
+    }
+  ]
+}

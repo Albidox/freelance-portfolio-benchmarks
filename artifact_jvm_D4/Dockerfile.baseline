@@ -1,0 +1,29 @@
+# ==============================================================================
+# File: Dockerfile.baseline
+# Purpose: Single-stage unoptimized monolithic build container definition.
+# Base Image: eclipse-temurin:21-jdk
+# Resulting Image Footprint: ~850MB
+# Rule: Zero em dashes across all code comments and instructions.
+# ==============================================================================
+
+FROM eclipse-temurin:21-jdk
+
+WORKDIR /workspace
+
+# Copy full build toolchain and source code
+COPY pom.xml .
+COPY src ./src
+
+# Install Maven build dependencies
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends maven && \
+    rm -rf /var/lib/apt/lists/*
+
+# Compile application into monolithic fat JAR
+RUN mvn clean package -DskipTests
+
+# Expose standard service port
+EXPOSE 8080
+
+# Run using full monolithic JDK runtime
+ENTRYPOINT ["java", "-jar", "target/artifact-jvm-d4-1.0.0.jar"]

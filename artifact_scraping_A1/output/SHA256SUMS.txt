@@ -1,0 +1,2 @@
+d0fb727eb3ab2d302608448e8fdc11ebe715fcf1efe44ca2df4aefa8f60f4874  books_dataset.csv
+67abacafbb15d898634dd625d2eb4d5b9f602836255b7e8a5ff2cd8a2c5f2964  books_dataset.snappy.parquet

@@ -1,0 +1,72 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "Greg Auditor",
+          "version": "1.0",
+          "informationUri": "https://hermes-agent.nousresearch.com/"
+        }
+      },
+      "results": [
+        {
+          "ruleId": "ROLE_COMPLIANCE",
+          "message": {
+            "text": "MERGE_APPROVED. Role compliance verified. No orchestrator inline execution detected. Ponytail mode strictly adhered to."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "generate_presentation_variants.py"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 2155
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "SECURITY_XSS_PREVENTION",
+          "message": {
+            "text": "Data safely stringified using json.dumps to avoid HTML injection."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "generate_presentation_variants.py"
+                },
+                "region": {
+                  "startLine": 597
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "RESEARCH_DEPTH",
+          "message": {
+            "text": "FRONTIER_LEADS.json properly explores adjacent problem space. Zero Breadth & Depth Veto."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "FRONTIER_LEADS.json"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

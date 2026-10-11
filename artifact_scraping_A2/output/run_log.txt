@@ -1,0 +1,42 @@
+[2026-10-10 02:32:45] [INFO] Initialized HockeyTableScraper using backend: Scrapling (HTTP/2)
+[2026-10-10 02:32:45] [INFO] Starting table scraping pipeline on https://www.scrapethissite.com/pages/forms/
+[2026-10-10 02:32:46] [INFO] Discovered 24 total pages from pagination links
+[2026-10-10 02:32:46] [INFO] Page 1/24: Extracted 25 valid records
+[2026-10-10 02:32:49] [INFO] Page 2/24: Extracted 25 valid records (Cumulative: 50)
+[2026-10-10 02:32:51] [INFO] Page 3/24: Extracted 25 valid records (Cumulative: 75)
+[2026-10-10 02:32:53] [INFO] Page 4/24: Extracted 25 valid records (Cumulative: 100)
+[2026-10-10 02:32:55] [INFO] Page 5/24: Extracted 25 valid records (Cumulative: 125)
+[2026-10-10 02:32:57] [INFO] Page 6/24: Extracted 25 valid records (Cumulative: 150)
+[2026-10-10 02:32:59] [INFO] Page 7/24: Extracted 25 valid records (Cumulative: 175)
+[2026-10-10 02:33:01] [INFO] Page 8/24: Extracted 25 valid records (Cumulative: 200)
+[2026-10-10 02:33:03] [INFO] Page 9/24: Extracted 25 valid records (Cumulative: 225)
+[2026-10-10 02:33:05] [INFO] Page 10/24: Extracted 25 valid records (Cumulative: 250)
+[2026-10-10 02:33:07] [INFO] Page 11/24: Extracted 25 valid records (Cumulative: 275)
+[2026-10-10 02:33:10] [INFO] Page 12/24: Extracted 25 valid records (Cumulative: 300)
+[2026-10-10 02:33:12] [INFO] Page 13/24: Extracted 25 valid records (Cumulative: 325)
+[2026-10-10 02:33:14] [INFO] Page 14/24: Extracted 25 valid records (Cumulative: 350)
+[2026-10-10 02:33:16] [INFO] Page 15/24: Extracted 25 valid records (Cumulative: 375)
+[2026-10-10 02:33:18] [INFO] Page 16/24: Extracted 25 valid records (Cumulative: 400)
+[2026-10-10 02:33:20] [INFO] Page 17/24: Extracted 25 valid records (Cumulative: 425)
+[2026-10-10 02:33:22] [INFO] Page 18/24: Extracted 25 valid records (Cumulative: 450)
+[2026-10-10 02:33:24] [INFO] Page 19/24: Extracted 25 valid records (Cumulative: 475)
+[2026-10-10 02:33:26] [INFO] Page 20/24: Extracted 25 valid records (Cumulative: 500)
+[2026-10-10 02:33:29] [INFO] Page 21/24: Extracted 25 valid records (Cumulative: 525)
+[2026-10-10 02:33:31] [INFO] Page 22/24: Extracted 25 valid records (Cumulative: 550)
+[2026-10-10 02:33:33] [INFO] Page 23/24: Extracted 25 valid records (Cumulative: 575)
+[2026-10-10 02:33:35] [INFO] Page 24/24: Extracted 7 valid records (Cumulative: 582)
+[2026-10-10 02:33:35] [INFO] Scraping completed in 50.01s: 24 pages walked, 582 total records extracted.
+[2026-10-10 02:33:35] [INFO] Exported 582 records to CSV: output\teams_dataset.csv
+[2026-10-10 02:33:35] [INFO] Exported 582 records to CSV: output\hockey_teams.csv
+[2026-10-10 02:33:35] [INFO] Exported 582 records to Snappy Parquet: output\teams_dataset.snappy.parquet
+[2026-10-10 02:33:35] [INFO] Exported 582 records to Snappy Parquet: output\hockey_teams.snappy.parquet
+[2026-10-10 02:33:36] [INFO] Exported 582 records to styled Excel workbook: output\teams_dataset.xlsx
+[2026-10-10 02:33:37] [INFO] Exported 582 records to styled Excel workbook: output\hockey_teams.xlsx
+[2026-10-10 02:33:38] [INFO] Parquet verification: Read back 582 rows, schema: ['team_name', 'year', 'wins', 'losses', 'ot_losses', 'win_pct', 'goals_for', 'goals_against', 'goal_diff', 'page_number']
+[2026-10-10 02:33:38] [INFO] SHA-256 [teams_dataset.csv]: 97e7d031aec828062f17d04c62ad8a54d13be3c2326b0efdced8572e84ca11f0
+[2026-10-10 02:33:38] [INFO] SHA-256 [teams_dataset.snappy.parquet]: d19ffe08801e19b9c47c4fae9f8c400e82132d94bfa470d4a1da45a53fc9df81
+[2026-10-10 02:33:38] [INFO] SHA-256 [teams_dataset.xlsx]: 068534db2ca558d8215247ccdbdddf25d7b0e58e9752fed9ea6c6ab7f258a33a
+[2026-10-10 02:33:38] [INFO] SHA-256 [hockey_teams.csv]: 97e7d031aec828062f17d04c62ad8a54d13be3c2326b0efdced8572e84ca11f0
+[2026-10-10 02:33:38] [INFO] SHA-256 [hockey_teams.snappy.parquet]: d19ffe08801e19b9c47c4fae9f8c400e82132d94bfa470d4a1da45a53fc9df81
+[2026-10-10 02:33:38] [INFO] SHA-256 [hockey_teams.xlsx]: 3855b78b9f23363845e5fdbc2c1e0cf4b9c665b8d0a74e649f4cbc534df2444d
+[2026-10-10 02:33:38] [INFO] Checksums saved to output\SHA256SUMS.txt

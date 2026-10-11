@@ -1,0 +1,29 @@
+{
+  "timestamp": "2026-10-10T23:23:20.286618+00:00",
+  "database": "artifact_d1_db",
+  "host": "127.0.0.1",
+  "port": 5433,
+  "execution_time_seconds": 0.0701,
+  "status": "SUCCESS",
+  "summary": {
+    "scanned_migrations": 3,
+    "repaired_count": 1,
+    "unmodified_count": 2,
+    "performance_threshold_seconds": 3.0,
+    "performance_passed": true
+  },
+  "repairs": [
+    {
+      "version": "3",
+      "script": "V3__add_metadata.sql",
+      "description": "add metadata",
+      "checksum_before": 641846724,
+      "checksum_after": 281292016,
+      "success_before": true,
+      "success_after": true,
+      "reasons": [
+        "CHECKSUM_MISMATCH"
+      ]
+    }
+  ]
+}

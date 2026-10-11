@@ -1,0 +1,99 @@
+#!/usr/bin/env bash
+# ==============================================================================
+# File: build_script.optimized
+# Purpose: Multi-stage modular packaging using jlink and Spring Boot layertools.
+# Description: Generates a custom minimal JRE runtime (<50MB) and extracts
+#              layered application components (dependencies, loader, application)
+#              yielding a sub-100MB production-ready deployment bundle.
+# Rule: Zero em dashes across all code comments and messages.
+# ==============================================================================
+
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$SCRIPT_DIR"
+
+DIST_DIR="$SCRIPT_DIR/dist/optimized"
+LAYERS_DIR="$SCRIPT_DIR/dist/layers"
+TARGET_JAR="$SCRIPT_DIR/target/artifact-jvm-d4-1.0.0.jar"
+
+echo "[OPTIMIZED] Starting multi-stage optimized modular build..."
+
+# Step 1: Clean previous optimized distribution and layer staging
+if [ -d "$DIST_DIR" ]; then
+    rm -rf "$DIST_DIR" 2>/dev/null || true
+fi
+if [ -d "$LAYERS_DIR" ]; then
+    rm -rf "$LAYERS_DIR" 2>/dev/null || true
+fi
+mkdir -p "$DIST_DIR"
+mkdir -p "$DIST_DIR/app"
+mkdir -p "$LAYERS_DIR"
+
+# Step 2: Stage 1 (Builder) - Compile application via Maven
+if [ ! -f "$TARGET_JAR" ]; then
+    echo "[OPTIMIZED] Compiling package via Maven..."
+    mvn.cmd clean package -DskipTests
+fi
+
+# Step 3: Stage 1 (Builder) - Extract Spring Boot layers using layertools
+echo "[OPTIMIZED] Extracting Spring Boot layers with layertools..."
+java -Djarmode=layertools -jar "target/artifact-jvm-d4-1.0.0.jar" extract --destination "dist/layers"
+
+# Step 4: Stage 2 (Runtime) - Build custom modular JRE runtime with jlink
+echo "[OPTIMIZED] Building custom modular JRE runtime with jlink..."
+MODULES="java.base,java.desktop,java.instrument,java.management,java.naming,java.net.http,java.security.jgss,java.security.sasl,java.sql,jdk.unsupported,jdk.management"
+
+jlink \
+    --add-modules "$MODULES" \
+    --strip-debug \
+    --no-man-pages \
+    --no-header-files \
+    --compress=zip-6 \
+    --output "dist/optimized/runtime"
+
+# Step 5: Copy extracted layers into app runtime in order of change frequency
+echo "[OPTIMIZED] Assembling layers into runtime directory..."
+# Layer 1: dependencies (rarely changes)
+if [ -d "$LAYERS_DIR/dependencies" ]; then
+    echo "  -> Copying dependencies layer..."
+    cp -r "$LAYERS_DIR/dependencies/." "$DIST_DIR/app/"
+fi
+
+# Layer 2: spring-boot-loader (rarely changes)
+if [ -d "$LAYERS_DIR/spring-boot-loader" ]; then
+    echo "  -> Copying spring-boot-loader layer..."
+    cp -r "$LAYERS_DIR/spring-boot-loader/." "$DIST_DIR/app/"
+fi
+
+# Layer 3: snapshot-dependencies (occasional changes)
+if [ -d "$LAYERS_DIR/snapshot-dependencies" ] && [ "$(ls -A "$LAYERS_DIR/snapshot-dependencies")" ]; then
+    echo "  -> Copying snapshot-dependencies layer..."
+    cp -r "$LAYERS_DIR/snapshot-dependencies/." "$DIST_DIR/app/"
+fi
+
+# Layer 4: application (frequently changes)
+if [ -d "$LAYERS_DIR/application" ]; then
+    echo "  -> Copying application layer..."
+    cp -r "$LAYERS_DIR/application/." "$DIST_DIR/app/"
+fi
+
+# Step 6: Create execution wrapper scripts
+cat << 'EOF' > "$DIST_DIR/run.sh"
+#!/usr/bin/env bash
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$SCRIPT_DIR/app"
+PORT="${PORT:-8080}"
+exec "$SCRIPT_DIR/runtime/bin/java" -Dserver.port="$PORT" org.springframework.boot.loader.launch.JarLauncher "$@"
+EOF
+chmod +x "$DIST_DIR/run.sh"
+
+cat << 'EOF' > "$DIST_DIR/run.bat"
+@echo off
+set SCRIPT_DIR=%~dp0
+cd /d "%SCRIPT_DIR%app"
+if "%PORT%"=="" set PORT=8080
+"%SCRIPT_DIR%runtime\bin\java.exe" -Dserver.port=%PORT% org.springframework.boot.loader.launch.JarLauncher %*
+EOF
+
+echo "[OPTIMIZED] Modular packaging complete at: $DIST_DIR"
