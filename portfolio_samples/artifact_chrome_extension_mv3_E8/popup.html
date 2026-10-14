@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>E8 Data Exporter</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      width: 360px;
+      font-family: 'SF Mono', 'Segoe UI Mono', 'Roboto Mono', Menlo, monospace;
+      font-size: 12px;
+      line-height: 1.4;
+      background: #0d0d0d;
+      color: #e0e0e0;
+      padding: 12px;
+      border: 2px solid #333333;
+    }
+    header {
+      border-bottom: 2px solid #00ff66;
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+    }
+    h1 {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #00ff66;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .badge {
+      background: #1a1a1a;
+      color: #00ff66;
+      border: 1px solid #00ff66;
+      padding: 2px 6px;
+      font-size: 10px;
+    }
+    .stats-box {
+      background: #141414;
+      border: 1px solid #2a2a2a;
+      padding: 8px 10px;
+      margin-bottom: 12px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    .stat-label {
+      color: #888888;
+      font-size: 10px;
+      text-transform: uppercase;
+    }
+    .stat-val {
+      font-size: 16px;
+      font-weight: bold;
+      color: #ffffff;
+    }
+    .section-title {
+      font-size: 10px;
+      text-transform: uppercase;
+      color: #888888;
+      margin-bottom: 6px;
+      letter-spacing: 0.5px;
+    }
+    select, button {
+      width: 100%;
+      font-family: inherit;
+      font-size: 11px;
+      padding: 7px 10px;
+      border: 1px solid #333;
+      margin-bottom: 8px;
+      border-radius: 0;
+      outline: none;
+    }
+    select {
+      background: #1a1a1a;
+      color: #ffffff;
+    }
+    button {
+      background: #00ff66;
+      color: #000000;
+      font-weight: bold;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      transition: background 0.1s ease;
+    }
+    button:hover {
+      background: #00cc52;
+    }
+    button.secondary {
+      background: #222222;
+      color: #ffffff;
+      border: 1px solid #444444;
+    }
+    button.secondary:hover {
+      background: #333333;
+    }
+    .action-row {
+      display: flex;
+      gap: 6px;
+    }
+    .action-row button {
+      flex: 1;
+    }
+    #status-log {
+      background: #000000;
+      border: 1px solid #222222;
+      color: #00ff66;
+      padding: 6px 8px;
+      font-size: 10px;
+      min-height: 48px;
+      max-height: 80px;
+      overflow-y: auto;
+      white-space: pre-wrap;
+      word-break: break-all;
+    }
+    .footer {
+      margin-top: 10px;
+      font-size: 9px;
+      color: #666666;
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px solid #222222;
+      padding-top: 6px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>E8 DATA EXPORTER <span class="badge">MV3 ACTIVE</span></h1>
+  </header>
+
+  <div class="stats-box">
+    <div>
+      <div class="stat-label">Tables Found</div>
+      <div id="stat-tables" class="stat-val">0</div>
+    </div>
+    <div>
+      <div class="stat-label">Rows Extracted</div>
+      <div id="stat-rows" class="stat-val">0</div>
+    </div>
+  </div>
+
+  <div class="section-title">Select Scraped Table</div>
+  <select id="table-select">
+    <option value="">Scan page to discover tables...</option>
+  </select>
+
+  <button id="btn-scan">SCAN ACTIVE TAB</button>
+
+  <div class="section-title">Export Format (RFC 4180 / Sanitized)</div>
+  <div class="action-row">
+    <button id="btn-export-csv" class="secondary">CSV (RFC 4180)</button>
+    <button id="btn-export-json" class="secondary">JSON ARRAY</button>
+  </div>
+
+  <button id="btn-copy-clipboard" class="secondary">COPY TO CLIPBOARD</button>
+
+  <div class="section-title">System Status</div>
+  <div id="status-log">System ready. Click SCAN to detect DOM tables.</div>
+
+  <div class="footer">
+    <span>RFC 4180 + FORMULA DEFENSE</span>
+    <span>POSTGRESQL 18 READY</span>
+  </div>
+
+  <script type="module" src="popup.js"></script>
+</body>
+</html>
