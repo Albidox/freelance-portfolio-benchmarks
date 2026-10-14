@@ -1,0 +1,18 @@
+{
+  "artifact": "E7",
+  "service": "Algorithmic Crypto & Forex TradingView Webhook Execution Bot",
+  "timestamp": "2026-10-14T03:22:59Z",
+  "hmac_auth_throughput_alerts_per_sec": 97886.63,
+  "hmac_auth_latency_ms": 0.0102,
+  "signal_parsing_throughput_alerts_per_sec": 8848.26,
+  "signal_parsing_latency_ms": 0.113,
+  "order_execution_throughput_orders_per_sec": 15218.36,
+  "order_execution_latency_ms": 0.0657,
+  "sqlite_wal_throughput_writes_per_sec": 55085.61,
+  "postgres_throughput_records_per_sec": 2842.82,
+  "postgres_records_committed": 5000,
+  "peak_memory_mb": 10.69,
+  "memory_ceiling_mb": 250.0,
+  "duplicate_prevention_rate_pct": 100.0,
+  "test_assertions_passing": "26/26"
+}

@@ -1,6 +1,6 @@
 # Sk Ashfaq Bux | Java Backend & Production Database Specialist
 
-Production Engineering Case Studies & Benchmarks: 31 Verified Backend, Database, Scraping & Automation Deliverables.
+Production Engineering Case Studies & Benchmarks: 32 Verified Backend, Database, Scraping & Automation Deliverables.
 
 [![Repository Status](https://img.shields.io/badge/Status-Production%20Verified-success?style=flat-square)](https://github.com/Albidox/freelance-portfolio-benchmarks)
 [![Java](https://img.shields.io/badge/Java-21%20LTS-orange?style=flat-square&logo=openjdk)](https://openjdk.org/)
@@ -8,11 +8,11 @@ Production Engineering Case Studies & Benchmarks: 31 Verified Backend, Database,
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16%20%2F%2018-blue?style=flat-square&logo=postgresql)](https://www.postgresql.org/)
 [![Audit Verdict](https://img.shields.io/badge/SARIF%20Audit-Zero%20Defects-blueviolet?style=flat-square)](https://github.com/Albidox/freelance-portfolio-benchmarks)
 
-Welcome to the production engineering case study repository. This portfolio contains 31 verified, end-to-end deliverables spanning high-throughput backend services, database internals, resilient data pipelines, and infrastructure automation. Every deliverable includes reproducible benchmarks, automated regression harnesses, cryptographic checksums, and formal SARIF audit reports.
+Welcome to the production engineering case study repository. This portfolio contains 32 verified, end-to-end deliverables spanning high-throughput backend services, database internals, resilient data pipelines, and infrastructure automation. Every deliverable includes reproducible benchmarks, automated regression harnesses, cryptographic checksums, and formal SARIF audit reports.
 
 ---
 
-## Master Engineering Showcase: 31 Verified Deliverables
+## Master Engineering Showcase: 32 Verified Deliverables
 
 ### 1. PostgreSQL & Database Performance
 
@@ -48,6 +48,7 @@ Industrial data extraction pipelines handling high-throughput catalog harvesting
 | **E4** | Legacy PDF Invoice & Receipt Table Extractor | [artifact_pdf_table_extractor_E4](./portfolio_samples/artifact_pdf_table_extractor_E4) | Layout Clustering, Gutters, PostgreSQL 18, SQLite WAL | 89.41 pages/sec crawl & layout rate, 76.0 line items/sec PostgreSQL 18 upsert, 100.0% math reconciliation accuracy, 0.85 MB peak RAM under 250 MB budget, 26/26 deterministic tests passing. |
 | **E5** | Third-Party Payment Gateway Webhook Reconciliation (Stripe & Razorpay) | [artifact_payment_reconciliation_E5](./portfolio_samples/artifact_payment_reconciliation_E5) | HMAC-SHA256, Anti-Replay, Idempotency, PostgreSQL 18 | 21,333.38 events/sec verification throughput, 1,445.08 records/sec PostgreSQL 18 upsert, 100.0% duplicate prevention, 4.06 MB peak RAM under 250 MB budget, 26/26 deterministic tests passing. |
 | **E6** | Amazon Selling Partner API (SP-API) Buy Box & ASIN Tracking | [artifact_amazon_spapi_tracker_E6](./portfolio_samples/artifact_amazon_spapi_tracker_E6) | AWS SigV4, LWA OAuth2, PostgreSQL 18, SQLite WAL | 5,400+ signatures/sec SigV4 throughput, 37,000+ decisions/sec repricing calculation, 100.0% margin guardrail protection, 1,800+ records/sec PostgreSQL 18 upsert, 33,000+ writes/sec SQLite WAL delta cache, 6.61 MB peak RAM, 26/26 deterministic tests passing. |
+| **E7** | Algorithmic Crypto & Forex TradingView Webhook Execution Bot | [artifact_tradingview_execution_bot_E7](./portfolio_samples/artifact_tradingview_execution_bot_E7) | FastAPI, HMAC-SHA256, ccxt, PostgreSQL 18, SQLite WAL | 97,000+ HMAC auth/sec, 15,000+ orders/sec execution, 100.0% duplicate prevention, 2,800+ records/sec PostgreSQL 18 upsert, 55,000+ writes/sec SQLite WAL delta cache, 10.69 MB peak RAM, 26/26 deterministic tests passing. |
 
 ---
 
