@@ -1,0 +1,14 @@
+{
+  "sigv4_throughput_rps": 2722.01,
+  "asin_parsing_throughput_per_sec": 3256.68,
+  "repricing_decision_throughput_per_sec": 18251.02,
+  "guardrail_violations_prevented": 114,
+  "guardrail_violation_prevention_rate_pct": 100.0,
+  "postgres_records_upsert_rate_rps": 1833.14,
+  "sqlite_wal_delta_write_rate_rps": 33806.97,
+  "peak_memory_mb": 6.61,
+  "memory_cap_mb": 250,
+  "test_assertions_passing": 26,
+  "test_assertions_total": 26,
+  "test_pass_rate_pct": 100.0
+}
