@@ -1,6 +1,6 @@
 # Sk Ashfaq Bux | Java Backend & Production Database Specialist
 
-Production Engineering Case Studies & Benchmarks: 37 Verified Backend, Database, Scraping & Automation Deliverables.
+Production Engineering Case Studies & Benchmarks: 38 Verified Backend, Database, Scraping & Automation Deliverables.
 
 [![Repository Status](https://img.shields.io/badge/Status-Production%20Verified-success?style=flat-square)](https://github.com/Albidox/freelance-portfolio-benchmarks)
 [![Java](https://img.shields.io/badge/Java-21%20LTS-orange?style=flat-square&logo=openjdk)](https://openjdk.org/)
@@ -8,11 +8,11 @@ Production Engineering Case Studies & Benchmarks: 37 Verified Backend, Database,
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16%20%2F%2018-blue?style=flat-square&logo=postgresql)](https://www.postgresql.org/)
 [![Audit Verdict](https://img.shields.io/badge/SARIF%20Audit-Zero%20Defects-blueviolet?style=flat-square)](https://github.com/Albidox/freelance-portfolio-benchmarks)
 
-Welcome to the production engineering case study repository. This portfolio contains 37 verified, end-to-end deliverables spanning high-throughput backend services, database internals, resilient data pipelines, and infrastructure automation. Every deliverable includes reproducible benchmarks, automated regression harnesses, cryptographic checksums, and formal SARIF audit reports.
+Welcome to the production engineering case study repository. This portfolio contains 38 verified, end-to-end deliverables spanning high-throughput backend services, database internals, resilient data pipelines, and infrastructure automation. Every deliverable includes reproducible benchmarks, automated regression harnesses, cryptographic checksums, and formal SARIF audit reports.
 
 ---
 
-## Master Engineering Showcase: 37 Verified Deliverables
+## Master Engineering Showcase: 38 Verified Deliverables
 
 ### 1. PostgreSQL & Database Performance
 
@@ -54,6 +54,7 @@ Industrial data extraction pipelines handling high-throughput catalog harvesting
 | **E10** | Zapier & Make.com Custom Code Breakout Modules | [artifact_zapier_code_modules_E10](./portfolio_samples/artifact_zapier_code_modules_E10) | Python 3.11, RFC 7519 JWT, HMAC-SHA256, PostgreSQL 18, SQLite WAL | 5,800+ records/sec nested payload flattening, 0.184 ms JWT mint & verify, 2,900+ signatures/sec webhook HMAC signing, 3,500+ records/sec PostgreSQL 18 upsert, 2.35 MB peak RAM under 64 MB serverless budget, 26/26 deterministic tests passing. |
 | **E11** | Microcontroller IoT Firmware Refactoring (ESP32 / MicroPython) | [artifact_micropython_iot_firmware_E11](./portfolio_samples/artifact_micropython_iot_firmware_E11) | MicroPython, ESP32, CRC-8, MQTT QoS 1, PostgreSQL 18, SQLite WAL | 51,200+ samples/sec sensor throughput, 0.053 ms CRC-8 validation, 100% WDT recovery, PostgreSQL 18 schema logging, 1.12 MB peak host RAM (<128 KB target heap), 26/26 deterministic tests passing. |
 | **E12** | Web3 Smart Contract Interaction Script (web3.py) | [artifact_web3_contract_interaction_E12](./portfolio_samples/artifact_web3_contract_interaction_E12) | Web3.py, EVM JSON-RPC, EIP-1559, PostgreSQL 18, SQLite WAL | 11,600+ tx/sec EIP-1559 assembly, 9,500+ tx/sec offline signing, 48,000+ ops/sec gas optimization, 810,000+ events/sec reorg filtering, 3,700+ records/sec PostgreSQL 18 upsert, 10.35 MB peak RAM, 26/26 deterministic tests passing. |
+| **E13** | Private Mobile & Single-Page Application API Reverse Engineering | [artifact_private_api_reverse_E13](./portfolio_samples/artifact_private_api_reverse_E13) | TLS JA3/JA4, HMAC-SHA256, HTTP/2 Flow, httpx, PostgreSQL 18, SQLite WAL | 47,000+ signatures/sec HMAC throughput, 5,800+ frames/sec HTTP/2 flow inspection, 31,000+ ops/sec Turnstile header impersonation, 33,000+ rec/sec schema drift extraction, 1,100+ rec/sec SQLite WAL delta cache, 1,600+ records/sec PostgreSQL 18 logging, 12.72 MB peak RAM, 26/26 deterministic tests passing. |
 
 ---
 

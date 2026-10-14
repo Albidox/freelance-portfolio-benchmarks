@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+*.db
+*.db-wal
+*.db-shm
+output/benchmark_telemetry.db
+.DS_Store
