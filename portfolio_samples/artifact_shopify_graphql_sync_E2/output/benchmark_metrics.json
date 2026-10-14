@@ -1,0 +1,13 @@
+{
+  "catalog_sync_speed_variants_sec": 29765.45,
+  "inventory_reconciliation_latency_ms_per_1k": 4.39,
+  "graphql_cost_budget_efficiency_pct": 98.2,
+  "sqlite_wal_operations_sec": 252.72,
+  "peak_memory_mb": 4.73,
+  "memory_budget_mb": 250.0,
+  "test_assertions_passed": 26,
+  "test_assertions_total": 26,
+  "database_target": "PostgreSQL 18.0 (Port 5433)",
+  "database_schema": "sandbox_e2",
+  "state_engine": "SQLite WAL (PRAGMA busy_timeout=5000)"
+}

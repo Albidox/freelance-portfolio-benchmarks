@@ -1,6 +1,6 @@
 # Sk Ashfaq Bux | Java Backend & Production Database Specialist
 
-Production Engineering Case Studies & Benchmarks: 26 Verified Backend, Database, Scraping & Automation Deliverables.
+Production Engineering Case Studies & Benchmarks: 27 Verified Backend, Database, Scraping & Automation Deliverables.
 
 [![Repository Status](https://img.shields.io/badge/Status-Production%20Verified-success?style=flat-square)](https://github.com/Albidox/freelance-portfolio-benchmarks)
 [![Java](https://img.shields.io/badge/Java-21%20LTS-orange?style=flat-square&logo=openjdk)](https://openjdk.org/)
@@ -8,11 +8,11 @@ Production Engineering Case Studies & Benchmarks: 26 Verified Backend, Database,
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16%20%2F%2018-blue?style=flat-square&logo=postgresql)](https://www.postgresql.org/)
 [![Audit Verdict](https://img.shields.io/badge/SARIF%20Audit-Zero%20Defects-blueviolet?style=flat-square)](https://github.com/Albidox/freelance-portfolio-benchmarks)
 
-Welcome to the production engineering case study repository. This portfolio contains 26 verified, end-to-end deliverables spanning high-throughput backend services, database internals, resilient data pipelines, and infrastructure automation. Every deliverable includes reproducible benchmarks, automated regression harnesses, cryptographic checksums, and formal SARIF audit reports.
+Welcome to the production engineering case study repository. This portfolio contains 27 verified, end-to-end deliverables spanning high-throughput backend services, database internals, resilient data pipelines, and infrastructure automation. Every deliverable includes reproducible benchmarks, automated regression harnesses, cryptographic checksums, and formal SARIF audit reports.
 
 ---
 
-## Master Engineering Showcase: 26 Verified Deliverables
+## Master Engineering Showcase: 27 Verified Deliverables
 
 ### 1. PostgreSQL & Database Performance
 
@@ -43,6 +43,7 @@ Industrial data extraction pipelines handling high-throughput catalog harvesting
 | **D13** | Dynamic XML Sitemap & Gzip Index Recursive Scraper | [artifact_scraping_D13](./artifact_scraping_D13) | lxml Streaming, Gzip Parsing, HTTP 429 Backoff | 25,000 URLs extracted across 10 nested gzipped archives in 0.8190s (30,525 URLs/sec). Peak RAM bounded at 38.56 MB. Automated recovery for corrupted gzip headers and unclosed XML tags. |
 | **D14** | Pydantic v2 Type Sanitizer & Quarantine Pipeline | [artifact_data_D14](./artifact_data_D14) | Pydantic v2, PyArrow, Streaming Data Cleaning | 100,000 dirty records sanitized in 2.4738s (40,423 records/sec); 1,000,000 records streamed in 15.70s under 45 MB RAM. Exactly zero uncaught exceptions. 100% invalid records isolated into dead-letter quarantine. |
 | **E1** | Large-Scale B2B Directory & Multi-Million Lead Harvester | [artifact_b2b_leadgen_harvester_E1](./portfolio_samples/artifact_b2b_leadgen_harvester_E1) | Async Playwright, Scrapling, DNS MX, PostgreSQL 18 | 99.28 leads/sec crawl rate, 3,208.79 records/sec PostgreSQL 18 streaming ingestion, 99.4% RFC 5321 email accuracy, 1.50 MB peak RAM under 250 MB budget, 27/27 deterministic tests passing. |
+| **E2** | Shopify & E-Commerce Catalog GraphQL Synchronization Daemon | [artifact_shopify_graphql_sync_E2](./portfolio_samples/artifact_shopify_graphql_sync_E2) | Shopify Admin GraphQL, Python 3.11, PostgreSQL 18, SQLite WAL | 29,765 variants/sec catalog sync speed, 4.39 ms / 1,000 SKUs reconciliation latency, 98.2% cost budget efficiency, 252.7 ops/sec SQLite WAL throughput, 4.73 MB peak RAM, 26/26 deterministic tests passing. |
 
 ---
 

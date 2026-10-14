@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.venv/
+*.db
+*.db-wal
+*.db-shm
+test_sync_state.db
+output/*.db
+output/*.db-wal
+output/*.db-shm
