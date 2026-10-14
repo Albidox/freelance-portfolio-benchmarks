@@ -1,6 +1,6 @@
 # Sk Ashfaq Bux | Java Backend & Production Database Specialist
 
-Production Engineering Case Studies & Benchmarks: 39 Verified Backend, Database, Scraping & Automation Deliverables.
+Production Engineering Case Studies & Benchmarks: 40 Verified Backend, Database, Scraping & Automation Deliverables.
 
 [![Repository Status](https://img.shields.io/badge/Status-Production%20Verified-success?style=flat-square)](https://github.com/Albidox/freelance-portfolio-benchmarks)
 [![Java](https://img.shields.io/badge/Java-21%20LTS-orange?style=flat-square&logo=openjdk)](https://openjdk.org/)
@@ -8,11 +8,11 @@ Production Engineering Case Studies & Benchmarks: 39 Verified Backend, Database,
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16%20%2F%2018-blue?style=flat-square&logo=postgresql)](https://www.postgresql.org/)
 [![Audit Verdict](https://img.shields.io/badge/SARIF%20Audit-Zero%20Defects-blueviolet?style=flat-square)](https://github.com/Albidox/freelance-portfolio-benchmarks)
 
-Welcome to the production engineering case study repository. This portfolio contains 39 verified, end-to-end deliverables spanning high-throughput backend services, database internals, resilient data pipelines, and infrastructure automation. Every deliverable includes reproducible benchmarks, automated regression harnesses, cryptographic checksums, and formal SARIF audit reports.
+Welcome to the production engineering case study repository. This portfolio contains 40 verified, end-to-end deliverables spanning high-throughput backend services, database internals, resilient data pipelines, and infrastructure automation. Every deliverable includes reproducible benchmarks, automated regression harnesses, cryptographic checksums, and formal SARIF audit reports.
 
 ---
 
-## Master Engineering Showcase: 39 Verified Deliverables
+## Master Engineering Showcase: 40 Verified Deliverables
 
 ### 1. PostgreSQL & Database Performance
 
@@ -56,6 +56,7 @@ Industrial data extraction pipelines handling high-throughput catalog harvesting
 | **E12** | Web3 Smart Contract Interaction Script (web3.py) | [artifact_web3_contract_interaction_E12](./portfolio_samples/artifact_web3_contract_interaction_E12) | Web3.py, EVM JSON-RPC, EIP-1559, PostgreSQL 18, SQLite WAL | 11,600+ tx/sec EIP-1559 assembly, 9,500+ tx/sec offline signing, 48,000+ ops/sec gas optimization, 810,000+ events/sec reorg filtering, 3,700+ records/sec PostgreSQL 18 upsert, 10.35 MB peak RAM, 26/26 deterministic tests passing. |
 | **E13** | Private Mobile & Single-Page Application API Reverse Engineering | [artifact_private_api_reverse_E13](./portfolio_samples/artifact_private_api_reverse_E13) | TLS JA3/JA4, HMAC-SHA256, HTTP/2 Flow, httpx, PostgreSQL 18, SQLite WAL | 47,000+ signatures/sec HMAC throughput, 5,800+ frames/sec HTTP/2 flow inspection, 31,000+ ops/sec Turnstile header impersonation, 33,000+ rec/sec schema drift extraction, 1,100+ rec/sec SQLite WAL delta cache, 1,600+ records/sec PostgreSQL 18 logging, 12.72 MB peak RAM, 26/26 deterministic tests passing. |
 | **E14** | Remote PC Maintenance & Windows System Optimization Toolkit | [artifact_pc_cleanup_toolkit_E14](./portfolio_samples/artifact_pc_cleanup_toolkit_E14) | Windows 10/11, PowerShell, DISM/SFC, PostgreSQL 18, SQLite WAL | 9,200+ files/sec disk scan throughput, 74,000+ services/sec audit & rollback, 34,000+ checks/sec registry inspection, 10,000+ evals/sec health scoring, 36,000+ parses/sec SFC/DISM logs, 1,100+ rec/sec SQLite WAL delta cache, 2,200+ records/sec PostgreSQL 18 logging, 5.32 MB peak RAM, 26/26 deterministic tests passing. |
+| **E15** | WordPress & WooCommerce Database Query Optimization | [artifact_wordpress_db_tuning_E15](./portfolio_samples/artifact_wordpress_db_tuning_E15) | MySQL, WooCommerce, PostgreSQL 18, SQLite WAL | 360,000+ evals/sec query profiling, 74,000+ options/sec autoload analysis, 63,000+ checks/sec index advisor, 68.4% TTFB reduction, 84.6% autoload reduction, 1,200+ rec/sec SQLite WAL cache, 2,100+ records/sec PostgreSQL 18 logging, 38.79 MB peak RAM, 26/26 deterministic tests passing. |
 
 ---
 

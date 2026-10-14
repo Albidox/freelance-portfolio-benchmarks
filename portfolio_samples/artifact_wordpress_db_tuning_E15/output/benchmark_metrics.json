@@ -1,0 +1,71 @@
+{
+  "query_profiles_evaluated": 25000,
+  "query_profiler_duration_sec": 0.0679,
+  "query_profiler_throughput_evals_sec": 368102.3,
+  "query_profiler_latency_us": 2.72,
+  "autoload_options_inspected": 6000,
+  "autoload_total_kb": 38361.88,
+  "autoload_migrations_generated": 2572,
+  "transients_expired_detected": 2000,
+  "transients_bytes_reclaimed": 2080000,
+  "autoload_analyzer_throughput_options_sec": 74417.5,
+  "autoload_analyzer_latency_us": 13.44,
+  "index_recommendations_count": 3,
+  "index_advisor_evaluations": 20000,
+  "index_advisor_throughput_checks_sec": 63526.6,
+  "index_advisor_latency_us": 15.74,
+  "query_latency_comparisons": {
+    "total_queries_benchmarked": 4,
+    "average_speedup_multiplier": 29.81,
+    "average_latency_reduction_pct": 95.62,
+    "details": [
+      {
+        "query_name": "WooCommerce Postmeta Price Filter",
+        "pre_optimization_ms": 850.0,
+        "post_optimization_ms": 18.5,
+        "speedup_multiplier": 45.95,
+        "latency_reduction_pct": 97.82,
+        "pre_rows_examined": 850000,
+        "post_rows_examined": 45
+      },
+      {
+        "query_name": "WP Posts Catalog Type/Status/Date Sort",
+        "pre_optimization_ms": 340.0,
+        "post_optimization_ms": 12.2,
+        "speedup_multiplier": 27.87,
+        "latency_reduction_pct": 96.41,
+        "pre_rows_examined": 250000,
+        "post_rows_examined": 50
+      },
+      {
+        "query_name": "WooCommerce Order Stats Analytics Lookup",
+        "pre_optimization_ms": 480.0,
+        "post_optimization_ms": 14.1,
+        "speedup_multiplier": 34.04,
+        "latency_reduction_pct": 97.06,
+        "pre_rows_examined": 500000,
+        "post_rows_examined": 100
+      },
+      {
+        "query_name": "wp_options Autoload Initial Page Load",
+        "pre_optimization_ms": 250.0,
+        "post_optimization_ms": 22.0,
+        "speedup_multiplier": 11.36,
+        "latency_reduction_pct": 91.2,
+        "pre_rows_examined": 8500,
+        "post_rows_examined": 120
+      }
+    ]
+  },
+  "sqlite_wal_records_persisted": 3000,
+  "sqlite_wal_duration_sec": 2.4391,
+  "sqlite_wal_throughput_records_sec": 1230.0,
+  "sqlite_wal_latency_ms": 0.813,
+  "postgres_schema_initialized": true,
+  "postgres_records_written": 508,
+  "postgres_duration_sec": 0.2349,
+  "postgres_throughput_records_sec": 2162.2,
+  "peak_memory_mb": 38.79,
+  "memory_ceiling_mb": 250.0,
+  "deterministic_tests": "26 / 26 passing (100% pass rate)"
+}
