@@ -1,0 +1,50 @@
+# Multi-Stage Production Dockerfile for Python 3.11 Microservice
+# Stage 1: Build & Dependency Resolution
+FROM python:3.11-slim AS builder
+
+WORKDIR /build
+
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    PIP_NO_CACHE_DIR=1 \
+    PIP_DISABLE_PIP_VERSION_CHECK=1
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    libpq-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+COPY requirements.txt .
+RUN pip install --prefix=/install --no-warn-script-location -r requirements.txt
+
+
+# Stage 2: Hardened Runtime Container
+FROM python:3.11-slim AS runtime
+
+WORKDIR /app
+
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    PATH="/install/bin:${PATH}" \
+    PYTHONPATH="/install/lib/python3.11/site-packages:${PYTHONPATH}"
+
+# Create unprivileged system group and user
+RUN groupadd -r appuser && useradd -r -g appuser -d /home/appuser -m appuser
+
+# Copy installed artifacts from builder
+COPY --from=builder --chown=appuser:appuser /install /install
+
+# Copy application source code
+COPY --chown=appuser:appuser src/ ./src/
+COPY --chown=appuser:appuser deploy_vps.py ./
+
+# Drop privileges to non-root user
+USER appuser
+
+EXPOSE 8080
+
+HEALTHCHECK --interval=15s --timeout=3s --start-period=5s --retries=3 \
+    CMD python -c "import urllib.request; urllib.request.urlopen('http://localhost:8080/healthz')" || exit 1
+
+ENTRYPOINT ["python"]
+CMD ["deploy_vps.py", "--image", "ghcr.io/app:latest", "--strategy", "BLUE_GREEN"]
