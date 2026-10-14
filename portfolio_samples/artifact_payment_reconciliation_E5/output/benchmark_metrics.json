@@ -1,0 +1,17 @@
+{
+  "artifact_id": "E5",
+  "service_name": "Third-Party Payment Gateway Webhook Reconciliation (Stripe & Razorpay)",
+  "platform": "Windows 10",
+  "python_runtime": "Python 3.11",
+  "database_target": "Native PostgreSQL 18 on port 5433 (sandbox_e5)",
+  "total_webhooks_processed": 1000,
+  "ingest_throughput_events_per_sec": 21333.38,
+  "duplicate_prevention_rate_pct": 100.0,
+  "tamper_rejection_rate_pct": 100.0,
+  "db_ingestion_rate_records_per_sec": 1445.08,
+  "reconciliation_discrepancies_corrected": 25,
+  "reconciliation_accuracy_pct": 100.0,
+  "peak_memory_mb": 4.06,
+  "memory_budget_mb": 250.0,
+  "deterministic_test_status": "26 / 26 passing (100% pass rate)"
+}
