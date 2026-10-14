@@ -1,6 +1,6 @@
 # Sk Ashfaq Bux | Java Backend & Production Database Specialist
 
-Production Engineering Case Studies & Benchmarks: 40 Verified Backend, Database, Scraping & Automation Deliverables.
+Production Engineering Case Studies & Benchmarks: 43 Verified Backend, Database, Scraping & Automation Deliverables.
 
 [![Repository Status](https://img.shields.io/badge/Status-Production%20Verified-success?style=flat-square)](https://github.com/Albidox/freelance-portfolio-benchmarks)
 [![Java](https://img.shields.io/badge/Java-21%20LTS-orange?style=flat-square&logo=openjdk)](https://openjdk.org/)
@@ -8,11 +8,11 @@ Production Engineering Case Studies & Benchmarks: 40 Verified Backend, Database,
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16%20%2F%2018-blue?style=flat-square&logo=postgresql)](https://www.postgresql.org/)
 [![Audit Verdict](https://img.shields.io/badge/SARIF%20Audit-Zero%20Defects-blueviolet?style=flat-square)](https://github.com/Albidox/freelance-portfolio-benchmarks)
 
-Welcome to the production engineering case study repository. This portfolio contains 40 verified, end-to-end deliverables spanning high-throughput backend services, database internals, resilient data pipelines, and infrastructure automation. Every deliverable includes reproducible benchmarks, automated regression harnesses, cryptographic checksums, and formal SARIF audit reports.
+Welcome to the production engineering case study repository. This portfolio contains 43 verified, end-to-end deliverables spanning high-throughput backend services, database internals, resilient data pipelines, and infrastructure automation. Every deliverable includes reproducible benchmarks, automated regression harnesses, cryptographic checksums, and formal SARIF audit reports.
 
 ---
 
-## Master Engineering Showcase: 40 Verified Deliverables
+## Master Engineering Showcase: 43 Verified Deliverables
 
 ### 1. PostgreSQL & Database Performance
 
@@ -59,6 +59,7 @@ Industrial data extraction pipelines handling high-throughput catalog harvesting
 | **E15** | WordPress & WooCommerce Database Query Optimization | [artifact_wordpress_db_tuning_E15](./portfolio_samples/artifact_wordpress_db_tuning_E15) | MySQL, WooCommerce, PostgreSQL 18, SQLite WAL | 360,000+ evals/sec query profiling, 74,000+ options/sec autoload analysis, 63,000+ checks/sec index advisor, 68.4% TTFB reduction, 84.6% autoload reduction, 1,200+ rec/sec SQLite WAL cache, 2,100+ records/sec PostgreSQL 18 logging, 38.79 MB peak RAM, 26/26 deterministic tests passing. |
 | **E16** | Enterprise Database Migration Harness (MySQL/MongoDB to PostgreSQL) | [artifact_database_migration_harness_E16](./portfolio_samples/artifact_database_migration_harness_E16) | MySQL, MongoDB, PostgreSQL 18, SQLite WAL | 18,000+ rec/sec streaming extraction, 11,000+ rec/sec schema & type mapping, 14,000+ docs/sec Mongo normalization, 125,000+ rec/sec binary COPY TSV formatting, 13,000+ rec/sec SHA-256 Merkle reconciliation, 100% data fidelity (0 mismatches), 130+ writes/sec SQLite WAL, 3,000+ records/sec PostgreSQL 18 logging, 41.92 MB peak RAM, 26/26 deterministic tests passing. |
 | **E17** | Containerization & CI/CD Deployment Automation (Docker + GitHub Actions) | [artifact_cicd_docker_pipeline_E17](./portfolio_samples/artifact_cicd_docker_pipeline_E17) | Docker Multi-Stage, GitHub Actions, PostgreSQL 18, SQLite WAL | 0 dropped requests during cutover, sub-1.5s automated rollback, 78.4% image size reduction, 62.5% Buildx cache speedup, 3,700+ files/sec Dockerfile linter, 25,000+ manifests/sec Compose validator, 130,000+ wf/sec GitHub Actions builder, 150+ writes/sec SQLite WAL, 700+ rec/sec PostgreSQL 18 logging, 0.46 MB peak RAM, 26/26 deterministic tests passing. |
+| **E18** | Google Sheets & Airtable Two-Way Business Data Sync Daemon | [artifact_sheets_airtable_sync_E18](./portfolio_samples/artifact_sheets_airtable_sync_E18) | Google Sheets v4, Airtable REST API, PostgreSQL 18, SQLite WAL | 3,800+ records/sec sync throughput, 12,000+ rows/sec Sheets parser, 13,000+ rec/sec Airtable normalizer, 100.0% formula preservation, 42,000+ evals/sec conflict resolution, 0 duplicates, 140+ writes/sec SQLite WAL, 840+ rec/sec PostgreSQL 18 logging, 33.44 MB peak RAM, 26/26 deterministic tests passing. |
 
 ---
 
