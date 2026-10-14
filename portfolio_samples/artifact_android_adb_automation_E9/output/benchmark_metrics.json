@@ -1,0 +1,21 @@
+{
+  "template_match_duration_sec": 3.0332,
+  "template_match_iterations": 50,
+  "template_match_latency_ms": 60.66,
+  "template_match_fps": 16.48,
+  "template_match_confidence": 1.0,
+  "bezier_gesture_count": 5000,
+  "bezier_total_points": 155000,
+  "bezier_duration_sec": 10.5339,
+  "bezier_gestures_per_sec": 474.66,
+  "bezier_points_per_sec": 14714.37,
+  "sqlite_records_written": 5000,
+  "sqlite_duration_sec": 34.2969,
+  "sqlite_writes_per_sec": 145.79,
+  "postgres_records_persisted": 2000,
+  "postgres_duration_sec": 0.2481,
+  "postgres_records_per_sec": 8061.29,
+  "peak_memory_mb": 11.49,
+  "memory_ceiling_mb": 250,
+  "memory_budget_compliant": true
+}
