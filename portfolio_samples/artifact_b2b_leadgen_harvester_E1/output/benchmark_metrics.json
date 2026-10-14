@@ -1,0 +1,12 @@
+{
+  "peak_harvesting_throughput_leads_sec": 99.28,
+  "bulk_ingestion_rate_leads_sec": 3208.79,
+  "peak_memory_mb": 1.5,
+  "memory_budget_mb": 250.0,
+  "email_validation_accuracy_pct": 99.4,
+  "test_assertions_passed": 27,
+  "test_assertions_total": 27,
+  "deduplication_integrity": "100% verified",
+  "database_target": "PostgreSQL 18.0 (Port 5433)",
+  "database_schema": "sandbox_e1"
+}
