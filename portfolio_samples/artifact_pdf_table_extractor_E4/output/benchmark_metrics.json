@@ -1,0 +1,14 @@
+{
+  "artifact": "E4",
+  "service": "Legacy PDF Invoice & Receipt Table Extractor",
+  "timestamp": "2026-10-14 02:00:46 UTC",
+  "pages_processed": 100,
+  "total_line_items_extracted": 500,
+  "page_throughput_pages_per_sec": 89.41,
+  "item_extraction_rate_per_sec": 447.06,
+  "reconciliation_accuracy_pct": 100.0,
+  "db_ingestion_rate_items_per_sec": 75.98,
+  "peak_memory_mb": 0.85,
+  "test_assertions_passed": 26,
+  "test_assertions_total": 26
+}
