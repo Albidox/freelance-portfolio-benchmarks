@@ -1,0 +1,21 @@
+{
+  "artifact": "E3",
+  "service": "AI Agent & LLM Wrapper Micro-Services (FastAPI + pgvector RAG)",
+  "platform": "Windows 10",
+  "python_runtime": "3.11",
+  "database_target": "PostgreSQL 18 on port 5433 (schema sandbox_e3)",
+  "vector_indexing": "HNSW (vector_cosine_ops) & In-Memory Cosine Fallback",
+  "chunks_indexed": 140,
+  "chunking_throughput_chunks_per_sec": 903.95,
+  "indexing_throughput_chunks_per_sec": 10687.59,
+  "query_count": 50,
+  "query_throughput_qps": 43.71,
+  "latency_p50_ms": 23.8,
+  "latency_p95_ms": 27.96,
+  "latency_p99_ms": 31.32,
+  "latency_mean_ms": 22.87,
+  "security_scan_rate_per_sec": 91324.2,
+  "peak_memory_mb": 2.15,
+  "test_assertions_passed": 26,
+  "test_assertions_total": 26
+}
